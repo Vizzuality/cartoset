@@ -9,52 +9,26 @@ namespace :cartoset do
 
     hydra = Typhoeus::Hydra.new
 
-    hydra.queue Typhoeus::Request.new("http://#{CARTODB[:host]}/api/json/tables.json",
+    create_table_request = Typhoeus::Request.new("http://#{CARTODB[:host]}/api/json/tables.json",
                                                  :method => :post,
                                                  :params => {
                                                    :api_key => CARTODB[:api_key],
                                                    :name => 'features'
-                                                 },
-                                                 :on_complete => lambda do |response|
-                                                   if response.success?
-                                                       table_data = JSON.parse(response.body)
+                                                 })
 
-                                                       table_id = table_data['id']
+    create_table_request.on_complete do |response|
 
-                                                       if table_id
-                                                         create_column = Typhoeus::Request.new("http://#{CARTODB[:host]}/api/json/tables/#{table_id}/update_schema.json",
-                                                                                           :method => :put,
-                                                                                           :params => {
-                                                                                             :api_key => CARTODB[:api_key],
-                                                                                             :what    => "add",
-                                                                                             :column  => {
-                                                                                                :name => "description",
-                                                                                                :type => "text"
-                                                                                             }
-                                                                                           })
-                                                         hydra.queue create_column
+      if response.success?
+        puts '... done!'
+      else
+        errors += parse_errors(response)
+      end
+    end
 
-                                                         hydra.run
-                                                         puts '... done!'
-                                                       end
-                                                     else
-                                                       json_response = JSON.parse(response.body)
-                                                       if json_response && json_response['errors']
-                                                         errors += json_response['errors']
-                                                       end
-                                                     end
-                                                   end)
-
+    hydra.queue create_table_request
     hydra.run
 
-    unless errors.empty?
-      puts ''
-      puts 'Errors creating table features:'
-      errors.each do |error|
-        puts "- #{error}"
-      end
-      puts '##############################################'
-    end
+    print_errors(errors)
   end
 
   desc "Drops the cartodb schema"
@@ -90,10 +64,7 @@ namespace :cartoset do
             if response.success?
               puts '... done!'
             else
-              json_response = JSON.parse(response.body)
-              if json_response && json_response['errors']
-                errors += json_response['errors']
-              end
+              errors += parse_errors(response)
             end
           end
 
@@ -104,16 +75,22 @@ namespace :cartoset do
           errors << 'Table features does not exist'
         end
       else
-        json_response = JSON.parse(response.body)
-        if json_response && json_response['errors']
-          errors += json_response['errors']
-        end
+        errors += parse_errors(response)
       end
     end
 
     hydra.queue list_tables_request
     hydra.run
 
+    print_errors(errors)
+  end
+
+  def parse_errors(response)
+    json_response = JSON.parse(response.body)
+    return json_response['errors'] if json_response && json_response['errors']
+  end
+
+  def print_errors(errors)
     unless errors.empty?
       puts ''
       puts 'Errors creating table features:'
