@@ -1,0 +1,3 @@
+development:
+  host: 'localhost:3000'
+  api_key: '334389048b872a533002b34d73f8c29fd09efc50'

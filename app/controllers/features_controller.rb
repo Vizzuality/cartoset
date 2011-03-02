@@ -1,0 +1,2 @@
+class FeaturesController < ApplicationController
+end
