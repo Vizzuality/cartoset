@@ -45,5 +45,12 @@ module Cartoset
     config.generators do |g|
       g.test_framework :rspec, :fixture => true, :views => false
     end
+
   end
+end
+
+require 'cartodb_strategy'
+
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :cartodb, "http://localhost:3000", 'MjyVDSIKJNbr3oDLEHXxVYMvirZQrpdztklTIddv', 'n9rJvBTPqGt3GUlYvR54nqPmgyBoycvdoYFekybN'
 end
