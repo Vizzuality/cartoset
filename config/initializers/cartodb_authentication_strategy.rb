@@ -3,16 +3,16 @@ require 'multi_json'
 
 module OmniAuth
   module Strategies
-    class Cartodb < OmniAuth::Strategies::OAuth
+    class CartodbAuthentication < OmniAuth::Strategies::OAuth
       def initialize(app, site, app_id, app_secret, options = {})
         options[:site] = site
         options[:authorize_path] = '/oauth/authorize'
         options[:access_token_path] = '/oauth/access_token'
-        super(app, :cartodb, app_id, app_secret, options)
+        super(app, :cartodb_authentication, app_id, app_secret, options)
       end
 
       def user_data
-        @user_data ||= MultiJson.decode(@access_token.get('/identity.json').body)
+        @user_data ||= MultiJson.decode(@access_token.get('/oauth/identity.json').body)
       end
 
       def auth_hash

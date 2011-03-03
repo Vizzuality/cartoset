@@ -4,6 +4,8 @@ gem 'rails', '3.0.5'
 
 gem 'typhoeus'
 gem 'omniauth'
+gem 'warden'
+gem 'rails_warden'
 
 group :development, :test do
   gem 'ruby-debug19', :require => 'ruby-debug', :platforms => :mri_19
