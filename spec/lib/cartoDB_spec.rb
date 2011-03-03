@@ -42,6 +42,36 @@ describe CartoDB do
     table['columns'].should include(["field4", "boolean"])
   end
 
+  it "should add and remove colums in a previously created table" do
+    table = @cartodb.create_table 'cartodb_spec'
+    @cartodb.add_column table['id'], :name => 'field1', :type => 'text'
+    @cartodb.add_column table['id'], :name => 'field2', :type => 'number'
+    @cartodb.add_column table['id'], :name => 'field3', :type => 'date'
+
+    table = @cartodb.table table['id']
+    table['columns'].should have(10).items
+    table['columns'].should include(["field1", "string"])
+    table['columns'].should include(["field2", "number"])
+    table['columns'].should include(["field3", "date"])
+
+    @cartodb.drop_column table['id'], :name => 'field3'
+    table = @cartodb.table table['id']
+    table['columns'].should have(9).items
+    table['columns'].should_not include(["field3", "date"])
+  end
+
+  it "should change a previously created column" do
+    table = @cartodb.create_table 'cartodb_spec', [{:name => 'field1', :type => 'text'}]
+    @cartodb.change_column table['id'], {
+      :old_name => "field1",
+      :new_name => "changed_field",
+      :type     => "number"
+    }
+    table = @cartodb.table table['id']
+    table['columns'].should_not include(["field1", "string"])
+    table['columns'].should include(["changed_field", "number"])
+  end
+
   it "should return user's table list" do
     table_1 = @cartodb.create_table 'table #1'
     table_2 = @cartodb.create_table 'table #2'

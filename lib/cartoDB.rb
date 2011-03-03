@@ -23,13 +23,31 @@ module CartoDB
         if table_id
           if schema.present?
             schema.each do |column|
-              cartodb_request "tables/#{table_id}/update_schema", :put, { :what    => "add", :column  => column }
+              add_column table_id, column
             end
           end
         end
 
         return created_table
       end.handled_response
+
+    end
+
+    def add_column(table_id, column)
+
+      cartodb_request "tables/#{table_id}/update_schema", :put, { :what => "add", :column  => column }
+
+    end
+
+    def drop_column(table_id, column)
+
+      cartodb_request "tables/#{table_id}/update_schema", :put, { :what => "drop", :column  => column }
+
+    end
+
+    def change_column(table_id, column)
+
+      cartodb_request "tables/#{table_id}/update_schema", :put, { :what => "modify", :column  => column }
 
     end
 
