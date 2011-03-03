@@ -16,9 +16,10 @@ module CartoDB
 
     def create_table(table_name = nil, schema = nil)
 
-      cartodb_request 'tables', :post, :name => 'features' do |response|
+      cartodb_request 'tables', :post, :name => table_name do |response|
         created_table = Utils.parse_json(response)
         table_id      = created_table['id'] if created_table
+
         if table_id
           if schema.present?
             schema.each do |column|
@@ -26,6 +27,7 @@ module CartoDB
             end
           end
         end
+
         return created_table
       end.handled_response
 
@@ -44,15 +46,6 @@ module CartoDB
       cartodb_request "tables/#{table_id}" do |response|
         return Utils.parse_json(response)
       end.handled_response
-
-    end
-
-    def drop_tables
-
-      tables_list = tables
-      tables_list.each do |table|
-        drop_table table['id'] if table && table['id']
-      end
 
     end
 
