@@ -209,4 +209,32 @@ describe CartoDB do
     table['total_rows'].should == 0
     table['rows'].should be_empty
   end
+
+  it "should execute a select query and return results" do
+    table = @cartodb.create_table 'table #1'
+
+    50.times do
+      @cartodb.insert_row table['id'], {
+        'name'        => String.random(15),
+        'description' => String.random(200),
+        'latitude'    => rand(180),
+        'longitude'   => rand(360)
+      }
+    end
+
+    table = @cartodb.table table['id']
+    results = @cartodb.query("SELECT * FROM #{table['name']}")
+    results.should_not be_nil
+    results['time'].should be > 0
+    results['total_rows'].should == 50
+    results['rows'].should have(50).items
+    random_row = results['rows'].sample
+    random_row['cartodb_id'].should be > 0
+    random_row['name'].should_not be_empty
+    random_row['latitude'].should be > 0
+    random_row['longitude'].should be > 0
+    random_row['description'].should_not be_empty
+    random_row['created_at'].should_not be_nil
+    random_row['updated_at'].should_not be_nil
+  end
 end

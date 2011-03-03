@@ -91,6 +91,14 @@ module CartoDB
 
     end
 
+    def query(query)
+
+      cartodb_request "tables/query", :query => query do |response|
+        return Utils.parse_json(response)
+      end.handled_response
+
+    end
+
 ##################
 # private methods
 
