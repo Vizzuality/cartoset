@@ -51,9 +51,25 @@ module CartoDB
 
     def drop_table(table_id)
 
-      cartodb_request "tables/#{table_id}", :delete do |response|
-        Utils.parse_json(response)
-      end.handled_response
+      cartodb_request "tables/#{table_id}", :delete
+
+    end
+
+    def insert_row(table_id, row)
+
+      cartodb_request "tables/#{table_id}/rows", :post, row
+
+    end
+
+    def update_row(table_id, row_id, row)
+
+      cartodb_request "tables/#{table_id}/rows/#{row_id}", :put, row
+
+    end
+
+    def delete_row(table_id, row_id)
+
+      cartodb_request "tables/#{table_id}/rows/#{row_id}", :delete
 
     end
 

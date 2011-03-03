@@ -66,4 +66,117 @@ describe CartoDB do
     tables_list.last['id'].should == table_3['id']
   end
 
+  it "should insert a row in a table" do
+    table = @cartodb.create_table 'table #1', [
+                                    {:name => 'field1', :type => 'text'},
+                                    {:name => 'field2', :type => 'number'},
+                                    {:name => 'field3', :type => 'date'},
+                                    {:name => 'field4', :type => 'boolean'}
+                                  ]
+
+    today = Time.now
+
+    @cartodb.insert_row table['id'], {
+      'name'        => 'cartoset',
+      'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'latitude'    => 40.423012,
+      'longitude'   => -3.699732,
+      'field1'      => 'lorem',
+      'field2'      => 100.99,
+      'field3'      => today,
+      'field4'      => true
+    }
+
+    table = @cartodb.table table['id']
+    table['total_rows'].should == 1
+    table['rows'].should have(1).item
+    table['rows'].first['cartodb_id'].should == 1
+    table['rows'].first['name'].should == 'cartoset'
+    table['rows'].first['latitude'].should == 40.423012
+    table['rows'].first['longitude'].should == -3.699732
+    table['rows'].first['description'].should == 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    table['rows'].first['field1'].should == 'lorem'
+    table['rows'].first['field2'].should == 100.99
+    table['rows'].first['field3'].should == today.strftime("%Y-%m-%d %H:%M:%S")
+    table['rows'].first['field4'].should == true
+  end
+
+  it "should update a row in a table" do
+    table = @cartodb.create_table 'table #1', [
+                                    {:name => 'field1', :type => 'text'},
+                                    {:name => 'field2', :type => 'number'},
+                                    {:name => 'field3', :type => 'date'},
+                                    {:name => 'field4', :type => 'boolean'}
+                                  ]
+
+    today = Time.now
+
+    @cartodb.insert_row table['id'], {
+      'name'        => 'cartoset',
+      'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'latitude'    => 40.423012,
+      'longitude'   => -3.699732,
+      'field1'      => 'lorem',
+      'field2'      => 100.99,
+      'field3'      => today,
+      'field4'      => true
+    }
+
+    table = @cartodb.table table['id']
+
+    row_id = table['rows'].first['cartodb_id']
+
+    @cartodb.update_row table['id'], row_id, {
+      'name'        => 'updated_row',
+      'description' => 'Eu capto illum, iustum, brevitas, lobortis torqueo importunus, capio sudo. Genitus importunus amet iaceo, abluo obruo consequat, virtus eros, aliquip iustum nisl duis zelus. Ymo augue nobis exerci letatio sed.',
+      'latitude'    => 40.415113,
+      'longitude'   => -3.699871,
+      'field1'      => 'illum',
+      'field2'      => -83.24,
+      'field3'      => today + 1.day,
+      'field4'      => false
+    }
+
+    table = @cartodb.table table['id']
+    table['total_rows'].should == 1
+    table['rows'].should have(1).item
+    table['rows'].first['cartodb_id'].should == 1
+    table['rows'].first['name'].should == 'updated_row'
+    table['rows'].first['latitude'].should == 40.415113
+    table['rows'].first['longitude'].should == -3.699871
+    table['rows'].first['description'].should == 'Eu capto illum, iustum, brevitas, lobortis torqueo importunus, capio sudo. Genitus importunus amet iaceo, abluo obruo consequat, virtus eros, aliquip iustum nisl duis zelus. Ymo augue nobis exerci letatio sed.'
+    table['rows'].first['field1'].should == 'illum'
+    table['rows'].first['field2'].should == -83.24
+    table['rows'].first['field3'].should == (today + 1.day).strftime("%Y-%m-%d %H:%M:%S")
+    table['rows'].first['field4'].should == false
+  end
+
+  it "should delete a table's row" do
+    table = @cartodb.create_table 'table #1', [
+                                    {:name => 'field1', :type => 'text'},
+                                    {:name => 'field2', :type => 'number'},
+                                    {:name => 'field3', :type => 'date'},
+                                    {:name => 'field4', :type => 'boolean'}
+                                  ]
+
+    today = Time.now
+
+    @cartodb.insert_row table['id'], {
+      'name'        => 'cartoset',
+      'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'latitude'    => 40.423012,
+      'longitude'   => -3.699732,
+      'field1'      => 'lorem',
+      'field2'      => 100.99,
+      'field3'      => today,
+      'field4'      => true
+    }
+    row_id = 1
+
+    @cartodb.delete_row table['id'], row_id
+
+    table = @cartodb.table table['id']
+    table['total_rows'].should == 0
+    table['rows'].should be_empty
+  end
 end
