@@ -36,6 +36,20 @@ namespace :cartoset do
     print_errors(errors)
   end
 
+  desc "Creates random test data"
+  task :test_data => :environment do
+    features_table = CARTODB.table 'features'
+
+    25.times do
+      CARTODB.insert_row features_table.id, {
+        'name'        => String.random(30),
+        'description' => String.random(200),
+        'latitude'    => Float.random_latitude,
+        'longitude'   => Float.random_longitude
+      }
+    end
+  end
+
   def print_errors(errors)
     unless errors.empty?
       puts ''

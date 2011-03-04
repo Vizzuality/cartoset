@@ -1,6 +1,6 @@
 <% content_for :javascripts do %>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-  <%= javascript_include_tag 'jquery.1.5.1.js', 'features/index.js' %>
+  <%= javascript_include_tag 'jquery.1.5.1.js', 'utils.js', 'features/index.js' %>
   <script type="text/javascript" charset="utf-8">
     var features = <%= @features.to_json.html_safe %>;
   </script>
@@ -15,6 +15,6 @@
 
 <ul>
   <% @features.each do |feature| %>
-    <li><%= link_to feature.name, feature_path(feature) %></li>
+    <li><%= link_to feature.name, features_path(feature.id) %></li>
   <% end %>
 </ul>

@@ -96,6 +96,7 @@ module CartoDB
       when id_or_name.is_a?(String)
         table_name = id_or_name
         table = tables.select{|table| table.name.eql? table_name}.first
+        table = table table.id
       when id_or_name.is_a?(Integer)
         table_id = id_or_name
         request = cartodb_request "tables/#{table_id}" do |response|
