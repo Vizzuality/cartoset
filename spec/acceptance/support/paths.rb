@@ -4,6 +4,13 @@ module NavigationHelpers
   def homepage
     "/"
   end
+<<<<<<< HEAD
+=======
+
+  def admin_dashboard
+    "/admin"
+  end
+>>>>>>> Adds first admin controllers, views and specs
 end
 
 RSpec.configuration.include NavigationHelpers, :type => :acceptance

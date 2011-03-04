@@ -2,6 +2,13 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  admin:
+    dashboard:
+      index:
+        your_features: 'Your features'
+        search: 'Search!'
+        prev_page: 'Previous page'
+        next_page: 'Next page'
   home:
     index:
       welcome: 'Welcome to CartoSet!'
@@ -11,3 +18,4 @@ en:
   features:
     index:
       title: 'Features list'
+

@@ -1,0 +1,11 @@
+<div id="features_list">
+  <h1 id="your_features"><%= t('.your_features') %></h1>
+  <div class="search">
+    <%= form_tag '/', :method => :get do %>
+      <%= text_field_tag 'search' %>
+      <%= submit_tag t('.search') %>
+    <% end %>
+    <%= link_to t('.prev_page'), '#', :id => 'prev_page' %>
+    <%= link_to t('.next_page'), '#', :id => 'next_page' %>
+  </div>
+</div>

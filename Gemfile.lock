@@ -198,6 +198,7 @@ DEPENDENCIES
   launchy
   omniauth
   cartodb-rb-client!
+  launchy
   rails (= 3.0.5)
   rails_warden
   rspec
