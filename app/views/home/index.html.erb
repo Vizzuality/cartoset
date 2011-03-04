@@ -1,2 +1,6 @@
 <h1 id="welcome_message"><%= t('.welcome') %></h1>
 <h2><%= t('.disclaimer') %></h2>
+
+<p>
+  <%= raw t('.features_list', :features_link => link_to(t('.features_link'), features_path)) %>
+</p>

@@ -5,4 +5,9 @@ en:
   home:
     index:
       welcome: 'Welcome to CartoSet!'
-      disclaimer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+      disclaimer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      features_list: 'You can see a list of %{features_link}'
+      features_link: 'features'
+  features:
+    index:
+      title: 'Features list'

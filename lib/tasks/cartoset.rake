@@ -25,8 +25,8 @@ namespace :cartoset do
     puts 'Droping table features...'
 
     begin
-      table = CARTODB.tables.select{|table| table['name'].eql?('features')}.first
-      CARTODB.drop_table table['id']
+      table = CARTODB.table 'features'
+      CARTODB.drop_table table.id
 
       puts '... done!'
     rescue CartoDB::CartoError => e

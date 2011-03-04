@@ -15,7 +15,7 @@ module CartoDB
     def create_table(table_name = nil, schema = nil)
       request = cartodb_request 'tables', :post, :params => {:name => table_name} do |response|
         created_table = Utils.parse_json(response)
-        table_id      = created_table['id'] if created_table
+        table_id      = created_table.id if created_table
 
         if table_id
           if schema.present?
@@ -90,14 +90,23 @@ module CartoDB
       request.handled_response
     end
 
-    def table(table_id)
-      request = cartodb_request "tables/#{table_id}" do |response|
-        return Utils.parse_json(response)
+    def table(id_or_name)
+      table = nil
+      case
+      when id_or_name.is_a?(String)
+        table_name = id_or_name
+        table = tables.select{|table| table.name.eql? table_name}.first
+      when id_or_name.is_a?(Integer)
+        table_id = id_or_name
+        request = cartodb_request "tables/#{table_id}" do |response|
+          return Utils.parse_json(response)
+        end
+
+        execute_queue
+
+        table = request.handled_response
       end
-
-      execute_queue
-
-      request.handled_response
+      table
     end
 
     def drop_table(table_id)
@@ -219,9 +228,32 @@ module CartoDB
         rescue JSON::ParserError => e
         end
       end
-      json
+      json.to_openstruct
     end
 
   end
 
+end
+
+require "ostruct"
+
+class Object
+  def to_openstruct
+    self
+  end
+end
+
+class Array
+  def to_openstruct
+    map{ |el| el.to_openstruct }
+  end
+end
+
+class Hash
+  def to_openstruct
+    mapped = {}
+    each{ |key,value| mapped[key] = value.to_openstruct }
+
+    OpenStruct.new(mapped)
+  end
 end
