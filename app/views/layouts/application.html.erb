@@ -3,7 +3,7 @@
 <head>
   <title>Cartoset</title>
   <%= stylesheet_link_tag 'reset.css', 'application.css' %>
-  <%= javascript_include_tag :defaults %>
+  <%= yield :stylesheets %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -11,6 +11,6 @@
 <div id="main_content">
   <%= yield %>
 </div>
-
+<%= yield :javascripts %>
 </body>
 </html>
