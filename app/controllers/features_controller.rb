@@ -11,7 +11,8 @@ class FeaturesController < ApplicationController
   end
 
   def get_feature
-    @feature = CARTODB.query("SELECT * FROM features WHERE id = #{params[:id]}") if params[:id]
+    results = CARTODB.query("SELECT * FROM features WHERE cartodb_id = #{params[:id]}") if params[:id]
+    @feature = results.rows.first if results && results.rows.present?
   end
   private :get_feature
 

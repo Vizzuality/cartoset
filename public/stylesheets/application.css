@@ -12,3 +12,7 @@ body > div#main_content{
 h1{
   font-size: 4em;
 }
+
+span.label{
+  font-weight: bold;
+}
