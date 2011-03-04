@@ -8,6 +8,8 @@ gem 'warden'
 gem 'rails_warden'
 gem 'cartodb-rb-client', :path => "#{ENV['HOME']}/Sources/cartodb-rb-client"
 
+gem 'sass'
+
 group :development, :test do
   gem 'ruby-debug19', :require => 'ruby-debug', :platforms => :mri_19
   gem 'capybara'

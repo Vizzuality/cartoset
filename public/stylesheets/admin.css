@@ -1,18 +1,14 @@
-body{
+body {
   font-family: Helvetica;
   font-size: 16px;
-  margin: 20px 0;
-}
+  margin: 20px 0; }
 
-body > div#main_content{
+body > div#main_content {
   width: 960px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
-h1{
-  font-size: 4em;
-}
+h1 {
+  font-size: 4em; }
 
-span.label{
-  font-weight: bold;
-}
+span.label {
+  font-weight: bold; }
