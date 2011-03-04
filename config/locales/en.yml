@@ -9,6 +9,8 @@ en:
         search: 'Search!'
         prev_page: 'Previous page'
         next_page: 'Next page'
+        create_feature: 'Create new feature'
+        edit_in_cartodb: 'or edit them in CartoDB'
   home:
     index:
       welcome: 'Welcome to CartoSet!'

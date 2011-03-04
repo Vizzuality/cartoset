@@ -8,4 +8,21 @@
     <%= link_to t('.prev_page'), '#', :id => 'prev_page' %>
     <%= link_to t('.next_page'), '#', :id => 'next_page' %>
   </div>
+  <table class="list">
+    <tr class="header">
+      <% @features_columns.each do |column| %>
+      <th><%= column %></th>
+      <% end %>
+    </tr>
+    <% @features.rows.each do |row| %>
+      <tr class="item <%= cycle('odd', 'even') %>">
+        <% @features_columns.each do |column| %>
+          <td class="<%= column %>"><%= row.send(column) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to t('.create_feature') %>
+  <%= link_to t('.edit_in_cartodb') %>
+  <%= paginate @features.rows, 1, @features.total_rows %>
 </div>
