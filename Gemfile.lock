@@ -1,3 +1,11 @@
+PATH
+  remote: /Users/fer/Sources/cartodb-rb-client
+  specs:
+    cartodb-rb-client (0.0.0)
+      json
+      mime-types
+      typhoeus
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -57,6 +65,7 @@ GEM
     ffi (0.6.3)
       rake (>= 0.8.7)
     i18n (0.5.0)
+    json (1.5.1)
     json_pure (1.5.1)
     launchy (0.4.0)
       configuration (>= 0.0.5)
@@ -188,11 +197,10 @@ DEPENDENCIES
   capybara
   launchy
   omniauth
+  cartodb-rb-client!
   rails (= 3.0.5)
   rails_warden
   rspec
   rspec-rails
   ruby-debug19
   steak
-  typhoeus
-  warden

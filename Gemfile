@@ -6,6 +6,7 @@ gem 'typhoeus'
 gem 'omniauth'
 gem 'warden'
 gem 'rails_warden'
+gem 'cartodb-rb-client', :path => "#{ENV['HOME']}/Sources/cartodb-rb-client"
 
 group :development, :test do
   gem 'ruby-debug19', :require => 'ruby-debug', :platforms => :mri_19

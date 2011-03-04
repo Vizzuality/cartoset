@@ -1,6 +1,5 @@
-require 'cartodb'
+require 'cartodb-rb-client/carto_db'
 
-raw_config = YAML.load_file("#{Rails.root}/config/cartodb_config.yml")[Rails.env]
-cartodb_settings = raw_config.to_options! unless raw_config.nil?
+cartodb_settings = YAML.load_file("#{Rails.root}/config/cartodb_config.yml")[Rails.env.to_s]
 
 CARTODB = CartoDB::Client.new cartodb_settings
