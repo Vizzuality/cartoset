@@ -6,130 +6,169 @@ module CartoDB
     include Typhoeus
 
     def initialize(settings = nil)
-
       raise Exception.new 'CartoDB settings not found' if settings.nil?
       @cartodb_host = settings[:host]
       @cartodb_key  = settings[:api_key]
-      @hydra        = Typhoeus::Hydra.new
-
+      @hydra        = Typhoeus::Hydra.new(:max_concurrency => 200)
     end
 
     def create_table(table_name = nil, schema = nil)
-
-      cartodb_request 'tables', :post, :name => table_name do |response|
+      request = cartodb_request 'tables', :post, :params => {:name => table_name} do |response|
         created_table = Utils.parse_json(response)
         table_id      = created_table['id'] if created_table
 
         if table_id
           if schema.present?
             schema.each do |column|
-              add_column table_id, column
+              cartodb_request "tables/#{table_id}/update_schema", :put, :params => { :what => "add", :column  => column }
             end
+            execute_queue
           end
         end
 
+
         return created_table
-      end.handled_response
+      end
 
+      execute_queue
+
+      request.handled_response
     end
 
-    def add_column(table_id, column)
+    def add_column(table_id, column_name, column_type)
+      cartodb_request "tables/#{table_id}/update_schema",
+                      :put,
+                      :params => {
+                        :what => "add",
+                        :column  => {
+                          :name => column_name,
+                          :type => column_type
+                        }
+                      },
+                      :headers => {'Content-Length' => '0'}
 
-      cartodb_request "tables/#{table_id}/update_schema", :put, { :what => "add", :column  => column }
-
+      execute_queue
     end
 
-    def drop_column(table_id, column)
+    def drop_column(table_id, column_name)
+      cartodb_request "tables/#{table_id}/update_schema",
+                      :put,
+                      :params => {
+                        :what => "drop",
+                        :column  => {
+                          :name => column_name
+                        }
+                      },
+                      :headers => {'Content-Length' => '0'}
 
-      cartodb_request "tables/#{table_id}/update_schema", :put, { :what => "drop", :column  => column }
-
+      execute_queue
     end
 
-    def change_column(table_id, column)
+    def change_column(table_id, old_column_name, new_column_name, column_type)
+      cartodb_request "tables/#{table_id}/update_schema",
+                      :put,
+                      :params => {
+                        :what => "modify",
+                        :column  => {
+                          :old_name => old_column_name,
+                          :new_name => new_column_name,
+                          :type => column_type
+                        }
+                      },
+                      :headers => {'Content-Length' => '0'}
 
-      cartodb_request "tables/#{table_id}/update_schema", :put, { :what => "modify", :column  => column }
-
+      execute_queue
     end
 
     def tables
-
-      cartodb_request 'tables' do |response|
+      request = cartodb_request 'tables' do |response|
         return Utils.parse_json(response)
-      end.handled_response
+      end
 
+      execute_queue
+
+      request.handled_response
     end
 
     def table(table_id)
-
-      cartodb_request "tables/#{table_id}" do |response|
+      request = cartodb_request "tables/#{table_id}" do |response|
         return Utils.parse_json(response)
-      end.handled_response
+      end
 
+      execute_queue
+
+      request.handled_response
     end
 
     def drop_table(table_id)
-
       cartodb_request "tables/#{table_id}", :delete
 
+      execute_queue
     end
 
     def insert_row(table_id, row)
+      cartodb_request "tables/#{table_id}/rows", :post, :params => row
 
-      cartodb_request "tables/#{table_id}/rows", :post, row
-
+      execute_queue
     end
 
     def update_row(table_id, row_id, row)
+      cartodb_request "tables/#{table_id}/rows/#{row_id}", :put, :params => row
 
-      cartodb_request "tables/#{table_id}/rows/#{row_id}", :put, row
-
+      execute_queue
     end
 
     def delete_row(table_id, row_id)
-
       cartodb_request "tables/#{table_id}/rows/#{row_id}", :delete
 
+      execute_queue
     end
 
     def query(query)
-
-      cartodb_request "tables/query", :query => query do |response|
+      request = cartodb_request "tables/query", :params => {:query => query} do |response|
         return Utils.parse_json(response)
-      end.handled_response
+      end
 
+      execute_queue
+
+      request.handled_response
     end
 
 ##################
 # private methods
 
-    def cartodb_request(uri, method = :get, params = {}, &block)
+    def cartodb_request(uri, method = :get, arguments = {:params => {}}, &block)
+      params = arguments[:params]
       if method.is_a? Hash
-        params = method
+        params = method[:params]
         method = :get
       end
 
       params[:api_key] = @cartodb_key
 
       format = 'json'
-      url    = "http://#{@cartodb_host}/api/json/#{uri}.#{format}"
+      url    = "http://#{@cartodb_host}/api/json/#{uri}"
+      headers =  {'Accept' => Mime::JSON}
+      headers = headers.merge(arguments[:headers]) if arguments[:headers]
 
       request = Request.new(url,
-        :method => method,
-        :params => params
+        :method        => method,
+        :params        => params,
+        :headers       => headers,
+        :verbose       => false
       )
 
       request.on_complete do |response|
-
         if response.success?
           yield(response) if block_given?
         else
-          raise CartoDBError.new url, method, response
+          puts response.code
+          puts response.body
+          raise CartoError.new url, method, response
         end
       end
 
       enqueue request
-      execute_queue
-
       request
     end
     private :cartodb_request
@@ -146,14 +185,12 @@ module CartoDB
 
   end
 
-  class CartoDBError < Exception
-
-    UNDEFINED_ERROR_MESSAGE = 'CartoDB undefined error'
+  class CartoError < Exception
 
     def initialize(uri, method, http_response)
       @uri            = uri
       @method         = method
-      @error_messages = [UNDEFINED_ERROR_MESSAGE]
+      @error_messages = ['undefined CartoDB error']
       @status_code    = 400
 
       if http_response

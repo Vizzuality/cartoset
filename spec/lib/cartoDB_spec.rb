@@ -25,6 +25,7 @@ describe CartoDB do
                                     {:name => 'field3', :type => 'date'},
                                     {:name => 'field4', :type => 'boolean'}
                                   ]
+
     table.should_not be_nil
     table['id'].should be > 0
     table = @cartodb.table table['id']
@@ -44,9 +45,9 @@ describe CartoDB do
 
   it "should add and remove colums in a previously created table" do
     table = @cartodb.create_table 'cartodb_spec'
-    @cartodb.add_column table['id'], :name => 'field1', :type => 'text'
-    @cartodb.add_column table['id'], :name => 'field2', :type => 'number'
-    @cartodb.add_column table['id'], :name => 'field3', :type => 'date'
+    @cartodb.add_column table['id'], 'field1', 'text'
+    @cartodb.add_column table['id'], 'field2', 'number'
+    @cartodb.add_column table['id'], 'field3', 'date'
 
     table = @cartodb.table table['id']
     table['columns'].should have(10).items
@@ -54,7 +55,7 @@ describe CartoDB do
     table['columns'].should include(["field2", "number"])
     table['columns'].should include(["field3", "date"])
 
-    @cartodb.drop_column table['id'], :name => 'field3'
+    @cartodb.drop_column table['id'], 'field3'
     table = @cartodb.table table['id']
     table['columns'].should have(9).items
     table['columns'].should_not include(["field3", "date"])
@@ -62,11 +63,7 @@ describe CartoDB do
 
   it "should change a previously created column" do
     table = @cartodb.create_table 'cartodb_spec', [{:name => 'field1', :type => 'text'}]
-    @cartodb.change_column table['id'], {
-      :old_name => "field1",
-      :new_name => "changed_field",
-      :type     => "number"
-    }
+    @cartodb.change_column table['id'], "field1", "changed_field", "number"
     table = @cartodb.table table['id']
     table['columns'].should_not include(["field1", "string"])
     table['columns'].should include(["changed_field", "number"])
