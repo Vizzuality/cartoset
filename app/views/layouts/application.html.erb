@@ -2,13 +2,15 @@
 <html>
 <head>
   <title>Cartoset</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag 'reset.css', 'application.css' %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
-<%= yield %>
+<div id="main_content">
+  <%= yield %>
+</div>
 
 </body>
 </html>

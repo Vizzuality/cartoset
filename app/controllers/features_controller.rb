@@ -1,2 +1,3 @@
 class FeaturesController < ApplicationController
+
 end
