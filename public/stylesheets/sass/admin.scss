@@ -1,7 +1,12 @@
-@import 'main_vars';
+@import 'main.vars.scss';
+@import 'main.mixins.scss';
+@import 'mixins.css3.scss';
+@import 'admin/mixins.scss';
+@import 'admin.colors.scss';
 
 body{
-  font-family: Helvetica;
+  background-color: $background;
+  font-family: Arial;
   font-size: 16px;
   margin: 20px 0;
 }
@@ -11,10 +16,120 @@ body > div#main_content{
   margin: 0 auto;
 }
 
-h1{
-  font-size: 4em;
+a{
+  color: $links;
 }
 
-span.label{
-  font-weight: bold;
+div.table{
+  width: 942px;
+
+  @include border-radius(3px);
+  background-color: $table_background;
+
+  font-size: 15px;
+
+  span.title{
+    font-size: 25px;
+    padding: 23px 30px;
+    @include inline-block;
+  }
+
+  table{
+    width: 100%;
+    font-weight: normal;
+    tr{
+      th, td{
+        padding-left: 30px;
+      }
+    }
+    tr.header{
+      height: 30px;
+      @include gradient($table_header_gradient_top, $table_header_gradient_bottom);
+      border-top: 1px solid $table_header_border_top;
+      border-bottom: 1px solid $table_header_border_bottom;
+      font-size: 11px;
+      color: $table_header_font;
+      text-transform: uppercase;
+      text-shadow: 0 1px 0 $table_header_font_shadow;
+      line-height: 30px;
+      text-align: left;
+    }
+    tr.item{
+      margin-top: 1px;
+      height: 69px;
+      color: $table_item_font;
+      font-size: 15px;
+      line-height: 69px;
+
+      td:first-child{
+        border-left: 0 none;
+      }
+
+      td{
+        border-width: 0 1px 1px 1px;
+        border-style: solid;
+        border-color: $table_item_cell_border;
+        border-collapse: collapse;
+        border-spacing: 10px;
+      }
+    }
+    tr.item.odd{
+      background-color: $table_item_background_odd;
+    }
+    tr.item.even{
+      background-color: $table_item_background_even;
+    }
+  }
+
+  .main_action, .alternate_action, .pagination{
+    @include inline-block;
+    vertical-align: middle;
+    margin: 25px 10px;
+    padding: 10px 15px;
+    font-size: 17px;
+  }
+
+  .main_action{
+    margin-left: 30px;
+    @include border-radius(4px);
+    @include gradient($add_feature_background_gradient_top, $add_feature_background_gradient_bottom);
+    border: 1px solid $add_feature_border;
+    font-weight: bold;
+    color: $add_feature_font;
+    text-shadow: 0 1px 0 $add_feature_font_shadow;
+    text-decoration: none;
+
+    &:hover{
+      @include gradient($add_feature_background_gradient_bottom, $add_feature_background_gradient_top);
+    }
+    &:active{
+      @include gradient($add_feature_background_gradient_bottom, $add_feature_background_gradient_top);
+      @include inner-shadow(0 3px 3px rgba(102, 102, 102, 0.7));
+    }
+  }
+
+  .alternate_action{
+    margin: 25px 0;
+    padding: 10px 0;
+  }
+
+  .pagination{
+    float: right;
+
+    a{
+      margin: 0 4px;
+    }
+
+    a.current{
+      @include inline-block;
+      padding: 0 5px;
+      background-color: $pagination_currentpage_background;
+      @include border-radius(2px);
+      border: 1px solid transparent;
+      font-weight: bold;
+      color: $pagination_currentpage_font;
+      text-decoration: none;
+    }
+  }
+
 }

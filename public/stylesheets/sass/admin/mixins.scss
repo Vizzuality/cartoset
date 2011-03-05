@@ -1,0 +1,3 @@
+@mixin sprite($top, $left){
+  background: transparent url('/images/sprites/admin.png') no-repeat scroll $top $left;
+}

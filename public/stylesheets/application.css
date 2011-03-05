@@ -1,14 +1,104 @@
-body {
-  font-family: Helvetica;
-  font-size: 16px;
-  margin: 20px 0; }
+/*
+Syntax error: File to import not found or unreadable: main_vars.
+              Load path: /Users/fer/Sources/cartoset/public/stylesheets/sass
+        on line 1 of /Users/fer/Sources/cartoset/public/stylesheets/sass/application.scss
 
-body > div#main_content {
-  width: 960px;
-  margin: 0 auto; }
+1: @import 'main_vars';
+2: 
+3: body{
+4:   font-family: Helvetica;
+5:   font-size: 16px;
+6:   margin: 20px 0;
 
-h1 {
-  font-size: 4em; }
-
-span.label {
-  font-weight: bold; }
+Backtrace:
+/Users/fer/Sources/cartoset/public/stylesheets/sass/application.scss:1
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/import_node.rb:64:in `rescue in import'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/import_node.rb:42:in `import'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/import_node.rb:25:in `imported_file'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/perform.rb:141:in `rescue in visit_import'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/perform.rb:146:in `visit_import'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/tree/root_node.rb:20:in `render'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/engine.rb:302:in `_render'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/engine.rb:250:in `block in render'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/util.rb:298:in `silence_sass_warnings'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/engine.rb:250:in `render'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/plugin/compiler.rb:175:in `each'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/plugin/compiler.rb:173:in `each'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/plugin.rb:81:in `update_stylesheets'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/sass-3.1.0.alpha.221/lib/sass/plugin/rack.rb:51:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rack-1.2.1/lib/rack/urlmap.rb:47:in `block in call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rack-1.2.1/lib/rack/urlmap.rb:41:in `each'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rack-1.2.1/lib/rack/urlmap.rb:41:in `call'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rack-test-0.5.7/lib/rack/mock_session.rb:30:in `request'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rack-test-0.5.7/lib/rack/test.rb:209:in `process_request'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rack-test-0.5.7/lib/rack/test.rb:57:in `get'
+/Users/fer/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/forwardable.rb:182:in `get'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/capybara-0.4.1.2/lib/capybara/driver/rack_test_driver.rb:259:in `get'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/capybara-0.4.1.2/lib/capybara/driver/rack_test_driver.rb:206:in `process'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/capybara-0.4.1.2/lib/capybara/driver/rack_test_driver.rb:200:in `visit'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/capybara-0.4.1.2/lib/capybara/session.rb:135:in `visit'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/capybara-0.4.1.2/lib/capybara/dsl.rb:104:in `visit'
+/Users/fer/Sources/cartoset/spec/acceptance/admin/dashboard_spec.rb:8:in `block (2 levels) in <top (required)>'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/example.rb:49:in `instance_eval'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/example.rb:49:in `block (2 levels) in run'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/example.rb:106:in `with_around_hooks'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/example.rb:46:in `block in run'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/example.rb:99:in `block in with_pending_capture'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/example.rb:98:in `catch'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/example.rb:98:in `with_pending_capture'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/example.rb:45:in `run'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/example_group.rb:262:in `block in run_examples'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/example_group.rb:258:in `map'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/example_group.rb:258:in `run_examples'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/example_group.rb:232:in `run'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/command_line.rb:27:in `block (2 levels) in run'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/command_line.rb:27:in `map'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/command_line.rb:27:in `block in run'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/reporter.rb:12:in `report'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/command_line.rb:24:in `run'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/runner.rb:55:in `run_in_process'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/runner.rb:46:in `run'
+/Users/fer/.rvm/gems/ruby-1.9.2-p180@cartoset/gems/rspec-core-2.5.1/lib/rspec/core/runner.rb:10:in `block in autorun'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: main_vars.\A               Load path: /Users/fer/Sources/cartoset/public/stylesheets/sass\A         on line 1 of /Users/fer/Sources/cartoset/public/stylesheets/sass/application.scss\A \A 1: @import 'main_vars';\A 2: \A 3: body{\A 4:   font-family: Helvetica;\A 5:   font-size: 16px;\A 6:   margin: 20px 0;"; }

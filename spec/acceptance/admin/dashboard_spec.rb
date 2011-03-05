@@ -9,13 +9,18 @@ feature "Dashboard" do
 
     within('#features_list') do
       page.should have_content('Your features')
-      page.should have_css('input#search')
+      within('#search') do
+        page.should have_css('label')
+        page.should have_css('input[type=text]')
+        page.should have_css('input[type=submit]')
+      end
+
       page.should have_link('prev_page')
       page.should have_link('next_page')
 
       within('.list') do
         within('.header') do
-          page.should have_content('cartodb_id')
+          page.should have_content('id.')
           page.should have_content('name')
           page.should have_content('description')
           page.should have_content('latitude')
@@ -23,7 +28,7 @@ feature "Dashboard" do
         end
 
         page.should have_css('tr.item', :count => 10)
-        page.should have_css('tr.item td.cartodb_id', :text => '1')
+        page.should have_css('tr.item td.cartodb_id a', :text => '1')
         page.should have_css('tr.item td.name', :text => 'Feature 0')
         page.should have_css('tr.item td.description', :text => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
         page.should have_css('tr.item td.latitude', :text => '-16.506')

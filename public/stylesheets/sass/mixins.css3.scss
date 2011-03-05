@@ -1,0 +1,18 @@
+@mixin border-radius($radius){
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin gradient($top_color, $bottom_color){
+  background-image: -moz-linear-gradient(top, $top_color, $bottom_color);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, $top_color),color-stop(1, $bottom_color));
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+}
+
+@mixin inner-shadow($shadow_params){
+  -moz-box-shadow: inset $shadow_params;
+  -webkit-box-shadow: inset $shadow_params;
+  box-shadow: inset $shadow_params;
+}

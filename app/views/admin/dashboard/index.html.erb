@@ -1,28 +1,39 @@
-<div id="features_list">
-  <h1 id="your_features"><%= t('.your_features') %></h1>
-  <div class="search">
+<% content_for :javascripts do %>
+<%= javascript_include_tag 'jquery.1.5.1.js' %>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'admin/dashboard/index.css' %>
+<% end %>
+
+<div id="features_list" class="table">
+  <span class="title"><%= t('.your_features') %></span>
+  <div id="search">
     <%= form_tag '/', :method => :get do %>
+      <%= label_tag 'search', t('.search_label') %>
       <%= text_field_tag 'search' %>
       <%= submit_tag t('.search') %>
     <% end %>
-    <%= link_to t('.prev_page'), '#', :id => 'prev_page' %>
-    <%= link_to t('.next_page'), '#', :id => 'next_page' %>
+    <%= link_to content_tag(:span, t('.prev_page')), '#', :id => 'prev_page' %>
+    <%= link_to content_tag(:span, t('.prev_page')), '#', :id => 'next_page' %>
   </div>
   <table class="list">
     <tr class="header">
+      <th>id.</th>
       <% @features_columns.each do |column| %>
       <th><%= column %></th>
       <% end %>
     </tr>
     <% @features.rows.each do |row| %>
       <tr class="item <%= cycle('odd', 'even') %>">
+        <td class="cartodb_id"><%= link_to row.cartodb_id, '#' %></td>
         <% @features_columns.each do |column| %>
           <td class="<%= column %>"><%= row.send(column) %></td>
         <% end %>
       </tr>
     <% end %>
   </table>
-  <%= link_to t('.create_feature') %>
-  <%= link_to t('.edit_in_cartodb') %>
+  <%= link_to t('.create_feature'), '#', :id => 'create_feature', :class => 'main_action' %>
+  <%= link_to t('.edit_in_cartodb'), '#', :id => 'edit_in_cartodb', :class => 'alternate_action' %>
   <%= paginate @features.rows, 1, @features.total_rows %>
 </div>

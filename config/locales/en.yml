@@ -7,6 +7,7 @@ en:
       index:
         your_features: 'Your features'
         search: 'Search!'
+        search_label: 'Search by any field'
         prev_page: 'Previous page'
         next_page: 'Next page'
         create_feature: 'Create new feature'

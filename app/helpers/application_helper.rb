@@ -5,7 +5,7 @@ module ApplicationHelper
     pages = (1..total_pages).to_a
 
     content_tag :div, :class => 'pagination' do
-      raw pages.map{|page| link_to page, '#'}.join(' ')
+      raw pages.map{|page| link_to page, '#', :class => page == current_page ? 'current' : nil}.join(' ')
     end
   end
 end
