@@ -11,6 +11,12 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
 }
 
+@mixin shadow($shadow_params){
+  -moz-box-shadow: $shadow_params;
+  -webkit-box-shadow: $shadow_params;
+  box-shadow: $shadow_params;
+}
+
 @mixin inner-shadow($shadow_params){
   -moz-box-shadow: inset $shadow_params;
   -webkit-box-shadow: inset $shadow_params;

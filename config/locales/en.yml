@@ -3,6 +3,12 @@
 
 en:
   admin:
+    shared:
+      header:
+        features: 'Features'
+        pages: 'Pages'
+        settings: 'Settings'
+        close_session: 'Close session'
     dashboard:
       index:
         your_features: 'Your features'
