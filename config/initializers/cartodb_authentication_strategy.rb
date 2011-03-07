@@ -8,6 +8,7 @@ module OmniAuth
         options[:site] = site
         options[:authorize_path] = '/oauth/authorize'
         options[:access_token_path] = '/oauth/access_token'
+        options[:callback_url] = '/auth/oauth/callback'
         super(app, :cartodb_authentication, app_id, app_secret, options)
       end
 
