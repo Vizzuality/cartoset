@@ -45,5 +45,11 @@ module Cartoset
     config.generators do |g|
       g.test_framework :rspec, :fixture => true, :views => false
     end
+
+    config.middleware.use OmniAuth::Builder do
+      provider :cartodb_authentication, CARTODB[:site], CARTODB[:oauth_key], CARTODB[:oauth_secret]
+    end
+
   end
 end
+
