@@ -4,6 +4,19 @@
 @import 'admin/mixins.scss';
 @import 'admin.colors.scss';
 
+
+@font-face {
+    font-family: 'MuseoSans500';
+    src: url('/fonts/museosans_500-webfont.eot');
+    src: url('/fonts/museosans_500-webfont.eot?iefix') format('eot'),
+         url('/fonts/museosans_500-webfont.woff') format('woff'),
+         url('/fonts/museosans_500-webfont.ttf') format('truetype'),
+         url('/fonts/museosans_500-webfont.svg#webfontaJIEhST4') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body{
   background-color: $background;
   font-family: Arial;
@@ -27,6 +40,7 @@ body > header{
 
     #logo{
       display: inline;
+      font-family: "MuseoSans500","Arial";
       font-size: 19px;
       font-weight: normal;
       color: $logo;
@@ -41,6 +55,8 @@ body > header{
           display: inline;
           margin: 0 20px;
           a{
+            font-family: "MuseoSans500","Arial";
+            font-weight: normal;
             color: $nav;
             text-decoration: none;
             line-height: 55px;
@@ -78,7 +94,7 @@ body > div#main_content{
       font-weight: normal;
       tr{
         th, td{
-          padding-left: 30px;
+          padding-left: 20px;
         }
       }
       tr.header{
@@ -112,6 +128,15 @@ body > div#main_content{
           border-spacing: 10px;
         }
       }
+      tr.item.supershort{
+        width: 60px;
+      }
+      tr.item.long{
+        width:200px
+      }
+      tr.item.short{
+        width:100px;
+      }      
       tr.item.odd{
         background-color: $table_item_background_odd;
       }
