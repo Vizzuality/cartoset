@@ -108,6 +108,17 @@ body > div#main_content{
         text-shadow: 0 1px 0 $table_header_font_shadow;
         line-height: 30px;
         text-align: left;
+
+        th.id{
+          width: 60px;
+        }
+        th.string{
+          width:200px
+        }
+        th.number, th.boolean, th.latitude, th.longitude{
+          width:100px;
+        }
+
       }
       tr.item{
         margin-top: 1px;
@@ -128,15 +139,6 @@ body > div#main_content{
           border-spacing: 10px;
         }
       }
-      tr.item.supershort{
-        width: 60px;
-      }
-      tr.item.long{
-        width:200px
-      }
-      tr.item.short{
-        width:100px;
-      }      
       tr.item.odd{
         background-color: $table_item_background_odd;
       }

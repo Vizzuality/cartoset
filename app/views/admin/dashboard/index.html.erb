@@ -19,16 +19,16 @@
   </div>
   <table class="list">
     <tr class="header">
-      <th>id.</th>
+      <th class="id">id.</th>
       <% @features_columns.each do |column| %>
-      <th><%= column %></th>
+      <th class="<%= column.last %>"><%= column.first %></th>
       <% end %>
     </tr>
     <% @features.rows.each do |row| %>
       <tr class="item <%= cycle('odd', 'even') %>">
         <td class="cartodb_id"><%= link_to row.cartodb_id, '#' %></td>
         <% @features_columns.each do |column| %>
-          <td class="<%= column %>"><%= row.send(column) %></td>
+          <td class="<%= column.first %>"><%= row.send(column.first) %></td>
         <% end %>
       </tr>
     <% end %>
