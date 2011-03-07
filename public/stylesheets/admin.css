@@ -89,6 +89,12 @@ body > div#main_content {
         text-shadow: 0 1px 0 white;
         line-height: 30px;
         text-align: left; }
+        body > div#main_content div.table table tr.header th.id {
+          width: 60px; }
+        body > div#main_content div.table table tr.header th.string {
+          width: 200px; }
+        body > div#main_content div.table table tr.header th.number, body > div#main_content div.table table tr.header th.boolean, body > div#main_content div.table table tr.header th.latitude, body > div#main_content div.table table tr.header th.longitude {
+          width: 100px; }
       body > div#main_content div.table table tr.item {
         margin-top: 1px;
         height: 69px;
@@ -109,6 +115,7 @@ body > div#main_content {
         width: 200px; }
       body > div#main_content div.table table tr.item.short {
         width: 100px; }
+
       body > div#main_content div.table table tr.item.odd {
         background-color: white; }
       body > div#main_content div.table table tr.item.even {
