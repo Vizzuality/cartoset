@@ -6,7 +6,7 @@ gem 'typhoeus'
 gem 'omniauth'
 gem 'warden'
 gem 'rails_warden'
-gem 'cartodb-rb-client', :path => "#{ENV['HOME']}/Sources/cartodb-rb-client"
+gem 'cartodb-rb-client', :git => 'git@github.com:Vizzuality/cartodb-rb-client.git'
 
 gem 'sass'
 

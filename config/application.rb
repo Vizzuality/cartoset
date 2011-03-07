@@ -47,7 +47,7 @@ module Cartoset
     end
 
     config.middleware.use OmniAuth::Builder do
-      provider :cartodb_authentication, CARTODB[:site], CARTODB[:oauth_key], CARTODB[:oauth_secret]
+      provider :cartodb_authentication, CARTODB.settings[:site], CARTODB.settings[:oauth_key], CARTODB.settings[:oauth_secret]
     end
 
   end
