@@ -45,6 +45,7 @@ GEM
     childprocess (0.1.7)
       ffi (~> 0.6.3)
     columnize (0.3.2)
+    configuration (1.2.0)
     culerity (0.2.15)
     diff-lcs (1.1.2)
     erubis (2.6.6)
@@ -57,6 +58,9 @@ GEM
       rake (>= 0.8.7)
     i18n (0.5.0)
     json_pure (1.5.1)
+    launchy (0.4.0)
+      configuration (>= 0.0.5)
+      rake (>= 0.8.1)
     linecache19 (0.5.11)
       ruby_core_source (>= 0.1.4)
     mail (2.2.15)
@@ -182,6 +186,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  launchy
   omniauth
   rails (= 3.0.5)
   rails_warden
