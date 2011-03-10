@@ -1,9 +1,14 @@
 Cartoset::Application.routes.draw do
+
   resources :features
 
   namespace :admin do
     resources :dashboard
+    resources :features
+    resources :pages
+    resources :settings
   end
+
   match '/admin' => 'admin/dashboard#index'
 
   root :to => "home#index"

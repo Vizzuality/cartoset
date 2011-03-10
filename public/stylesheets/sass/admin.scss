@@ -290,7 +290,7 @@ body > div#main_content{
                 font-size: 13px;
                 
                 input[type="text"] {
-                  float: left;
+                  float: left; 
                   width: 300px;
                   @include border-radius(5px 0 0 5px);
                   background: url(/images/bg_textbox.png) repeat-x 0 0 white;
@@ -321,9 +321,112 @@ body > div#main_content{
   }
 }
 
-body > footer {
+body > div#main_content div.content_box {
+
+  float: right;
+  width: 942px;
+  background-color: #FFFFFF;
+  @include border-radius(5px);
+  margin: 0 0 60px 0;
+  color: #333333;
+  font-size: 15px;
+  @include shadow(0px 3px 3px #407292);
   
-  height: 26px;
+  div.left {
+    float: left;
+    width: 581px;
+    padding: 30px;
+    
+    h1 {
+      font-family: "MuseoSans500","Arial";
+      font-size: 27px;
+      font-weight: normal;
+      color: #333333;
+      margin: 0 0 30px 0;
+    }
+    
+    input[type="text"] {
+      width: 300px;
+      @include border-radius(5px);
+      background: url(/images/bg_input.png) repeat-x 0 0 white;
+      height: 30px;
+      border: 1px solid #CCCCCC;
+      font: normal 15px Arial;
+      color: #999;
+      padding: 0 15px;
+      margin: 0 0 25px 0;
+    }
+    
+    .main_action {
+      margin: 40px 0 0 0;
+    }
+    
+    label {
+      display: block;
+      font-size: 11px;
+      font-family: Arial;
+      color: #999999;
+      font-weight: bold;
+      margin: 0 0 7px 0;
+    }
+  }
+  
+  div.right {
+  
+    float: right;
+    width: 231px;
+    height: 100%;
+    padding: 30px;
+    background-color: #F5F5F5;
+    border-left: 1px solid #CCCCCC;
+    @include border-radius(0 5px 5px 0);
+    
+    a.back {
+      font-size: 14px;
+      float: right;
+      @include sprite(-48px,2px);
+      padding: 0 0 0 21px ;
+    }
+    
+    div.delete {
+      
+      position: absolute;
+      width: 230px;
+      bottom: 90px;
+      span {
+        float: left;
+        font-family: "MuseoSans500","Arial";
+        font-size: 17px;
+        font-weight: normal;
+        color: #333333;
+        margin: 0 0 10px 0;
+      }
+      
+      p {
+        float: left;
+        font-family: "Arial";
+        font-size: 13px;
+        font-weight: normal;
+        color: #666666;
+        margin: 0 0 10px 0;        
+      }
+      
+      a {
+        float: left;
+        font-size: 15px;
+        
+      
+      }
+      
+    }
+  }  
+}
+
+body > footer {
+
+  bottom: -26px;
+  float: left;
+  width: 100%;
   background-color: #000000;
 
   div#footer_content{
@@ -347,7 +450,7 @@ body > footer {
   @include inline-block;
   vertical-align: middle;
   margin: 25px 10px;
-  padding: 10px 15px;
+  padding: 7px 15px;
   font-size: 17px;
 }
 
@@ -356,7 +459,9 @@ body > footer {
   @include border-radius(4px);
   @include gradient($main_action_background_gradient_top, $main_action_background_gradient_bottom);
   border: 1px solid $main_action_border;
-  font-weight: bold;
+  font-family: "MuseoSans500","Arial";
+  font-size: 19px;
+  font-weight: normal;
   color: $main_action_font;
   text-shadow: 0 1px 0 $main_action_font_shadow;
   text-decoration: none;

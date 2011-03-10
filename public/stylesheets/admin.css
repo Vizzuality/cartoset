@@ -247,8 +247,91 @@ body > div#main_content {
       clear: both;
       height: 75px; }
 
+body > div#main_content div.content_box {
+  float: right;
+  width: 942px;
+  background-color: #FFFFFF;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0 0 60px 0;
+  color: #333333;
+  font-size: 15px;
+  -moz-box-shadow: 0px 3px 3px #407292;
+  -webkit-box-shadow: 0px 3px 3px #407292;
+  box-shadow: 0px 3px 3px #407292; }
+  body > div#main_content div.content_box div.left {
+    float: left;
+    width: 581px;
+    padding: 30px; }
+    body > div#main_content div.content_box div.left h1 {
+      font-family: "MuseoSans500","Arial";
+      font-size: 27px;
+      font-weight: normal;
+      color: #333333;
+      margin: 0 0 30px 0; }
+    body > div#main_content div.content_box div.left input[type="text"] {
+      width: 300px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      background: url(/images/bg_input.png) repeat-x 0 0 white;
+      height: 30px;
+      border: 1px solid #CCCCCC;
+      font: normal 15px Arial;
+      color: #999;
+      padding: 0 15px;
+      margin: 0 0 25px 0; }
+    body > div#main_content div.content_box div.left .main_action {
+      margin: 40px 0 0 0; }
+    body > div#main_content div.content_box div.left label {
+      display: block;
+      font-size: 11px;
+      font-family: Arial;
+      color: #999999;
+      font-weight: bold;
+      margin: 0 0 7px 0; }
+  body > div#main_content div.content_box div.right {
+    float: right;
+    width: 231px;
+    height: 100%;
+    padding: 30px;
+    background-color: #F5F5F5;
+    border-left: 1px solid #CCCCCC;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0; }
+    body > div#main_content div.content_box div.right a.back {
+      font-size: 14px;
+      float: right;
+      background: transparent url("/images/sprites/admin.png") no-repeat scroll -48px 2px;
+      padding: 0 0 0 21px; }
+    body > div#main_content div.content_box div.right div.delete {
+      position: absolute;
+      width: 230px;
+      bottom: 90px; }
+      body > div#main_content div.content_box div.right div.delete span {
+        float: left;
+        font-family: "MuseoSans500","Arial";
+        font-size: 17px;
+        font-weight: normal;
+        color: #333333;
+        margin: 0 0 10px 0; }
+      body > div#main_content div.content_box div.right div.delete p {
+        float: left;
+        font-family: "Arial";
+        font-size: 13px;
+        font-weight: normal;
+        color: #666666;
+        margin: 0 0 10px 0; }
+      body > div#main_content div.content_box div.right div.delete a {
+        float: left;
+        font-size: 15px; }
+
 body > footer {
-  height: 26px;
+  bottom: -26px;
+  float: left;
+  width: 100%;
   background-color: #000000; }
   body > footer div#footer_content {
     width: 960px;
@@ -269,7 +352,7 @@ body > footer {
   *display: inline;
   vertical-align: middle;
   margin: 25px 10px;
-  padding: 10px 15px;
+  padding: 7px 15px;
   font-size: 17px; }
 
 .main_action {
@@ -282,7 +365,9 @@ body > footer {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
   border: 1px solid #6e9400;
-  font-weight: bold;
+  font-family: "MuseoSans500","Arial";
+  font-size: 19px;
+  font-weight: normal;
   color: white;
   text-shadow: 0 1px 0 #537000;
   text-decoration: none; }

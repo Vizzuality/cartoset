@@ -1,0 +1,40 @@
+<% content_for :javascripts do %>
+<%= javascript_include_tag 'jquery.1.5.1.js' %>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'admin/features/index.css' %>
+<% end %>
+
+
+<div class="content_box">
+  <div class="left">
+    <h1>Feature <%=params[:id]%></h1>
+
+    <label for="name" class="field_label">NAME</label>
+    <input type="text" id="name"/>
+
+    <label for="description" class="field_label">DESCRIPTION</label>
+    <input type="text" id="description"/>
+
+    <label for="employee_number" class="field_label">EMPLOYEE NUMBER</label>
+    <input type="text" id="employee_number"/>
+
+    <label for="iso_certification" class="field_label">ISO 9001 CERTIFICATION</label>
+    <input type="radio" name="iso_certification" value="Yes"/> Yes<br/>
+    <input type="radio" name="iso_certification" value="No"/> No<br/>
+    <input type="radio" name="iso_certification" value="Not informed"/> Not informed<br/>
+    
+    <a href="/admin/" class="main_action">Save changes</a>
+    
+  </div>
+  
+  <div class="right">
+    <a href="" class="back">Back to dashboard</a>
+    <div class="delete">
+      <span>DELETE THIS FEATURE</span>
+      <p>Clicking the link below will permanently delete this feature and its references within the site</p>
+      <a href="">Delete this feature</a>
+    </div>
+  </div>
+</div>
