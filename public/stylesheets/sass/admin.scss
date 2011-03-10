@@ -226,6 +226,119 @@ body > div#main_content{
      }
      
   }
+
+  div.settings{
+     width: 942px;
+     margin: $box_margin;
+     @include border-radius(3px);
+     background-color: $table_background;
+     font-size: 15px;
+     span.title{
+       font-size: 25px;
+       padding: 23px 30px;
+       @include inline-block;
+     }
+     
+     div.settings_list_container{
+        background-color: #FFFFFF;
+        float:left;
+        border-top: 1px solid $table_header_border_top;
+        border-bottom: 1px solid $table_header_border_top;        
+      
+        ul{
+          
+          li{
+            display: inline;
+            float: left;
+            width: 882px;
+            border-bottom: 1px solid #E5E5E5;
+            &.last {border:none;}
+            padding: 15px 30px;
+
+            &.even{
+              background-color: #FAFAFA;
+              }
+              
+              div{
+                width: 305px;
+                float: left;
+                p.setting_name{
+                  color: #666666;
+                  font-size: 15px;
+                  font-weight: bold;
+                  font-family: Arial;
+                  }
+                p.setting_description {
+                  color: #9F9F9F;
+                  font-size: 13px;
+                  font-family: Arial;
+                  margin: 6px 0 0 0;
+                
+                  }
+              }
+
+              span.setting_value{
+                float: left;
+                margin: 10px 0 0 0;
+                font-size: 15px;
+              }
+
+              span.edit_value{
+                margin: 4px 0 0 0;
+                float: left;
+                color: #666666;
+                font-size: 13px;
+                
+                input[type="text"] {
+                  float: left;
+                  width: 300px;
+                  @include border-radius(5px 0 0 5px);
+                  background: url(/images/bg_textbox.png) repeat-x 0 0 white;
+                  height: 30px;
+                  border: 1px solid #CCCCCC;
+                  font: normal 15px Arial;
+                  color: #999;
+                  padding: 0 15px;
+                }
+                               
+              }
+              span.cancel_value {
+                float: left;
+                margin: 10px 0 0 15px;
+                color: #666666;
+                font-size: 13px;                
+              }
+            
+          }
+        }
+     }
+     
+     div.settings_footer{
+      clear:both;
+      height: 75px;
+     }
+     
+  }
+}
+
+body > footer {
+  
+  height: 26px;
+  background-color: #000000;
+
+  div#footer_content{
+    width: $app_width;
+    margin: 0 auto;
+    color: #FFFFFF;
+    padding: 7px;
+    font-family: "MuseoSans500","Arial";
+    font-size: 11px;
+    font-weight: normal;
+    
+    a {
+      color: white;
+      }
+    }
 }
 
 
@@ -244,6 +357,30 @@ body > div#main_content{
   @include gradient($main_action_background_gradient_top, $main_action_background_gradient_bottom);
   border: 1px solid $main_action_border;
   font-weight: bold;
+  color: $main_action_font;
+  text-shadow: 0 1px 0 $main_action_font_shadow;
+  text-decoration: none;
+
+  &:hover{
+    @include gradient($main_action_background_gradient_bottom, $main_action_background_gradient_top);
+  }
+  &:active{
+    @include gradient($main_action_background_gradient_bottom, $main_action_background_gradient_top);
+    @include inner-shadow(0 3px 3px rgba(102, 102, 102, 0.7));
+  }
+}
+
+.action_input {
+  float: left;
+  height: 18px;
+  vertical-align: middle;
+  padding: 6px 15px;
+  margin-left: 0;
+  @include border-radius(0 4px4px 0);
+  @include gradient($main_action_background_gradient_top, $main_action_background_gradient_bottom);
+  border: 1px solid $main_action_border;
+  font-size: 15px;
+  font-weight: normal;
   color: $main_action_font;
   text-shadow: 0 1px 0 $main_action_font_shadow;
   text-decoration: none;

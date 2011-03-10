@@ -109,13 +109,6 @@ body > div#main_content {
           border-color: #e5e5e5;
           border-collapse: collapse;
           border-spacing: 10px; }
-      body > div#main_content div.table table tr.item.supershort {
-        width: 60px; }
-      body > div#main_content div.table table tr.item.long {
-        width: 200px; }
-      body > div#main_content div.table table tr.item.short {
-        width: 100px; }
-
       body > div#main_content div.table table tr.item.odd {
         background-color: white; }
       body > div#main_content div.table table tr.item.even {
@@ -180,6 +173,93 @@ body > div#main_content {
               margin: 10px 0; }
     body > div#main_content div.pages div.pages_footer {
       clear: both; }
+  body > div#main_content div.settings {
+    width: 942px;
+    margin: 0 0 50px 0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #ecf2f6;
+    font-size: 15px; }
+    body > div#main_content div.settings span.title {
+      font-size: 25px;
+      padding: 23px 30px;
+      display: -moz-inline-stack;
+      display: inline-block;
+      vertical-align: top;
+      zoom: 1;
+      *display: inline; }
+    body > div#main_content div.settings div.settings_list_container {
+      background-color: #FFFFFF;
+      float: left;
+      border-top: 1px solid #c2ccd2;
+      border-bottom: 1px solid #c2ccd2; }
+      body > div#main_content div.settings div.settings_list_container ul li {
+        display: inline;
+        float: left;
+        width: 882px;
+        border-bottom: 1px solid #E5E5E5;
+        padding: 15px 30px; }
+        body > div#main_content div.settings div.settings_list_container ul li.last {
+          border: none; }
+        body > div#main_content div.settings div.settings_list_container ul li.even {
+          background-color: #FAFAFA; }
+        body > div#main_content div.settings div.settings_list_container ul li div {
+          width: 305px;
+          float: left; }
+          body > div#main_content div.settings div.settings_list_container ul li div p.setting_name {
+            color: #666666;
+            font-size: 15px;
+            font-weight: bold;
+            font-family: Arial; }
+          body > div#main_content div.settings div.settings_list_container ul li div p.setting_description {
+            color: #9F9F9F;
+            font-size: 13px;
+            font-family: Arial;
+            margin: 6px 0 0 0; }
+        body > div#main_content div.settings div.settings_list_container ul li span.setting_value {
+          float: left;
+          margin: 10px 0 0 0;
+          font-size: 15px; }
+        body > div#main_content div.settings div.settings_list_container ul li span.edit_value {
+          margin: 4px 0 0 0;
+          float: left;
+          color: #666666;
+          font-size: 13px; }
+          body > div#main_content div.settings div.settings_list_container ul li span.edit_value input[type="text"] {
+            float: left;
+            width: 300px;
+            -moz-border-radius: 5px 0 0 5px;
+            -webkit-border-radius: 5px 0 0 5px;
+            border-radius: 5px 0 0 5px;
+            background: url(/images/bg_textbox.png) repeat-x 0 0 white;
+            height: 30px;
+            border: 1px solid #CCCCCC;
+            font: normal 15px Arial;
+            color: #999;
+            padding: 0 15px; }
+        body > div#main_content div.settings div.settings_list_container ul li span.cancel_value {
+          float: left;
+          margin: 10px 0 0 15px;
+          color: #666666;
+          font-size: 13px; }
+    body > div#main_content div.settings div.settings_footer {
+      clear: both;
+      height: 75px; }
+
+body > footer {
+  height: 26px;
+  background-color: #000000; }
+  body > footer div#footer_content {
+    width: 960px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    padding: 7px;
+    font-family: "MuseoSans500","Arial";
+    font-size: 11px;
+    font-weight: normal; }
+    body > footer div#footer_content a {
+      color: white; }
 
 .main_action, .alternate_action, .pagination {
   display: -moz-inline-stack;
@@ -212,6 +292,39 @@ body > div#main_content {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')"; }
   .main_action:active {
+    background-image: -moz-linear-gradient(top, #88b600, #95c700);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #88b600), color-stop(1, #95c700));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+    -moz-box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7);
+    -webkit-box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7);
+    box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7); }
+
+.action_input {
+  float: left;
+  height: 18px;
+  vertical-align: middle;
+  padding: 6px 15px;
+  margin-left: 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -webkit-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  background-image: -moz-linear-gradient(top, #95c700, #88b600);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #95c700), color-stop(1, #88b600));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+  border: 1px solid #6e9400;
+  font-size: 15px;
+  font-weight: normal;
+  color: white;
+  text-shadow: 0 1px 0 #537000;
+  text-decoration: none; }
+  .action_input:hover {
+    background-image: -moz-linear-gradient(top, #88b600, #95c700);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #88b600), color-stop(1, #95c700));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')"; }
+  .action_input:active {
     background-image: -moz-linear-gradient(top, #88b600, #95c700);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #88b600), color-stop(1, #95c700));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
