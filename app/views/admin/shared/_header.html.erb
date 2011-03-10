@@ -3,9 +3,9 @@
     <h1 id="logo">CartoSet</h1>
     <nav>
       <ul>
-        <li><%= link_to t('.features'), '#' %></li>
-        <li><%= link_to t('.pages'), '#' %></li>
-        <li><%= link_to t('.settings'), '#' %></li>
+        <li><%= link_to t('.features'), '#' , :id => 'features_menu_link' %></li>
+        <li><%= link_to t('.pages'), '#', :id => 'pages_menu_link' %></li>
+        <li><%= link_to t('.settings'), '#' , :id => 'settings_menu_link'%></li>
         <li><%= link_to t('.close_session'), '#', :class => 'close_session' %></li>
       </ul>
     </nav>

@@ -1,5 +1,5 @@
 <% content_for :javascripts do %>
-<%= javascript_include_tag 'jquery.1.5.1.js' %>
+<%= javascript_include_tag 'jquery.1.5.1.js', 'jquery.scrollTo-1.4.2.js', 'admin/dashboard/index.js' %>
 <% end %>
 
 <% content_for :stylesheets do %>
@@ -83,6 +83,10 @@
           <p class="setting_description">Integration ID with Google Analytics</p>
         </div>
         <span class="setting_value"><a href="">UA-1234567-9</a></span>
+        <span class="edit_value">
+          <input type="text"/>
+          <a href="" class="action_input">Save</a>
+        </span>
       </li>
       <li class="even">
         <div>
@@ -106,3 +110,4 @@
   </div>
   <div class="settings_footer"></div>
 </div>
+

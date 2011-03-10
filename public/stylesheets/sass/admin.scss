@@ -32,6 +32,9 @@ a{
 }
 
 body > header{
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 57px;
   margin-bottom: 60px;
   @include gradient($header_background_gradient_top, $header_background_gradient_bottom);
@@ -75,8 +78,9 @@ body > header{
 }
 
 body > div#main_content{
+
   width: $app_width;
-  margin: 0 auto;
+  margin: 120px auto;
 
   div.table{
     width: 942px;
@@ -281,6 +285,7 @@ body > div#main_content{
                 float: left;
                 margin: 10px 0 0 0;
                 font-size: 15px;
+                position:absolute;
               }
 
               span.edit_value{
@@ -288,6 +293,8 @@ body > div#main_content{
                 float: left;
                 color: #666666;
                 font-size: 13px;
+                display:none;
+                position:absolute;
                 
                 input[type="text"] {
                   float: left; 
@@ -323,7 +330,7 @@ body > div#main_content{
 
 body > div#main_content div.content_box {
 
-  float: right;
+  float: left;
   width: 942px;
   background-color: #FFFFFF;
   @include border-radius(5px);
@@ -390,7 +397,7 @@ body > div#main_content div.content_box {
     
     div.delete {
       
-      position: absolute;
+      
       width: 230px;
       bottom: 90px;
       span {
@@ -424,8 +431,8 @@ body > div#main_content div.content_box {
 
 body > footer {
 
+  positiom: absolute;
   bottom: -26px;
-  float: left;
   width: 100%;
   background-color: #000000;
 

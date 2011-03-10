@@ -18,6 +18,9 @@ a {
   color: #ff3366; }
 
 body > header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 57px;
   margin-bottom: 60px;
   background-image: -moz-linear-gradient(top, #353535, #171717);
@@ -53,7 +56,7 @@ body > header {
 
 body > div#main_content {
   width: 960px;
-  margin: 0 auto; }
+  margin: 120px auto; }
   body > div#main_content div.table {
     width: 942px;
     margin: 0 0 50px 0;
@@ -220,12 +223,15 @@ body > div#main_content {
         body > div#main_content div.settings div.settings_list_container ul li span.setting_value {
           float: left;
           margin: 10px 0 0 0;
-          font-size: 15px; }
+          font-size: 15px;
+          position: absolute; }
         body > div#main_content div.settings div.settings_list_container ul li span.edit_value {
           margin: 4px 0 0 0;
           float: left;
           color: #666666;
-          font-size: 13px; }
+          font-size: 13px;
+          display: none;
+          position: absolute; }
           body > div#main_content div.settings div.settings_list_container ul li span.edit_value input[type="text"] {
             float: left;
             width: 300px;
@@ -248,7 +254,7 @@ body > div#main_content {
       height: 75px; }
 
 body > div#main_content div.content_box {
-  float: right;
+  float: left;
   width: 942px;
   background-color: #FFFFFF;
   -moz-border-radius: 5px;
@@ -307,7 +313,6 @@ body > div#main_content div.content_box {
       background: transparent url("/images/sprites/admin.png") no-repeat scroll -48px 2px;
       padding: 0 0 0 21px; }
     body > div#main_content div.content_box div.right div.delete {
-      position: absolute;
       width: 230px;
       bottom: 90px; }
       body > div#main_content div.content_box div.right div.delete span {
@@ -329,8 +334,8 @@ body > div#main_content div.content_box {
         font-size: 15px; }
 
 body > footer {
+  positiom: absolute;
   bottom: -26px;
-  float: left;
   width: 100%;
   background-color: #000000; }
   body > footer div#footer_content {
