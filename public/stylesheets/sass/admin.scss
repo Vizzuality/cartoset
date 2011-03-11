@@ -39,12 +39,15 @@ body > header{
   margin-bottom: 60px;
   @include gradient($header_background_gradient_top, $header_background_gradient_bottom);
   @include shadow(0 5px 10px $header_shadow);
+    z-index:100000;
+
 
   div#header_content{
     width: $app_width;
     margin: 0 auto;
 
     #logo{
+      float: left;
       display: inline;
       font-family: "MuseoSans500","Arial";
       font-size: 19px;
@@ -92,6 +95,7 @@ body > div#main_content{
     font-size: 15px;
 
     span.title{
+      float: left;
       font-size: 25px;
       padding: 23px 30px;
       @include inline-block;
@@ -440,7 +444,6 @@ body > div#main_content div.clear {
 
 body > footer {
 
-  positiom: absolute;
   bottom: -26px;
   width: 100%;
   background-color: #000000;

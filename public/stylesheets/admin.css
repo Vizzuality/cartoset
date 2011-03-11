@@ -29,11 +29,13 @@ body > header {
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
   -moz-box-shadow: 0 5px 10px #305771;
   -webkit-box-shadow: 0 5px 10px #305771;
-  box-shadow: 0 5px 10px #305771; }
+  box-shadow: 0 5px 10px #305771;
+  z-index: 100000; }
   body > header div#header_content {
     width: 960px;
     margin: 0 auto; }
     body > header div#header_content #logo {
+      float: left;
       display: inline;
       font-family: "MuseoSans500","Arial";
       font-size: 19px;
@@ -66,6 +68,7 @@ body > div#main_content {
     background-color: #ecf2f6;
     font-size: 15px; }
     body > div#main_content div.table span.title {
+      float: left;
       font-size: 25px;
       padding: 23px 30px;
       display: -moz-inline-stack;
@@ -343,7 +346,6 @@ body > div#main_content div.clear {
   clear: both; }
 
 body > footer {
-  positiom: absolute;
   bottom: -26px;
   width: 100%;
   background-color: #000000; }
