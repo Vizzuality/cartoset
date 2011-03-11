@@ -1,1 +1,37 @@
-Page <%=params[:id]%>
+<% content_for :javascripts do %>
+<%= javascript_include_tag 'jquery.1.5.1.js' %>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'admin/features/index.css' %>
+<% end %>
+
+
+<div class="content_box">
+  <div class="left">
+    <h1>Page <%=params[:id]%></h1>
+
+    <label for="title" class="field_label">TITLE</label>
+    <input type="text" id="title"/>
+
+    <label for="body" class="field_label">BODY</label>
+    <input type="text" id="body"/>
+
+    <label for="permalink" class="field_label">PERMALINK</label>
+    <input type="text" id="permalink"/>
+
+    <a href="/admin/" class="main_action">Save changes</a>
+    
+  </div>
+  
+  <div class="right">
+    <a href="/admin/" class="back">Back to dashboard</a>
+    <div class="delete">
+      <span>DELETE THIS PAGE</span>
+      <p>Clicking the link below will permanently delete this page from the site</p>
+      <a href="">Delete this page</a>
+    </div>
+  </div>
+</div>
+
+<div class="clear"></div>
