@@ -198,6 +198,7 @@ body > div#main_content {
       border-top: 1px solid #c2ccd2;
       border-bottom: 1px solid #c2ccd2; }
       body > div#main_content div.settings div.settings_list_container ul li {
+        position: relative;
         display: inline;
         float: left;
         width: 882px;
@@ -207,32 +208,35 @@ body > div#main_content {
           border: none; }
         body > div#main_content div.settings div.settings_list_container ul li.even {
           background-color: #FAFAFA; }
-        body > div#main_content div.settings div.settings_list_container ul li div {
+        body > div#main_content div.settings div.settings_list_container ul li div.name {
           width: 305px;
-          float: left; }
-          body > div#main_content div.settings div.settings_list_container ul li div p.setting_name {
+          float: left;
+          display: block; }
+          body > div#main_content div.settings div.settings_list_container ul li div.name p.setting_name {
             color: #666666;
             font-size: 15px;
             font-weight: bold;
             font-family: Arial; }
-          body > div#main_content div.settings div.settings_list_container ul li div p.setting_description {
+          body > div#main_content div.settings div.settings_list_container ul li div.name p.setting_description {
             color: #9F9F9F;
             font-size: 13px;
             font-family: Arial;
             margin: 6px 0 0 0; }
-        body > div#main_content div.settings div.settings_list_container ul li span.setting_value {
-          float: left;
+        body > div#main_content div.settings div.settings_list_container ul li div.setting_value {
+          position: absolute;
+          left: 360px;
           margin: 10px 0 0 0;
-          font-size: 15px;
-          position: absolute; }
-        body > div#main_content div.settings div.settings_list_container ul li span.edit_value {
+          font-size: 15px; }
+        body > div#main_content div.settings div.settings_list_container ul li div.edit_value {
+          position: absolute;
+          left: 340px;
+          display: none;
           margin: 4px 0 0 0;
           float: left;
           color: #666666;
           font-size: 13px;
-          display: none;
           position: absolute; }
-          body > div#main_content div.settings div.settings_list_container ul li span.edit_value input[type="text"] {
+          body > div#main_content div.settings div.settings_list_container ul li div.edit_value input[type="text"] {
             float: left;
             width: 300px;
             -moz-border-radius: 5px 0 0 5px;
@@ -244,6 +248,8 @@ body > div#main_content {
             font: normal 15px Arial;
             color: #999;
             padding: 0 15px; }
+          body > div#main_content div.settings div.settings_list_container ul li div.edit_value input[type="text"]:focus {
+            outline: none; }
         body > div#main_content div.settings div.settings_list_container ul li span.cancel_value {
           float: left;
           margin: 10px 0 0 15px;
@@ -260,7 +266,7 @@ body > div#main_content div.content_box {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  margin: 0 0 60px 0;
+  margin: 0;
   color: #333333;
   font-size: 15px;
   -moz-box-shadow: 0px 3px 3px #407292;
@@ -332,6 +338,9 @@ body > div#main_content div.content_box {
       body > div#main_content div.content_box div.right div.delete a {
         float: left;
         font-size: 15px; }
+
+body > div#main_content div.clear {
+  clear: both; }
 
 body > footer {
   positiom: absolute;

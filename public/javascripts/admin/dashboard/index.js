@@ -12,10 +12,21 @@ $(document).ready(function() {
 		$.scrollTo($('div#main_content div#settings_list').position().top-100, 1000, {queue:true});
 	});
 	
-	$('span.setting_value a').click(function() {
-		// Hide the parent div
-		
-		// Show the corresponding editable element
-		
+	$('div.setting_value a').click(function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		var clickedId = $(this).parent().parent().attr("id");
+		$(this).parent().hide();
+		$('div.settings_list_container ul li#'+clickedId+' div.edit_value').show();
+		$('div.settings_list_container ul li#'+clickedId+' div.edit_value input[type="text"]').focus();
 	});
+
+	$('span.cancel_value a').click(function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		var clickedId = $(this).parent().parent().parent().attr("id");
+		$(this).parent().parent().hide();
+		$('div.settings_list_container ul li#'+clickedId+' div.setting_value').show();
+	});
+	
  });

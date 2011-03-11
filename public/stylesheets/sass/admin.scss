@@ -252,6 +252,7 @@ body > div#main_content{
         ul{
           
           li{
+            position: relative;
             display: inline;
             float: left;
             width: 882px;
@@ -263,9 +264,10 @@ body > div#main_content{
               background-color: #FAFAFA;
               }
               
-              div{
+              div.name{
                 width: 305px;
                 float: left;
+                display: block;
                 p.setting_name{
                   color: #666666;
                   font-size: 15px;
@@ -281,19 +283,21 @@ body > div#main_content{
                   }
               }
 
-              span.setting_value{
-                float: left;
+              div.setting_value{
+                position:absolute;
+                left: 360px;
                 margin: 10px 0 0 0;
                 font-size: 15px;
-                position:absolute;
               }
 
-              span.edit_value{
+              div.edit_value{
+                position:absolute;
+                left: 340px;
+                display:none;
                 margin: 4px 0 0 0;
                 float: left;
                 color: #666666;
                 font-size: 13px;
-                display:none;
                 position:absolute;
                 
                 input[type="text"] {
@@ -306,6 +310,10 @@ body > div#main_content{
                   font: normal 15px Arial;
                   color: #999;
                   padding: 0 15px;
+                }
+                
+                input[type="text"]:focus {
+                  outline: none;
                 }
                                
               }
@@ -334,7 +342,7 @@ body > div#main_content div.content_box {
   width: 942px;
   background-color: #FFFFFF;
   @include border-radius(5px);
-  margin: 0 0 60px 0;
+  margin: 0;
   color: #333333;
   font-size: 15px;
   @include shadow(0px 3px 3px #407292);
@@ -397,7 +405,6 @@ body > div#main_content div.content_box {
     
     div.delete {
       
-      
       width: 230px;
       bottom: 90px;
       span {
@@ -421,12 +428,14 @@ body > div#main_content div.content_box {
       a {
         float: left;
         font-size: 15px;
-        
-      
       }
       
     }
   }  
+}
+
+body > div#main_content div.clear {
+  clear: both;
 }
 
 body > footer {
