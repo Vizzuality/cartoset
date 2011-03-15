@@ -4,7 +4,7 @@ class FeaturesController < ApplicationController
   before_filter :get_feature, :only => [:show]
 
   def index
-    table = CartoDB::Connection.table 'features'
+    table = CartoDB::Connection.query 'SELECT * FROM features'
     @features = table.rows || []
   end
 
