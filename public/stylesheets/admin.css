@@ -170,49 +170,6 @@ body > div#main_content {
         font-weight: bold;
         color: #666666;
         text-decoration: none; }
-  body > div#main_content div#features_list table {
-    width: 100%;
-    font-weight: normal; }
-    body > div#main_content div#features_list table tr th, body > div#main_content div#features_list table tr td {
-      padding-left: 20px; }
-    body > div#main_content div#features_list table tr.header {
-      height: 30px;
-      background-image: -moz-linear-gradient(top, #dbe7ee, #d1dde4);
-      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #dbe7ee), color-stop(1, #d1dde4));
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
-      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
-      border-top: 1px solid #c2ccd2;
-      border-bottom: 1px solid #a5aaac;
-      font-size: 11px;
-      color: #26465b;
-      text-transform: uppercase;
-      text-shadow: 0 1px 0 white;
-      line-height: 30px;
-      text-align: left; }
-      body > div#main_content div#features_list table tr.header th.id {
-        width: 60px; }
-      body > div#main_content div#features_list table tr.header th.string {
-        width: 200px; }
-      body > div#main_content div#features_list table tr.header th.number, body > div#main_content div#features_list table tr.header th.boolean, body > div#main_content div#features_list table tr.header th.latitude, body > div#main_content div#features_list table tr.header th.longitude {
-        width: 100px; }
-    body > div#main_content div#features_list table tr.item {
-      margin-top: 1px;
-      height: 69px;
-      color: rgba(102, 102, 102, 0.7);
-      font-size: 15px;
-      line-height: 69px; }
-      body > div#main_content div#features_list table tr.item td:first-child {
-        border-left: 0 none; }
-      body > div#main_content div#features_list table tr.item td {
-        border-width: 0 1px 1px 1px;
-        border-style: solid;
-        border-color: #e5e5e5;
-        border-collapse: collapse;
-        border-spacing: 10px; }
-    body > div#main_content div#features_list table tr.item.odd {
-      background-color: white; }
-    body > div#main_content div#features_list table tr.item.even {
-      background-color: #fafafa; }
   body > div#main_content div#pages_list div.pages_list_container {
     background-color: #FFFFFF;
     border-top: 1px solid #c2ccd2;
@@ -388,9 +345,6 @@ body > div#main_content div.content_box {
       body > div#main_content div.content_box div.right div.delete a {
         float: left;
         font-size: 15px; }
-
-body > div#main_content div.clear {
-  clear: both; }
 
 body > footer {
   bottom: -26px;

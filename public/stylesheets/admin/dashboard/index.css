@@ -3,19 +3,62 @@
 /* DASHBOARD */
 /*************/
 /* Pages*/
-div.table #search {
+div#features_list table {
+  width: 100%;
+  font-weight: normal; }
+  div#features_list table tr th, div#features_list table tr td {
+    padding-left: 20px; }
+  div#features_list table tr.header {
+    height: 30px;
+    background-image: -moz-linear-gradient(top, #dbe7ee, #d1dde4);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #dbe7ee), color-stop(1, #d1dde4));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+    border-top: 1px solid #c2ccd2;
+    border-bottom: 1px solid #a5aaac;
+    font-size: 11px;
+    color: #26465b;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 white;
+    line-height: 30px;
+    text-align: left; }
+    div#features_list table tr.header th.id {
+      width: 60px; }
+    div#features_list table tr.header th.string {
+      width: 200px; }
+    div#features_list table tr.header th.number, div#features_list table tr.header th.boolean, div#features_list table tr.header th.latitude, div#features_list table tr.header th.longitude {
+      width: 100px; }
+  div#features_list table tr.item {
+    margin-top: 1px;
+    height: 69px;
+    color: rgba(102, 102, 102, 0.7);
+    font-size: 15px;
+    line-height: 69px; }
+    div#features_list table tr.item td:first-child {
+      border-left: 0 none; }
+    div#features_list table tr.item td {
+      border-width: 0 1px 1px 1px;
+      border-style: solid;
+      border-color: #e5e5e5;
+      border-collapse: collapse;
+      border-spacing: 10px; }
+  div#features_list table tr.item.odd {
+    background-color: white; }
+  div#features_list table tr.item.even {
+    background-color: #fafafa; }
+div#features_list #search {
   float: right;
   position: relative;
   width: 487px;
   margin: 23px 0; }
-  div.table #search label {
+  div#features_list #search label {
     display: none;
     position: absolute;
     left: 5px;
     color: #999999;
     line-height: 30px;
     z-index: 1; }
-  div.table #search input[type=text] {
+  div#features_list #search input[type=text] {
     position: absolute;
     left: 0;
     top: 0;
@@ -32,7 +75,7 @@ div.table #search {
     -webkit-box-shadow: inset 0px 7px 7px #efefef;
     box-shadow: inset 0px 7px 7px #efefef;
     font-size: inherit; }
-  div.table #search input[type=submit] {
+  div#features_list #search input[type=submit] {
     position: absolute;
     top: 7px;
     left: 350px;
@@ -41,7 +84,7 @@ div.table #search {
     border: 0 none;
     color: transparent;
     background: transparent url("/images/sprites/admin.png") no-repeat scroll 0 0; }
-  div.table #search #prev_page, div.table #search #next_page {
+  div#features_list #search #prev_page, div#features_list #search #next_page {
     position: absolute;
     top: 0px;
     display: block;
@@ -53,12 +96,12 @@ div.table #search {
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
     border: 1px solid black;
     color: transparent; }
-    div.table #search #prev_page:hover, div.table #search #next_page:hover {
+    div#features_list #search #prev_page:hover, div#features_list #search #next_page:hover {
       background-image: -moz-linear-gradient(top, #3a6988, #4880a5);
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3a6988), color-stop(1, #4880a5));
       filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
       -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')"; }
-    div.table #search #prev_page:active, div.table #search #next_page:active {
+    div#features_list #search #prev_page:active, div#features_list #search #next_page:active {
       background-image: -moz-linear-gradient(top, #3a6988, #4880a5);
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3a6988), color-stop(1, #4880a5));
       filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
@@ -66,7 +109,7 @@ div.table #search {
       -moz-box-shadow: inset 0px 3px 7px #333333;
       -webkit-box-shadow: inset 0px 3px 7px #333333;
       box-shadow: inset 0px 3px 7px #333333; }
-    div.table #search #prev_page span, div.table #search #next_page span {
+    div#features_list #search #prev_page span, div#features_list #search #next_page span {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -75,17 +118,17 @@ div.table #search {
       display: block;
       width: 6px;
       height: 9px; }
-  div.table #search #prev_page {
+  div#features_list #search #prev_page {
     -moz-border-radius: 7px 0 0 7px;
     -webkit-border-radius: 7px 0 0 7px;
     border-radius: 7px 0 0 7px;
     left: 391px; }
-    div.table #search #prev_page span {
+    div#features_list #search #prev_page span {
       background: transparent url("/images/sprites/admin.png") no-repeat scroll -16px 0; }
-  div.table #search #next_page {
+  div#features_list #search #next_page {
     -moz-border-radius: 0 7px 7px 0;
     -webkit-border-radius: 0 7px 7px 0;
     border-radius: 0 7px 7px 0;
     left: 426px; }
-    div.table #search #next_page span {
+    div#features_list #search #next_page span {
       background: transparent url("/images/sprites/admin.png") no-repeat scroll -22px 0; }
