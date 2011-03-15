@@ -1,5 +1,6 @@
-PATH
-  remote: ~/Sources/cartodb-rb-client
+GIT
+  remote: git@github.com:Vizzuality/cartodb-rb-client.git
+  revision: bb379e3f5e47a67bbd20499246941d401e11c93b
   specs:
     cartodb-rb-client (0.0.1)
       json (= 1.5.1)
