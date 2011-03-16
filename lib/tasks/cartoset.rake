@@ -8,7 +8,7 @@ namespace :cartoset do
     puts 'Creating table features...'
 
     begin
-      CARTODB.create_table 'features'
+      CartoDB::Connection.create_table 'features'
       puts '... done!'
     rescue CartoDB::CartoError => e
       errors << e
@@ -25,8 +25,8 @@ namespace :cartoset do
     puts 'Droping table features...'
 
     begin
-      table = CARTODB.table 'features'
-      CARTODB.drop_table table.id
+      table = CartoDB::Connection.table 'features'
+      CartoDB::Connection.drop_table table.id
 
       puts '... done!'
     rescue CartoDB::CartoError => e
@@ -38,10 +38,10 @@ namespace :cartoset do
 
   desc "Creates random test data"
   task :test_data => :environment do
-    features_table = CARTODB.table 'features'
+    CartoDB::Connection.table 'features'
 
     25.times do
-      CARTODB.insert_row features_table.id, {
+      CartoDB::Connection.insert_row 'features', {
         'name'        => String.random(30),
         'description' => String.random(200),
         'latitude'    => Float.random_latitude,

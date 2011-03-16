@@ -1,0 +1,1 @@
+require 'helpers/feature_getter_helper'

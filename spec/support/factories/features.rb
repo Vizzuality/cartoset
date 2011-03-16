@@ -3,7 +3,7 @@ module CartoSet
     module Features
 
       def create_table(attributes = {})
-        @features_table = CARTODB.create_table 'features'
+        @features_table = CartoDB::Connection.create_table 'features'
       end
 
       def new_feature(values = {})
@@ -17,7 +17,7 @@ module CartoSet
         }
         values = default_values.merge(values)
 
-        CARTODB.insert_row @features_table.id, values
+        CartoDB::Connection.insert_row @features_table.id, values
       end
 
       def create_random_features(ammount = 25)
