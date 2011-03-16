@@ -1,0 +1,21 @@
+@import 'main.mixins.scss';
+
+div.small_content_box {
+  margin-top: 200px;
+  height: 200px;
+  background: #FFFFFF url(/images/globe.png) no-repeat top right ;  
+}
+
+h1.lowered {
+  @include inline-block;
+  margin: 200px 0 0 0;
+
+}
+
+p.success_message {
+  width: 300px;
+  }
+  
+a.main_action {
+  margin: 20px 0 0 0;
+}

@@ -1,0 +1,18 @@
+div.small_content_box {
+  margin-top: 200px;
+  height: 200px;
+  background: white url(/images/globe.png) no-repeat top right; }
+
+h1.lowered {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  margin: 200px 0 0 0; }
+
+p.success_message {
+  width: 300px; }
+
+a.main_action {
+  margin: 20px 0 0 0; }

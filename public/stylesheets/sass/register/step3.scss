@@ -1,0 +1,38 @@
+@import 'main.fonts.scss';
+@import 'main.mixins.scss';
+@import 'mixins.css3.scss';
+@import 'register/register.colors.scss';
+
+div.shadowed {
+
+  margin: 20px 0 0 0;
+  padding: 20px;
+  background: #DFE5EB;  
+  @include border-radius(3px);
+  font-family: "MuseoSans500","Arial";
+  font-size: 15px;  
+  color: #666666;
+
+}
+
+div.selector {
+  @include inline-block;
+  background: url(/images/select.png);
+  color: $select_text;
+  padding: 8px;  
+  width: 193px;
+}
+
+span#new_table{
+  @include inline-block;
+  margin: 7px; 
+}
+
+a.main_action {
+  float: right;
+  margin: 20px 0 0 0;
+}
+
+a{
+  color: #FF3366;
+}

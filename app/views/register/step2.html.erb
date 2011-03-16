@@ -1,0 +1,16 @@
+<% content_for :javascripts do %>
+<%= javascript_include_tag 'jquery.1.5.1.js', 'admin/register/index.js' %>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'register/index.css' %>
+  <%= stylesheet_link_tag 'register/step2.css' %>    
+<% end %>
+
+<%= render 'register/shared/step_indicator' %>
+
+<div class="small_content_box">
+  <h1>Name you app</h1>
+  <p>Don't be afraid. You will be able to change it later.</p>
+  <input type="text" id="appname"/><a href="step3" class="main_action right">Save and continue</a>
+</div>

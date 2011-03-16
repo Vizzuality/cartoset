@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'MuseoSans500';
+  src: url("/fonts/museosans_500-webfont.eot");
+  src: url("/fonts/museosans_500-webfont.eot?iefix") format("eot"), url("/fonts/museosans_500-webfont.woff") format("woff"), url("/fonts/museosans_500-webfont.ttf") format("truetype"), url("/fonts/museosans_500-webfont.svg#webfontaJIEhST4") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+div.shadowed {
+  margin: 20px 0 0 0;
+  padding: 20px;
+  background: #DFE5EB;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font-family: "MuseoSans500","Arial";
+  font-size: 15px;
+  color: #666666; }
+
+div.selector {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  background: url(/images/select.png);
+  color: #333333;
+  padding: 8px;
+  width: 193px; }
+
+span#new_table {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  margin: 7px; }
+
+a.main_action {
+  float: right;
+  margin: 20px 0 0 0; }
+
+a {
+  color: #FF3366; }

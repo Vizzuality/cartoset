@@ -1,0 +1,48 @@
+@import 'main.fonts.scss';
+@import 'main.mixins.scss';
+@import 'mixins.css3.scss';
+
+div.small_content_box {
+  margin-top: 200px;
+}
+
+div.shadowed {
+
+  margin: 20px 0 0 0;
+  padding: 20px;
+  background: #DFE5EB url(/images/next_steps_diagram.png) no-repeat 60px 30px;
+  @include border-radius(3px);
+  
+  div.suggestion {
+    @include inline-block;
+    width: 171px;
+    margin: 80px 10px 0 0;
+    
+    &.last {
+      margin: 80px 0 0 0;
+    }
+    
+    h2 {
+      font-family: "MuseoSans500","Arial";
+      font-size: 15px;
+      font-weight: normal;
+      color: #666666;
+    }
+    
+    p {
+      margin: 10px 0 0 0;
+      font-family: Arial;
+      color: #666666;
+      font-size: 13px;
+    }
+    
+    a{
+      @include inline-block;    
+      margin: 10px 0 0 0;
+      font-family: "MuseoSans500","Arial";
+      font-size: 15px;
+      color: #FF3366;
+    }
+  }
+}
+

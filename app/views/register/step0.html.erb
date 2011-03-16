@@ -1,0 +1,15 @@
+<% content_for :javascripts do %>
+<%= javascript_include_tag 'jquery.1.5.1.js', 'admin/register/index.js' %>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'register/index.css' %>
+  <%= stylesheet_link_tag 'register/step0.css' %>  
+<% end %>
+
+<div class="small_content_box">
+  <h1 class="lowered">Congratulations!</h1>
+  <p class="success_message">CartosSet has been succesfully installed. It's time to adapt it to your needs.</p>
+  <a href="step1" class="main_action">Start configuration</a>
+</div>
+
