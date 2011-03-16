@@ -263,9 +263,9 @@ body > div#main_content {
       height: 75px; }
 
 body > div#main_content div.content_box {
-  float: left;
+  position: relative;
   width: 942px;
-  background-color: #FFFFFF;
+  background: url(/images/bg_content_box.png) repeat-y 0 0;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -311,8 +311,6 @@ body > div#main_content div.content_box {
     width: 231px;
     height: 100%;
     padding: 30px;
-    background-color: #F5F5F5;
-    border-left: 1px solid #CCCCCC;
     -moz-border-radius: 0 5px 5px 0;
     -webkit-border-radius: 0 5px 5px 0;
     border-radius: 0 5px 5px 0; }
@@ -322,8 +320,9 @@ body > div#main_content div.content_box {
       background: transparent url("/images/sprites/admin.png") no-repeat scroll -48px 2px;
       padding: 0 0 0 21px; }
     body > div#main_content div.content_box div.right div.delete {
+      position: absolute;
       width: 230px;
-      bottom: 90px; }
+      bottom: 30px; }
       body > div#main_content div.content_box div.right div.delete span {
         float: left;
         font-family: "MuseoSans500","Arial";

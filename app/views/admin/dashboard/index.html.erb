@@ -26,7 +26,7 @@
     </tr>
     <% @features.rows.each do |row| %>
       <tr class="item <%= cycle('odd', 'even') %>">
-        <td class="cartodb_id"><%= link_to row.cartodb_id, admin_features_path %></td>
+        <td class="cartodb_id"><%= link_to row.cartodb_id, admin_features_path(row.cartodb_id) %></td>
         <% @features_columns.each do |column| %>
           <td class="<%= column.first %>"><%= row.send(column.first) %></td>
         <% end %>
@@ -85,6 +85,7 @@
         <div class="setting_value"><a href="">UA-1234567-1</a></div>
         <div class="edit_value">
           <input type="text" value="UA-1234567-1"/>
+          <input type="hidden" value="UA-1234567-1"/>
           <a href="" class="action_input">Save</a>
           <span class="cancel_value">or <a href="">cancel</a></span>          
         </div>
@@ -97,6 +98,7 @@
         <div class="setting_value"><a href="">UA-1234567-2</a></div>
         <div class="edit_value">
           <input type="text" value="UA-1234567-2"/>
+          <input type="hidden" value="UA-1234567-2"/>          
           <a href="" class="action_input">Save</a>
           <span class="cancel_value">or <a href="">cancel</a></span>          
         </div>
@@ -109,6 +111,7 @@
         <div class="setting_value"><a href="">UA-1234567-3</a></div>
         <div class="edit_value">
           <input type="text" value="UA-1234567-3"/>
+          <input type="hidden" value="UA-1234567-3"/>          
           <a href="" class="action_input">Save</a>
           <span class="cancel_value">or <a href="">cancel</a></span>          
         </div>
