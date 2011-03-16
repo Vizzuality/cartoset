@@ -172,6 +172,11 @@ body > div#main_content {
         text-decoration: none; }
 
 body > div#main_content div.content_box {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
   position: relative;
   width: 942px;
   background: url(/images/bg_content_box.png) repeat-y 0 0;

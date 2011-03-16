@@ -169,6 +169,7 @@ body > div#main_content{
 
 body > div#main_content div.content_box {
 
+  @include inline-block;
   position: relative;
   width: 942px;
   background: url(/images/bg_content_box.png) repeat-y 0 0 ;
@@ -177,6 +178,7 @@ body > div#main_content div.content_box {
   color: #333333;
   font-size: 15px;
   @include shadow(0px 3px 3px #407292);
+  
 
   div.left {
     float: left;
