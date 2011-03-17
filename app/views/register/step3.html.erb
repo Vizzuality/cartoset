@@ -1,5 +1,5 @@
 <% content_for :javascripts do %>
-<%= javascript_include_tag 'jquery.1.5.1.js', 'admin/register/index.js' %>
+<%= javascript_include_tag 'jquery.1.5.1.js', 'register/step3_new_table.js' %>
 <% end %>
 
 <% content_for :stylesheets do %>
@@ -14,7 +14,14 @@
   <p>Select which CartoDB table you want to use for this CartoSet. If you don't have tables created you will be able to create a new one.</p>
   
   <div class="shadowed">
-    <div class="selector">Select table</div> <span id="new_table">or <a href="">create a new one</a></span>
+    <a class="selector">Select table</a> <span id="new_table">or <a href="step3_new_table">create a new one</a></span>
+    <ul class="selector_values">
+      <li><a href="" id="11111">Tabla 1</a></li>
+      <li><a href="" id="12211">Tabla 2</a></li>
+      <li><a href="" id="13311">Tabla 3</a></li>
+      <li><a href="" id="14411">Tabla 4</a></li>      
+    </ul>
+    <input id="table" type="hidden" />
     
     <table class="data">
       <tr>
@@ -39,5 +46,5 @@
       </tr>
     </table>
   </div>
-  <input id="table" type="hidden"/><a href="step4" class="main_action right">Use this table</a>
+  <input id="table" type="hidden"/><a href="step4" class="main_action right disabled">Use this table</a>
 </div>

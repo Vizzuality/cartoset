@@ -14,6 +14,9 @@ class RegisterController < ApplicationController
   def step3
   end
 
+  def step3_new_table
+  end
+
   def step4
   end
 

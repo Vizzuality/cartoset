@@ -15,12 +15,39 @@ div.shadowed {
 
 }
 
-div.selector {
+a.selector {
   @include inline-block;
   background: url(/images/select.png);
   color: $select_text;
-  padding: 8px;  
-  width: 193px;
+  padding: 8px 10px;
+  width: 189px;
+  cursor: pointer;
+}
+
+ul.selector_values {
+  position: absolute;
+  display: none;
+  width: 207px;
+  @include gradient(#FFFFFF, $select_bottom);
+  border-left: 1px solid $select_border;
+  border-right: 1px solid $select_border;
+  border-bottom: 1px solid $select_border;
+  @include border-radius(0 0 5px 5px);
+  @include shadow(0px 2px 5px $select_shadow);
+
+  li {
+    @include inline-block;
+    width: 193px;
+    padding: 10px 10px;
+    
+    a {
+      color: $select_text_list;
+      text-decoration: none;
+      &:hover{
+        color: $select_text_highlighted;
+      }
+    }
+  }
 }
 
 span#new_table{
@@ -34,6 +61,16 @@ a.main_action {
 
 a{
   color: #FF3366;
+}
+
+span.message {
+      @include inline-block;
+      padding: 7px 0 0 0;
+      font-family: "Arial";
+      font-size: 15px;
+      font-style: italic;
+      font-weight: normal;
+      color: #999999;
 }
 
 table.data {
@@ -55,13 +92,15 @@ table.data {
   
   tr {
     padding: 20px;
-  
+    background-color: #FFFFFF;
+    &:nth-child(odd) {
+      background-color: #FAFAFA;
+    }
   }
   
   td {
       padding: 20px 10px 20px 10px;
       border-top: 1px solid #E3E3E3;
-      background-color: #FFFFFF;
       font-family: "Arial";
       font-size: 15px;
       font-weight: normal;
@@ -72,5 +111,4 @@ table.data {
       }
   }
   
-
 }

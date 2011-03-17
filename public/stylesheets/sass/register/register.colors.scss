@@ -5,10 +5,24 @@ $main_action_background_gradient_bottom: #88B600;
 $main_action_font:                       #FFFFFF;
 $main_action_font_shadow:                #537000;
 $main_action_border:                     #6E9400;
+$main_action_background_disabled_bottom: #D2D2D2;
+$main_action_background_disabled_top:    #CACACA;
+$main_action_border_disabled:            #C4C4C4;
+$main_action_font_shadow_disabled:       #A0A0A0;
+
+$red_button_background_gradient_top:     #E93E3F;
+$red_button_background_gradient_bottom:  #CA393B;
+$red_button_border:                      #962A2D;
+$red_button_font_color:                  #FFFFFF;
+$red_button_font_shadow:                 #990000;
 
 $select_text:  #333333;
+$select_text_list:  #666666;
+$select_text_highlighted:  #333333;
 $select_top:  #F9F9F9;
 $select_bottom: #F1F1F1;
+$select_border: #CCCCCC;
+$select_shadow: #CCCCCC;
 
 $steps_selected:  #FFFFFF;
 $steps_unselected:  #B6CDDC;

@@ -15,6 +15,7 @@ Cartoset::Application.routes.draw do
   match '/register/step1' => 'register#step1'
   match '/register/step2' => 'register#step2'
   match '/register/step3' => 'register#step3'
+  match '/register/step3_new_table' => 'register#step3_new_table'  
   match '/register/step4' => 'register#step4'
 
   root :to => "home#index"

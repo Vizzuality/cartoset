@@ -16,7 +16,7 @@ div.shadowed {
   font-size: 15px;
   color: #666666; }
 
-div.selector {
+a.selector {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: top;
@@ -24,8 +24,40 @@ div.selector {
   *display: inline;
   background: url(/images/select.png);
   color: #333333;
-  padding: 8px;
-  width: 193px; }
+  padding: 8px 10px;
+  width: 189px;
+  cursor: pointer; }
+
+ul.selector_values {
+  position: absolute;
+  display: none;
+  width: 207px;
+  background-image: -moz-linear-gradient(top, white, #f1f1f1);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1, #f1f1f1));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  -moz-box-shadow: 0px 2px 5px #cccccc;
+  -webkit-box-shadow: 0px 2px 5px #cccccc;
+  box-shadow: 0px 2px 5px #cccccc; }
+  ul.selector_values li {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
+    width: 193px;
+    padding: 10px 10px; }
+    ul.selector_values li a {
+      color: #666666;
+      text-decoration: none; }
+      ul.selector_values li a:hover {
+        color: #333333; }
 
 span#new_table {
   display: -moz-inline-stack;
@@ -40,6 +72,19 @@ a.main_action {
 
 a {
   color: #FF3366; }
+
+span.message {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  padding: 7px 0 0 0;
+  font-family: "Arial";
+  font-size: 15px;
+  font-style: italic;
+  font-weight: normal;
+  color: #999999; }
 
 table.data {
   width: 100%;
@@ -58,11 +103,13 @@ table.data {
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
     text-shadow: 0 1px 0 #FFFFFF; }
   table.data tr {
-    padding: 20px; }
+    padding: 20px;
+    background-color: #FFFFFF; }
+    table.data tr:nth-child(odd) {
+      background-color: #FAFAFA; }
   table.data td {
     padding: 20px 10px 20px 10px;
     border-top: 1px solid #E3E3E3;
-    background-color: #FFFFFF;
     font-family: "Arial";
     font-size: 15px;
     font-weight: normal;
