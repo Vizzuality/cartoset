@@ -7,7 +7,7 @@
   <%= stylesheet_link_tag 'register/step3.css' %>    
 <% end %>
 
-<%= render 'register/shared/step_indicator' , :step=>1%>
+<%= render 'register/shared/step_indicator', :step=>3 %>
 
 <div class="small_content_box">
   <h1>Import your data</h1>
@@ -15,6 +15,29 @@
   
   <div class="shadowed">
     <div class="selector">Select table</div> <span id="new_table">or <a href="">create a new one</a></span>
+    
+    <table class="data">
+      <tr>
+        <th>ID.</th>
+        <th>DESCRIPTION</th>
+        <TH>DATA2</TH>
+      </tr>
+      <tr>
+        <td class="first">Bar Hawaii</td>
+        <td class="first">Lorem ipsum dolor sit am...</td>
+        <td class="first">Lorem ipsum dolor sit am...</td>
+      </tr>
+      <tr>
+        <td>Bar Hawaii</td>
+        <td>Lorem ipsum dolor sit am...</td>
+        <td>Lorem ipsum dolor sit am...</td>
+      </tr>
+      <tr>
+        <td>Bar Hawaii</td>
+        <td>Lorem ipsum dolor sit am...</td>
+        <td>Lorem ipsum dolor sit am...</td>
+      </tr>
+    </table>
   </div>
   <input id="table" type="hidden"/><a href="step4" class="main_action right">Use this table</a>
 </div>

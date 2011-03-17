@@ -1,8 +1,10 @@
+@import 'main.mixins.scss';
+
 input[type="text"]#appname {
   width: 552px;
   margin: 20px 0 20px 0;
 }
 
 .right {
-  float: right;
+  @include inline-block;  
 }

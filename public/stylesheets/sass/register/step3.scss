@@ -29,10 +29,48 @@ span#new_table{
 }
 
 a.main_action {
-  float: right;
   margin: 20px 0 0 0;
 }
 
 a{
   color: #FF3366;
+}
+
+table.data {
+  
+  width: 100%; 
+  margin: 20px 0 0 0;
+  border: 1px solid #AFB9BE;
+
+  th {
+      padding: 10px;
+      font-family: "Arial";
+      font-size: 11px;
+      font-weight: normal;
+      text-align: left;
+      color: #26465A;
+      @include gradient($data_table_header_top, $data_table_header_bottom);
+      text-shadow: 0 1px 0 #FFFFFF;
+  }
+  
+  tr {
+    padding: 20px;
+  
+  }
+  
+  td {
+      padding: 20px 10px 20px 10px;
+      border-top: 1px solid #E3E3E3;
+      background-color: #FFFFFF;
+      font-family: "Arial";
+      font-size: 15px;
+      font-weight: normal;
+      color: #949494;
+      
+      &.first {
+        border-top: 1px solid #CCCCCC;      
+      }
+  }
+  
+
 }

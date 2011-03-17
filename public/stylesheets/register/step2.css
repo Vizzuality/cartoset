@@ -3,4 +3,8 @@ input[type="text"]#appname {
   margin: 20px 0 20px 0; }
 
 .right {
-  float: right; }
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline; }

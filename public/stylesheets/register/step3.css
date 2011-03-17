@@ -36,8 +36,36 @@ span#new_table {
   margin: 7px; }
 
 a.main_action {
-  float: right;
   margin: 20px 0 0 0; }
 
 a {
   color: #FF3366; }
+
+table.data {
+  width: 100%;
+  margin: 20px 0 0 0;
+  border: 1px solid #AFB9BE; }
+  table.data th {
+    padding: 10px;
+    font-family: "Arial";
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    color: #26465A;
+    background-image: -moz-linear-gradient(top, #dbe7ee, #d1dce3);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #dbe7ee), color-stop(1, #d1dce3));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+    text-shadow: 0 1px 0 #FFFFFF; }
+  table.data tr {
+    padding: 20px; }
+  table.data td {
+    padding: 20px 10px 20px 10px;
+    border-top: 1px solid #E3E3E3;
+    background-color: #FFFFFF;
+    font-family: "Arial";
+    font-size: 15px;
+    font-weight: normal;
+    color: #949494; }
+    table.data td.first {
+      border-top: 1px solid #CCCCCC; }
