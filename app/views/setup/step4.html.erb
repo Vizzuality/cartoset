@@ -1,0 +1,31 @@
+<% content_for :javascripts do %>
+<%= javascript_include_tag 'jquery.1.5.1.js', 'admin/setup/index.js' %>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'setup/index.css' %>
+  <%= stylesheet_link_tag 'setup/step4.css' %>
+<% end %>
+
+<div class="small_content_box">
+  <h1><%= t('.title') %></h1>
+  <p><%= t('.description') %></p>
+
+  <div class="shadowed">
+    <div class="suggestion" id="manage_data">
+      <h2><%= t('.manage_data.title') %></h2>
+      <p><%= t('.manage_data.description') %></p>
+      <%= link_to t('.manage_data.link'), "#{CartoDB::Settings['host']}/tables/#{@table.id}" %>
+    </div>
+    <div class="suggestion" id="manage_site">
+      <h2><%= t('.manage_site.title') %></h2>
+      <p><%= t('.manage_site.description') %></p>
+      <%= link_to t('.manage_site.link'), admin_path %>
+    </div>
+    <div class="suggestion last" id="public_site">
+      <h2><%= t('.public_site.title') %></h2>
+      <p><%= t('.public_site.description') %></p>
+      <%= link_to t('.public_site.link'), root_path %>
+    </div>
+  </div>
+</div>

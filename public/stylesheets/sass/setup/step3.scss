@@ -1,16 +1,16 @@
 @import 'main.fonts.scss';
 @import 'main.mixins.scss';
 @import 'mixins.css3.scss';
-@import 'register/register.colors.scss';
+@import 'setup/setup.colors.scss';
 
 div.shadowed {
 
   margin: 20px 0 0 0;
   padding: 20px;
-  background: #DFE5EB;  
+  background: #DFE5EB;
   @include border-radius(3px);
   font-family: "MuseoSans500","Arial";
-  font-size: 15px;  
+  font-size: 15px;
   color: #666666;
 
 }
@@ -39,7 +39,7 @@ ul.selector_values {
     @include inline-block;
     width: 180px;
     padding: 10px 10px;
-    
+
     a {
       color: $select_text_list;
       text-decoration: none;
@@ -52,10 +52,10 @@ ul.selector_values {
 
 span#new_table{
   @include inline-block;
-  margin: 7px; 
+  margin: 7px;
 }
 
-a.main_action {
+a.main_action, input.main_action {
   margin: 20px 0 0 0;
 }
 
@@ -74,8 +74,8 @@ span.message {
 }
 
 table.data {
-  
-  width: 100%; 
+
+  width: 100%;
   margin: 20px 0 0 0;
   border: 1px solid #AFB9BE;
 
@@ -83,13 +83,14 @@ table.data {
       padding: 10px;
       font-family: "Arial";
       font-size: 11px;
-      font-weight: normal;
+      font-weight: bold;
       text-align: left;
       color: #26465A;
       @include gradient($data_table_header_top, $data_table_header_bottom);
+      text-transform: uppercase;
       text-shadow: 0 1px 0 #FFFFFF;
   }
-  
+
   tr {
     padding: 20px;
     background-color: #FFFFFF;
@@ -97,7 +98,7 @@ table.data {
       background-color: #FAFAFA;
     }
   }
-  
+
   td {
       padding: 20px 10px 20px 10px;
       border-top: 1px solid #E3E3E3;
@@ -105,11 +106,12 @@ table.data {
       font-size: 15px;
       font-weight: normal;
       color: #949494;
-      
+
       &.first {
-        border-top: 1px solid #CCCCCC;      
+        border-top: 1px solid #CCCCCC;
       }
   }
+
 }
 
 .scroll_pane{

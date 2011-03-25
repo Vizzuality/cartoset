@@ -98,6 +98,7 @@ div.help {
   zoom: 1;
   *display: inline;
   vertical-align: middle;
+  margin: 0;
   padding: 7px 15px;
   border: 1px solid #6e9400;
   font-family: "MuseoSans500","Arial";
@@ -126,7 +127,7 @@ div.help {
     -moz-box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7);
     -webkit-box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7);
     box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7); }
-  .main_action.disabled {
+  .main_action.disabled, .main_action:disabled {
     background-image: -moz-linear-gradient(top, #d2d2d2, #cacaca);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #d2d2d2), color-stop(1, #cacaca));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');

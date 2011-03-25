@@ -8,20 +8,16 @@ Cartoset::Application.routes.draw do
     resources :pages
     resources :settings
   end
+  match '/admin' => 'admin/dashboard#index', :as => :admin
 
-  match '/admin' => 'admin/dashboard#index'
+  match '/setup(/steps/:step_id)'    => 'setup#step', :as => :setup
+  match '/setup/features_table_data' => 'setup#features_table_data'
 
-  match '/register' => 'register#step0'
-  match '/register/step1' => 'register#step1'
-  match '/register/step2' => 'register#step2'
-  match '/register/step3' => 'register#step3'
-  match '/register/step3_new_table' => 'register#step3_new_table'  
-  match '/register/step4' => 'register#step4'
-
-  root :to => "home#index"
+  match "/auth/cartodb", :as => :authorize
   match "/auth/:provider/callback" => "sessions#create"
 
   get '/logout' => 'sessions#destroy', :as => :logout
 
   resources :features
+  root :to => "home#index"
 end

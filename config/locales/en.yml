@@ -27,4 +27,45 @@ en:
   features:
     index:
       title: 'Features list'
-
+  setup:
+    help:
+      problems: 'If you get stuck or have any problem, %{contact_us}'
+      contact_us: 'contact us'
+    step_indicator:
+      step_1: 'Your CartoDB'
+      step_2: 'Your CartoSet'
+      step_3: 'Your Data'
+    step0:
+      congrats: 'Congratulations!'
+      success: "CartosSet has been succesfully installed. It's time to adapt it to your needs."
+      start: 'Start configuration'
+    step1:
+      title: 'Connect your app with CartoDB'
+      description: 'CartoSet stores its data in CartoDB, a powerful cloud-based database for geolocated data.'
+      next_step: 'Connect with CartoDB'
+    step2:
+      title: 'Name your app'
+      description: "Don't be afraid. You will be able to change it later."
+      next_step: 'Save and continue'
+      app_name: "'Pandas in the world', 'Elvis sightings'..."
+    step3:
+      title: 'Import your data'
+      description: "Select which CartoDB table you want to use for this CartoSet. If you don't have tables created you will be able to create a new one."
+      or: 'or %{link}'
+      create_a_new_one: 'create a new one'
+      use_this_table: 'Use this table'
+    step4:
+      title: 'Done!'
+      description: 'It looks like you have your CartoSet running in your server. Now...'
+      manage_data:
+        title: 'Manage your data'
+        description: 'Change and clean your data, geolocalize your features...'
+        link: 'CartoDB table'
+      manage_site:
+        title: 'Manage your site'
+        description: 'Add images and videos, create additional pages...'
+        link: 'CartoSet backoffice'
+      public_site:
+        title: 'Go to your site'
+        description: 'Check how your users will see your site...'
+        link: 'Public site'

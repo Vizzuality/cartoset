@@ -1,0 +1,28 @@
+form {
+  position: relative; }
+  form label {
+    position: absolute;
+    top: 27px;
+    left: 10px;
+    font-size: 19px;
+    color: #999999; }
+  form input#app_name {
+    width: 552px;
+    margin: 20px 0 20px 0;
+    font-size: 19px;
+    color: #999999; }
+  form .main_action {
+    float: right; }
+  form:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+
+.right {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline; }

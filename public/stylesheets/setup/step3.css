@@ -26,6 +26,7 @@ a.selector {
   color: #333333;
   padding: 8px 10px;
   width: 189px;
+  height: 16px;
   cursor: pointer; }
 
 ul.selector_values {
@@ -67,7 +68,7 @@ span#new_table {
   *display: inline;
   margin: 7px; }
 
-a.main_action {
+a.main_action, input.main_action {
   margin: 20px 0 0 0; }
 
 a {
@@ -94,13 +95,14 @@ table.data {
     padding: 10px;
     font-family: "Arial";
     font-size: 11px;
-    font-weight: normal;
+    font-weight: bold;
     text-align: left;
     color: #26465A;
     background-image: -moz-linear-gradient(top, #dbe7ee, #d1dce3);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #dbe7ee), color-stop(1, #d1dce3));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+    text-transform: uppercase;
     text-shadow: 0 1px 0 #FFFFFF; }
   table.data tr {
     padding: 20px;

@@ -1,8 +1,8 @@
 @import 'main.fonts.scss';
 @import 'main.mixins.scss';
 @import 'mixins.css3.scss';
-@import 'register/register.colors.scss';
-@import 'register/register.vars.scss';
+@import 'setup/setup.colors.scss';
+@import 'setup/setup.vars.scss';
 
 body{
   background-color: $background;
@@ -12,11 +12,11 @@ body{
 }
 
 ol.step_indicator {
-  
+
   margin: 150px auto 30px auto;;
   bottom: 100px;
   width: 588px;
-  
+
   li {
     @include inline-block;
     width: 161px;
@@ -29,7 +29,7 @@ ol.step_indicator {
     &.selected {
       color: $steps_selected;
     }
-    
+
     span.step_number {
       @include inline-block;
       float: left;
@@ -37,21 +37,21 @@ ol.step_indicator {
       width: 15px;
       height: 15px;
       padding: 2px;
-      margin: 0 6px 0 0; 
+      margin: 0 6px 0 0;
       border: 1px solid $steps_unselected;
-      @include border-radius(10px);      
+      @include border-radius(10px);
       line-height: 15px;
       text-align: center;
-      
+
       &.selected {
       border: 1px solid $steps_selected;
-        }      
+        }
     }
-    
+
     span.step_description {
       float: left;
       @include inline-block;
-      margin: 3px 0 0 0;    
+      margin: 3px 0 0 0;
     }
   }
 }
@@ -64,15 +64,15 @@ div.small_content_box {
   background: #FFFFFF;
   @include border-radius(3px);
   @include shadow(0px 3px 3px #407292);
-  
+
   h1 {
-      margin: 0 0 15px 0;  
+      margin: 0 0 15px 0;
       font-family: "MuseoSans500","Arial";
       font-size: 25px;
       font-weight: normal;
       color: #333333;
   }
-  
+
   p {
       font-family: "MuseoSans500","Arial";
       font-size: 15px;
@@ -88,7 +88,7 @@ div.help {
       font-weight: normal;
       color: #B6CDDC;
       text-align: center;
-      
+
       a {
         color: $help_message;
       }
@@ -98,6 +98,7 @@ div.help {
 .main_action{
       @include inline-block;
       vertical-align: middle;
+      margin: 0;
       padding: 7px 15px;
       border: 1px solid $main_action_border;
       font-family: "MuseoSans500","Arial";
@@ -116,9 +117,9 @@ div.help {
         @include gradient($main_action_background_gradient_bottom, $main_action_background_gradient_top);
         @include inner-shadow(0 3px 3px rgba(102, 102, 102, 0.7));
       }
-      
-      &.disabled {
-        @include gradient($main_action_background_disabled_bottom, $main_action_background_disabled_top);            
+
+      &.disabled, &:disabled {
+        @include gradient($main_action_background_disabled_bottom, $main_action_background_disabled_top);
         border: 1px solid $main_action_border_disabled;
         text-shadow: 0 1px 0 $main_action_font-shadow_disabled;
       }
@@ -134,13 +135,13 @@ a.red_button {
       color: $red_button_font_color;
       text-decoration: none;
       text-shadow: 0px 1px 0px $red_button_font_shadow;
-      
+
       &:hover {
-        @include gradient($red_button_background_gradient_bottom, $red_button_background_gradient_top);      
+        @include gradient($red_button_background_gradient_bottom, $red_button_background_gradient_top);
       }
-      
+
       &:active {
-        @include gradient($red_button_background_gradient_bottom, $red_button_background_gradient_top);            
+        @include gradient($red_button_background_gradient_bottom, $red_button_background_gradient_top);
         @include inner-shadow(0 3px 3px rgba(102, 102, 102, 0.7));
       }
 }

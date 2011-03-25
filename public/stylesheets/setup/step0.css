@@ -3,13 +3,8 @@ div.small_content_box {
   height: 200px;
   background: white url(/images/globe.png) no-repeat top right; }
 
-h1.lowered {
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: top;
-  zoom: 1;
-  *display: inline;
-  margin: 200px 0 0 0; }
+div.small_content_box h1.lowered {
+  margin: 30px 0 15px; }
 
 p.success_message {
   width: 300px; }

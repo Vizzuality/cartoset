@@ -1,0 +1,27 @@
+<% content_for :javascripts do %>
+<%= javascript_include_tag 'jquery.1.5.1.js', 'setup/step3.js', 'setup/step3_new_table.js' %>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'setup/index.css', 'setup/step3.css' %>
+<% end %>
+
+<%= render 'step_indicator', :step => 3 %>
+<%= form_tag setup_path(:step_id => 4) do %>
+  <div class="small_content_box">
+    <h1><%= t('.title') %></h1>
+    <p><%= t('.description') %></p>
+
+    <div class="shadowed">
+      <a class="selector">Select table</a> <span id="new_table"><%= raw t('.or', :link => link_to(t('.create_a_new_one'), '#')) %></span>
+      <ul id="tables_combo" class="selector_values">
+        <% @tables.each do |table| %>
+        <li><a href="#"><%= table.name %></a></li>
+        <% end %>
+      </ul>
+      <%= select_tag 'features_table', options_for_select(@tables.map{|t| [t.name, t.name]}), {:include_blank => true} %>
+      <div id="table_data"></div>
+    </div>
+    <%= submit_tag t('.use_this_table'), :id => 'use_this_table', :class => 'main_action right', :disabled => true %>
+  </div>
+<% end %>

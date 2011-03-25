@@ -11,11 +11,11 @@ $(function(){
     map = new google.maps.Map(document.getElementById("features_map"), myOptions);
 
   $.each(features, function(index, feature){
-      latlng = new google.maps.LatLng(feature['table']['latitude'], feature['table']['longitude']);
+      latlng = new google.maps.LatLng(feature['latitude'], feature['longitude']);
 
       marker = new google.maps.Marker({
         position: latlng,
-        title: feature['table']['name']
+        title: feature['name']
       });
 
       marker.setMap(map);

@@ -1,0 +1,11 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'setup/index.css', 'setup/step1.css' %>
+<% end %>
+
+<%= render 'step_indicator', :step => 1 %>
+
+<div class="small_content_box">
+  <h1><%= t('.title') %></h1>
+  <p><%= t('.description') %></p>
+  <%= link_to t('.next_step'), authorize_path, :class => 'main_action' %>
+</div>
