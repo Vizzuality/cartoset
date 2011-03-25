@@ -1,7 +1,10 @@
 $(document).ready(function() {
 
+	$('.scroll_pane').jScrollPane();
+
 	$("a.selector").click(function() {
 		$("ul.selector_values").toggle();
+		$("ul.selector_values").jScrollPane();		
 		var backgroundPosition;
 		if ($("ul.selector_values").is(":visible")) {
 				backgroundPosition = "32px";

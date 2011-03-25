@@ -1,10 +1,11 @@
 <% content_for :javascripts do %>
-<%= javascript_include_tag 'jquery.1.5.1.js', 'register/step3_new_table.js' %>
+<%= javascript_include_tag 'jquery.1.5.1.js', 'register/step3_new_table.js', 'jquery.jscrollpane.min.js', 'jquery.mousewheel.js' %>
 <% end %>
 
 <% content_for :stylesheets do %>
   <%= stylesheet_link_tag 'register/index.css' %>
   <%= stylesheet_link_tag 'register/step3.css' %>    
+  <%= stylesheet_link_tag 'jscrollpane.css' %>
 <% end %>
 
 <%= render 'register/shared/step_indicator', :step=>3 %>
@@ -15,11 +16,17 @@
   
   <div class="shadowed">
     <a class="selector">Select table</a> <span id="new_table">or <a href="step3_new_table">create a new one</a></span>
-    <ul class="selector_values">
+    <ul class="selector_values scroll_pane">
       <li><a href="" id="11111">Tabla 1</a></li>
       <li><a href="" id="12211">Tabla 2</a></li>
       <li><a href="" id="13311">Tabla 3</a></li>
       <li><a href="" id="14411">Tabla 4</a></li>      
+      <li><a href="" id="11111">Tabla 5</a></li>
+      <li><a href="" id="12211">Tabla 6</a></li>
+      <li><a href="" id="13311">Tabla 7</a></li>
+      <li><a href="" id="14411">Tabla 8</a></li>      
+      <li><a href="" id="11111">Tabla 9</a></li>
+      <li><a href="" id="12211">Tabla 10</a></li>
     </ul>
     <input id="table" type="hidden" />
     

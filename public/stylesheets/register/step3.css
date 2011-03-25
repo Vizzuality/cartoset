@@ -31,7 +31,7 @@ a.selector {
 ul.selector_values {
   position: absolute;
   display: none;
-  width: 207px;
+  overflow: auto;
   background-image: -moz-linear-gradient(top, white, #f1f1f1);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1, #f1f1f1));
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
@@ -51,7 +51,7 @@ ul.selector_values {
     vertical-align: top;
     zoom: 1;
     *display: inline;
-    width: 193px;
+    width: 180px;
     padding: 10px 10px; }
     ul.selector_values li a {
       color: #666666;
@@ -116,3 +116,9 @@ table.data {
     color: #949494; }
     table.data td.first {
       border-top: 1px solid #CCCCCC; }
+
+.scroll_pane {
+  width: 207px;
+  max-height: 200px;
+  overflow: auto;
+  overflow-y: hidden; }
