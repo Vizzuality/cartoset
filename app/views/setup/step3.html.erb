@@ -1,9 +1,9 @@
 <% content_for :javascripts do %>
-<%= javascript_include_tag 'jquery.1.5.1.js', 'setup/step3.js', 'setup/step3_new_table.js' %>
+<%= javascript_include_tag 'jquery.1.5.1.js', 'jquery.jscrollpane.min.js', 'jquery.mousewheel.js', 'setup/step3.js' %>
 <% end %>
 
 <% content_for :stylesheets do %>
-  <%= stylesheet_link_tag 'setup/index.css', 'setup/step3.css' %>
+  <%= stylesheet_link_tag 'setup/index.css', 'setup/step3.css', 'jscrollpane.css' %>
 <% end %>
 
 <%= render 'step_indicator', :step => 3 %>
@@ -13,8 +13,8 @@
     <p><%= t('.description') %></p>
 
     <div class="shadowed">
-      <a class="selector">Select table</a> <span id="new_table"><%= raw t('.or', :link => link_to(t('.create_a_new_one'), '#')) %></span>
-      <ul id="tables_combo" class="selector_values">
+      <a href="#" class="selector">Select table</a> <span id="new_table"><%= raw t('.or', :link => link_to(t('.create_a_new_one'), '#')) %></span>
+      <ul id="tables_combo" class="selector_values scroll_pane">
         <% @tables.each do |table| %>
         <li><a href="#"><%= table.name %></a></li>
         <% end %>

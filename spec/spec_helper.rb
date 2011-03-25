@@ -8,6 +8,14 @@ require 'rspec/rails'
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
+
+  config.before(:each) do
+    Cartoset::Config.destroy
+  end
+
+  config.after(:all) do
+    Cartoset::Config.destroy
+  end
   # == Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:

@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 require File.expand_path(File.dirname(__FILE__) + '/acceptance_helper')
 
 feature 'cartoset setup', %q{
@@ -37,5 +39,39 @@ feature 'cartoset setup', %q{
     click 'Save and continue'
 
     current_path.should be == "/setup/steps/3"
+
+    page.should have_content 'Import your data'
+    page.should have_content "Select which CartoDB table you want to use for this CartoSet. If you don't have tables created you will be able to create a new one."
+
+    click 'Select table'
+    click 'madrid_bars'
+
+    page.should have_css('table.data tr th', :text => 'cartodb_id')
+    page.should have_css('table.data tr th', :text => 'name')
+    page.should have_css('table.data tr th', :text => 'address')
+
+    page.should have_content 'Hawai'
+    page.should have_content 'El Estocolmo'
+    page.should have_content 'El Rey del Tallarín'
+
+    click 'Use this table'
+
+    current_path.should be == "/setup/steps/4"
+
+    page.should have_content 'Done!'
+    page.should have_content 'It looks like you have your CartoSet running in your server. Now...'
+
+    page.should have_content 'Manage your data'
+    page.should have_content 'Change and clean your data, geolocalize your features...'
+    page.should have_link 'CartoDB table'
+
+    page.should have_content 'Manage your site'
+    page.should have_content 'Add images and videos, create additional pages...'
+    page.should have_link 'CartoSet backoffice'
+
+    page.should have_content 'Go to your site'
+    page.should have_content 'Check how your users will see your site...'
+    page.should have_link 'Public site'
+
   end
 end

@@ -17,6 +17,7 @@ class SetupController < ApplicationController
       CartoDB::Settings['oauth_secret'] = current_user.oauth_secret
     when "3"
       Cartoset::Config.update :app_name => params[:app_name]
+
       @tables = CartoDB::Connection.tables || []
     when "4"
       @table = CartoDB::Connection.table params[:features_table]

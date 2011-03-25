@@ -1,6 +1,9 @@
 class Cartoset::Config
 
-  @@path = Rails.root.join('config', 'cartoset_config.yml')
+  config_env_folder = Rails.env.test?? 'tmp' : 'config'
+
+  @@path = Rails.root.join(config_env_folder, 'cartoset_config.yml')
+
 
   cattr_accessor :path
 
@@ -28,6 +31,10 @@ class Cartoset::Config
 
     def []=(key, value)
       settings[key] = value
+    end
+
+    def destroy
+      FileUtils.rm_f(path) if File.exists?(path)
     end
 
     def settings=(values)

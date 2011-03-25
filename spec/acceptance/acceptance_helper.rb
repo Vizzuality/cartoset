@@ -15,10 +15,6 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include Capybara, :type => :acceptance
 
-  config.before(:all) do
-    drop_tables
-  end
-
   config.before(:each) do
     Rails.cache.clear
   end
