@@ -1,2 +1,23 @@
-a.main_action {
-  margin: 20px 0 0 0; }
+form {
+  position: relative; }
+  form label {
+    position: absolute;
+    left: 0px;
+    color: #999999; }
+  form label.oauth_key {
+    top: -4px; }
+  form label.oauth_secret {
+    top: 68px; }
+  form input#oauth_key, form input#oauth_secret {
+    width: 552px;
+    margin: 16px 0 20px 0;
+    font-size: 19px;
+    color: #999999; }
+  form .main_action {
+    float: right; }
+  form:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }

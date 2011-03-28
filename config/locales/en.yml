@@ -42,7 +42,10 @@ en:
     step1:
       title: 'Connect your app with CartoDB'
       description: 'CartoSet stores its data in CartoDB, a powerful cloud-based database for geolocated data.'
-      next_step: 'Connect with CartoDB'
+      continue: 'To continue, introduce your OAUTH key and secrets from your account in CartoDB:'
+      oauth_key: 'Oauth key'
+      oauth_secret: 'Oauth secret'
+      next_step: 'Connect'
     step2:
       title: 'Name your app'
       description: "Don't be afraid. You will be able to change it later."

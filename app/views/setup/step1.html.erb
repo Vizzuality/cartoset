@@ -7,5 +7,14 @@
 <div class="small_content_box">
   <h1><%= t('.title') %></h1>
   <p><%= t('.description') %></p>
-  <%= link_to t('.next_step'), authorize_path, :class => 'main_action' %>
+  <br />
+  <p><%= t('.continue') %></p>
+  <br />
+  <%= form_tag setup_path(:step_id => 2) do %>
+    <%= label_tag 'oauth_key', t('.oauth_key'), :class => 'oauth_key' %>
+    <%= text_field_tag 'oauth_key' %>
+    <%= label_tag 'oauth_secret', t('.oauth_secret'), :class => 'oauth_secret' %>
+    <%= text_field_tag 'oauth_secret' %>
+    <%= submit_tag t('.next_step'), :class => 'main_action' %>
+  <% end %>
 </div>

@@ -1,3 +1,36 @@
-a.main_action {
-  margin: 20px 0 0 0;
+form{
+  position: relative;
+
+  label{
+    position: absolute;
+    left: 0px;
+    color: #999999;
+  }
+
+  label.oauth_key{
+    top: -4px;
+  }
+
+  label.oauth_secret{
+    top: 68px;
+  }
+
+  input#oauth_key, input#oauth_secret {
+    width: 552px;
+    margin: 16px 0 20px 0;
+    font-size: 19px;
+    color: #999999;
+  }
+
+  .main_action{
+    float: right;
+  }
+
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
 }

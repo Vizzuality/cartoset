@@ -21,15 +21,12 @@ feature 'cartoset setup', %q{
     current_path.should be == '/setup/steps/1'
     page.should have_content 'Connect your app with CartoDB'
     page.should have_content 'CartoSet stores its data in CartoDB, a powerful cloud-based database for geolocated data.'
+    page.should have_content 'To continue, introduce your OAUTH key and secrets from your account in CartoDB:'
 
-    click 'Connect with CartoDB'
+    fill_in 'Oauth key', :with => 'W3Ls49Adgv3g23MalqZbWpEUuMXrQI7nO8EwR8wm'
+    fill_in 'Oauth secret', :with => 'cKZFeKhRRA5SgSsyTqWHXgwH6rIadqQprAO6eW5P'
 
-    current_path.should be == "/login"
-
-    fill_in 'e-mail', :with => 'admin@example.com'
-    fill_in 'password', :with => 'example'
-
-    click 'Log in'
+    click 'Connect'
 
     current_path.should be == "/setup/steps/2"
     page.should have_content 'Name your app'
@@ -74,4 +71,5 @@ feature 'cartoset setup', %q{
     page.should have_link 'Public site'
 
   end
+
 end
