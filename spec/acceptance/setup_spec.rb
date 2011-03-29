@@ -36,7 +36,7 @@ feature 'cartoset setup', %q{
     click 'Save and continue'
 
     current_path.should be == "/setup/steps/3"
-
+peich
     page.should have_content 'Import your data'
     page.should have_content "Select which CartoDB table you want to use for this CartoSet. If you don't have tables created you will be able to create a new one."
 

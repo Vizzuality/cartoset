@@ -16,6 +16,7 @@ Cartoset::Application.routes.draw do
   match "/auth/cartodb", :as => :authorize
   match "/auth/:provider/callback" => "sessions#create"
 
+  get '/login' => 'sessions#create', :as => :login
   get '/logout' => 'sessions#destroy', :as => :logout
 
   resources :features

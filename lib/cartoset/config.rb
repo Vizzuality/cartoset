@@ -4,7 +4,6 @@ class Cartoset::Config
 
   @@path = Rails.root.join(config_env_folder, 'cartoset_config.yml')
 
-
   cattr_accessor :path
 
   class << self
@@ -40,7 +39,6 @@ class Cartoset::Config
     def settings=(values)
       @@settings = values
     end
-    private :settings=
 
     def settings
       @@settings ||= begin
@@ -49,7 +47,21 @@ class Cartoset::Config
         {}
       end
     end
-    private :settings
+
+    def setup_cartodb
+      if settings['cartodb_oauth_key'].present? && settings['cartodb_oauth_secret'].present?
+
+        cartodb_settings = {
+          'host'         => settings['cartodb_host'] || 'http://api.localhost.lan:3000',
+          'oauth_key'    => settings['cartodb_oauth_key'],
+          'oauth_secret' => settings['cartodb_oauth_secret']
+        }
+
+        CartoDB::Init.start Cartoset::Application, cartodb_settings
+
+      end
+
+    end
 
     def consolidate_settings
       File.open(path, "w") do |f|

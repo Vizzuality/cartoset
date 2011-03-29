@@ -1,5 +1,0 @@
-development:
-  site: 'dev.cartoset.com:3000'
-  api_key: '680d0aa5ca370c11edccac0a579e091f21ef5079'
-  oauth_key: ''
-  oauth_secret: ''
