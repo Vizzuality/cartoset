@@ -26,6 +26,7 @@ a.selector {
   color: #333333;
   padding: 8px 10px;
   width: 189px;
+  height: 16px;
   cursor: pointer; }
 
 ul.selector_values {
@@ -123,3 +124,68 @@ table.data {
   max-height: 200px;
   overflow: auto;
   overflow-y: hidden; }
+
+.small_content_box #use_this_table {
+  float: right; }
+.small_content_box:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+/****************************/
+/*    TABLE DATA UPLOAD     */
+/****************************/
+#create_table {
+  display: none;
+  height: 32px; }
+  #create_table .processing {
+    display: none;
+    line-height: 32px; }
+
+#file-uploader {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline; }
+
+.qq-upload-drop-area {
+  display: none; }
+
+.qq-upload-button {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  margin: 0 10px 0 0;
+  padding: 7px 12px;
+  background-image: -moz-linear-gradient(top, #e93e3f, #ca393b);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e93e3f), color-stop(1, #ca393b));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #962a2d;
+  color: white;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #990000; }
+  .qq-upload-button:hover {
+    background-image: -moz-linear-gradient(top, #ca393b, #e93e3f);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ca393b), color-stop(1, #e93e3f));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')"; }
+  .qq-upload-button:active {
+    background-image: -moz-linear-gradient(top, #ca393b, #e93e3f);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ca393b), color-stop(1, #e93e3f));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+    -moz-box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7);
+    -webkit-box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7);
+    box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7); }
+
+.qq-upload-list {
+  display: none; }

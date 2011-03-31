@@ -1,5 +1,5 @@
 <% content_for :javascripts do %>
-<%= javascript_include_tag 'jquery.1.5.1.js', 'jquery.jscrollpane.min.js', 'jquery.mousewheel.js', 'setup/step3.js' %>
+<%= javascript_include_tag 'jquery.1.5.1.js', 'fileuploader.js', 'jquery.jscrollpane.min.js', 'jquery.mousewheel.js', 'setup/step3.js' %>
 <% end %>
 
 <% content_for :stylesheets do %>
@@ -12,7 +12,7 @@
     <h1><%= t('.title') %></h1>
     <p><%= t('.description') %></p>
 
-    <div class="shadowed">
+    <div id="select_table" class="shadowed">
       <a href="#" class="selector">Select table</a> <span id="new_table"><%= raw t('.or', :link => link_to(t('.create_a_new_one'), '#')) %></span>
       <ul id="tables_combo" class="selector_values scroll_pane">
         <% @tables.each do |table| %>
@@ -22,6 +22,22 @@
       <%= select_tag 'features_table', options_for_select(@tables.map{|t| [t.name, t.name]}), {:include_blank => true} %>
       <div id="table_data"></div>
     </div>
+
+    <div id="create_table" class="shadowed">
+      <div id="file-uploader">
+        select
+        <noscript>
+          <%= form_tag create_table_path do %>
+            <%= label_tag 'data_file' %>
+            <%= file_field_tag 'data_file' %>
+            <%= submit_tag 'Submit' %>
+          <% end %>
+        </noscript>
+      </div>
+      <span class="select_file message">Select a data file (CSV,XLS) from your computer</span>
+      <span class="processing message">Processing your file...</span>
+    </div>
+
     <%= submit_tag t('.use_this_table'), :id => 'use_this_table', :class => 'main_action right', :disabled => true %>
   </div>
 <% end %>

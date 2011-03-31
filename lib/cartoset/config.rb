@@ -36,18 +36,6 @@ class Cartoset::Config
       FileUtils.rm_f(path) if File.exists?(path)
     end
 
-    def settings=(values)
-      @@settings = values
-    end
-
-    def settings
-      @@settings ||= begin
-        YAML.load_file(path) || {}
-      rescue Exception => e
-        {}
-      end
-    end
-
     def setup_cartodb
       if settings['cartodb_oauth_key'].present? && settings['cartodb_oauth_secret'].present?
 
@@ -60,8 +48,21 @@ class Cartoset::Config
         CartoDB::Init.start Cartoset::Application, cartodb_settings
 
       end
-
     end
+
+    def settings=(values)
+      @@settings = values
+    end
+    private :settings=
+
+    def settings
+      @@settings ||= begin
+        YAML.load_file(path) || {}
+      rescue Exception => e
+        {}
+      end
+    end
+    private :settings
 
     def consolidate_settings
       File.open(path, "w") do |f|

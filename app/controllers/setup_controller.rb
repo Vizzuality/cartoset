@@ -32,8 +32,19 @@ class SetupController < ApplicationController
     table_name = params[:table_name]
     if table_name
       @table  = CartoDB::Connection.table table_name
-      records = CartoDB::Connection.records table_name
+      records = CartoDB::Connection.records table_name, {}
       @rows = records.rows if records
     end
+    render :layout => false
+  end
+
+  def create_features_table
+    table = {}
+
+    if params[:qqfile] && request.body.present?
+      table = FeaturesDataImporter.start request.body
+    end
+
+    render :json => table.to_json
   end
 end

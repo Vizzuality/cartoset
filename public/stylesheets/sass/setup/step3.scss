@@ -21,6 +21,7 @@ a.selector {
   color: $select_text;
   padding: 8px 10px;
   width: 189px;
+  height: 16px;
   cursor: pointer;
 }
 
@@ -115,9 +116,70 @@ table.data {
 }
 
 .scroll_pane{
-      width: 207px;
-      max-height: 200px;
-			overflow:auto;
-			overflow-y: hidden;
-			
+  width: 207px;
+  max-height: 200px;
+  overflow:auto;
+  overflow-y: hidden;
+}
+
+.small_content_box{
+  #use_this_table{
+    float: right;
   }
+
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+}
+
+
+/****************************/
+/*    TABLE DATA UPLOAD     */
+/****************************/
+#create_table{
+  display: none;
+  height: 32px;
+
+  .processing{
+    display: none;
+    line-height: 32px;
+  }
+}
+
+#file-uploader{
+  @include inline-block;
+}
+
+.qq-upload-drop-area{
+  display: none;
+}
+
+.qq-upload-button{
+  @include inline-block;
+  margin: 0 10px 0 0;
+  padding: 7px 12px;
+  @include gradient($red_button_background_gradient_top, $red_button_background_gradient_bottom);
+  @include border-radius(5px);
+  border: 1px solid $red_button_border;
+  color: $red_button_font_color;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px $red_button_font_shadow;
+
+  &:hover {
+    @include gradient($red_button_background_gradient_bottom, $red_button_background_gradient_top);
+  }
+
+  &:active {
+    @include gradient($red_button_background_gradient_bottom, $red_button_background_gradient_top);
+    @include inner-shadow(0 3px 3px rgba(102, 102, 102, 0.7));
+  }
+}
+
+.qq-upload-list{
+  display: none;
+}
