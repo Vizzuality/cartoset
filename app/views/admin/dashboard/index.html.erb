@@ -14,28 +14,30 @@
       <%= text_field_tag 'search' %>
       <%= submit_tag t('.search') %>
     <% end %>
-    <%= link_to content_tag(:span, t('.prev_page')), '#', :id => 'prev_page' %>
-    <%= link_to content_tag(:span, t('.prev_page')), '#', :id => 'next_page' %>
+    <%= link_to content_tag(:span, t('.scroll_right')), '#', :id => 'scroll_right' %>
+    <%= link_to content_tag(:span, t('.scroll_left')), '#', :id => 'scroll_left' %>
   </div>
-  <table class="list">
-    <tr class="header">
-      <th class="id">id.</th>
-      <% @features_columns.each do |column| %>
-      <th class="<%= column.last %>"><%= column.first %></th>
-      <% end %>
-    </tr>
-    <% @features.rows.each do |row| %>
-      <tr class="item <%= cycle('odd', 'even') %>">
-        <td class="cartodb_id"><%= link_to row.cartodb_id, admin_features_path(row.cartodb_id) %></td>
+  <div id="features_table">
+    <table class="list">
+      <tr class="header">
+        <th><div class="id">id.</div></th>
         <% @features_columns.each do |column| %>
-          <td class="<%= column.first %>"><%= row.send(column.first) %></td>
+        <th><div class="<%= column.last %>"><%= column.first %></div></th>
         <% end %>
       </tr>
-    <% end %>
-  </table>
+      <% @features.each do |feature| %>
+        <tr class="item <%= cycle('odd', 'even') %>">
+          <td class="cartodb_id"><%= link_to feature.cartodb_id, admin_features_path(feature.cartodb_id) %></td>
+          <% @features_columns.each do |column| %>
+            <td class="<%= column.first %>"><%= feature.send(column.first).to_s.truncate(28) %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+  </div>
   <%= link_to t('.create_feature'), '#', :id => 'create_feature', :class => 'main_action' %>
   <%= link_to t('.edit_in_cartodb'), '#', :id => 'edit_in_cartodb', :class => 'alternate_action' %>
-  <%= paginate @features.rows, 1, @features.total_rows %>
+  <%= paginate @features, 1, @features.count %>
 </div>
 
 <div id="pages_list" class="table">
@@ -98,7 +100,7 @@
         <div class="setting_value"><a href="">UA-1234567-2</a></div>
         <div class="edit_value">
           <input type="text" value="UA-1234567-2"/>
-          <input type="hidden" value="UA-1234567-2"/>          
+          <input type="hidden" value="UA-1234567-2"/>
           <a href="" class="action_input">Save</a>
           <span class="cancel_value">or <a href="">cancel</a></span>
         </div>
@@ -111,7 +113,7 @@
         <div class="setting_value"><a href="">UA-1234567-3</a></div>
         <div class="edit_value">
           <input type="text" value="UA-1234567-3"/>
-          <input type="hidden" value="UA-1234567-3"/>          
+          <input type="hidden" value="UA-1234567-3"/>
           <a href="" class="action_input">Save</a>
           <span class="cancel_value">or <a href="">cancel</a></span>
         </div>

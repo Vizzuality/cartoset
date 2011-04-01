@@ -14,8 +14,8 @@ en:
         your_features: 'Your features'
         search: 'Search!'
         search_label: 'Search by any field'
-        prev_page: 'Previous page'
-        next_page: 'Next page'
+        scroll_left: 'Scroll left'
+        scroll_right: 'Scroll right'
         create_feature: 'Create new feature'
         edit_in_cartodb: 'or edit them in CartoDB'
   home:

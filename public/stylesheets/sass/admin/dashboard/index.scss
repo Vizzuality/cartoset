@@ -3,61 +3,68 @@
 @import 'admin.colors.scss';
 
 div#features_list{
-  table{
+  overflow-x: hidden;
+  #features_table{
     width: 100%;
-    font-weight: normal;
-    tr{
-      th, td{
-        padding-left: 20px;
+    table{
+      width: 100%;
+      font-weight: normal;
+      position: relative;
+      tr{
+        th, td{
+          padding-left: 20px;
+        }
       }
-    }
-    tr.header{
-      height: 30px;
-      @include gradient($table_header_gradient_top, $table_header_gradient_bottom);
-      border-top: 1px solid $table_header_border_top;
-      border-bottom: 1px solid $table_header_border_bottom;
-      font-size: 11px;
-      color: $table_header_font;
-      text-transform: uppercase;
-      text-shadow: 0 1px 0 $table_header_font_shadow;
-      line-height: 30px;
-      text-align: left;
+      tr.header{
+        height: 30px;
+        @include gradient($table_header_gradient_top, $table_header_gradient_bottom);
+        border-top: 1px solid $table_header_border_top;
+        border-bottom: 1px solid $table_header_border_bottom;
+        font-size: 11px;
+        color: $table_header_font;
+        text-transform: uppercase;
+        text-shadow: 0 1px 0 $table_header_font_shadow;
+        line-height: 30px;
+        text-align: left;
 
-      th.id{
-        width: 60px;
-      }
-      th.string{
-        width:200px
-      }
-      th.number, th.boolean, th.latitude, th.longitude{
-        width:100px;
-      }
+        th .id{
+          width: 60px;
+        }
+        th .string{
+          width: 200px;
+        }
+        th{
+          .number, .boolean, .latitude, .longitude{
+            width:100px;
+          }
+        }
 
-    }
-    tr.item{
-      margin-top: 1px;
-      height: 69px;
-      color: $table_item_font;
-      font-size: 15px;
-      line-height: 69px;
-
-      td:first-child{
-        border-left: 0 none;
       }
+      tr.item{
+        margin-top: 1px;
+        height: 69px;
+        color: $table_item_font;
+        font-size: 15px;
+        line-height: 69px;
 
-      td{
-        border-width: 0 1px 1px 1px;
-        border-style: solid;
-        border-color: $table_item_cell_border;
-        border-collapse: collapse;
-        border-spacing: 10px;
+        td:first-child{
+          border-left: 0 none;
+        }
+
+        td{
+          border-width: 0 1px 1px 1px;
+          border-style: solid;
+          border-color: $table_item_cell_border;
+          border-collapse: collapse;
+          border-spacing: 10px;
+        }
       }
-    }
-    tr.item.odd{
-      background-color: $table_item_background_odd;
-    }
-    tr.item.even{
-      background-color: $table_item_background_even;
+      tr.item.odd{
+        background-color: $table_item_background_odd;
+      }
+      tr.item.even{
+        background-color: $table_item_background_even;
+      }
     }
   }
 
@@ -103,7 +110,7 @@ div#features_list{
       @include sprite(0, 0);
     }
 
-    #prev_page, #next_page{
+    #scroll_left, #scroll_right{
       position: absolute;
       top: 0px;
       display: block;
@@ -135,14 +142,14 @@ div#features_list{
       }
     }
 
-    #prev_page{
+    #scroll_left{
       @include border-radius(7px 0 0 7px);
       left: 391px;
       span{
         @include sprite(-16px, 0);
       }
     }
-    #next_page{
+    #scroll_right{
       @include border-radius(0 7px 7px 0);
       left: 426px;
       span{

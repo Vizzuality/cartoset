@@ -15,8 +15,8 @@ feature "Dashboard" do
         page.should have_css('input[type=submit]')
       end
 
-      page.should have_link('prev_page')
-      page.should have_link('next_page')
+      page.should have_link('scroll_left')
+      page.should have_link('scroll_right')
 
       within('.list') do
         within('.header') do
