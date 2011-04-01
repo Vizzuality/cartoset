@@ -1,5 +1,6 @@
-PATH
-  remote: /Users/fer/Sources/cartodb-rb-client
+GIT
+  remote: git@github.com:Vizzuality/cartodb-rb-client.git
+  revision: 2ff4d4a533b217a4c27a74221a849ac150569f7d
   specs:
     cartodb-rb-client (0.0.1)
       activesupport (= 3.0.5)
