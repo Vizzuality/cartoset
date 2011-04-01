@@ -1,5 +1,7 @@
 class Cartoset::Config
 
+  CARTODB_DEFAULT_HOST = 'https://api.cartodb.com'
+
   config_env_folder = Rails.env.test?? 'tmp' : 'config'
 
   @@path = Rails.root.join(config_env_folder, 'cartoset_config.yml')
@@ -40,7 +42,7 @@ class Cartoset::Config
       if settings['cartodb_oauth_key'].present? && settings['cartodb_oauth_secret'].present?
 
         cartodb_settings = {
-          'host'         => settings['cartodb_host'] || 'http://api.localhost.lan:3000',
+          'host'         => settings['cartodb_host'] || CARTODB_DEFAULT_HOST,
           'oauth_key'    => settings['cartodb_oauth_key'],
           'oauth_secret' => settings['cartodb_oauth_secret']
         }
