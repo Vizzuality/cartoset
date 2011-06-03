@@ -6,3 +6,5 @@ tmp/
 
 config/cartodb_config.yml
 config/cartoset_config.yml
+
+bin/

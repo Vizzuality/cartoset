@@ -19,7 +19,8 @@ class SetupController < ApplicationController
     when "3"
       Cartoset::Config.update :app_name => params[:app_name]
 
-      @tables = CartoDB::Connection.tables || []
+      result = CartoDB::Connection.tables || []
+      @tables = result.tables
     when "4"
       @table = CartoDB::Connection.table params[:features_table]
       Cartoset::Config.update :features_table => @table.name
