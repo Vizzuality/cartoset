@@ -7,4 +7,8 @@ class Admin::FeaturesController <  Admin::AdminController
 
   end
 
+  def new
+    @features_fields = Feature.non_common_fields
+  end
+
 end

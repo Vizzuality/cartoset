@@ -1,0 +1,27 @@
+<% content_for :javascripts do %>
+<%= javascript_include_tag 'jquery.1.5.1.js', 'admin/features/new.js' %>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'admin/features/new.css' %>
+<% end %>
+
+<div class="content_box table">
+  <h1>New Feature</h1>
+
+  <% @features_fields.each do |column| %>
+    <%= label_tag column[:name], column[:name], :class => 'field_label' %>
+    <%= build_field_for_column(column) %>
+  <% end %>
+
+  <%= link_to 'Save changes', admin_dashboard_index_path, :class => 'main_action' %>
+
+  <div class="side_bar">
+    <%= link_to (content_tag(:span) + 'Back to dashboard'), admin_dashboard_index_path, :class => 'back' %>
+    <div class="delete">
+      <span>DELETE THIS FEATURE</span>
+      <p>Clicking the link below will permanently delete this feature and its references within the site</p>
+      <a href="">Delete this feature</a>
+    </div>
+  </div>
+</div>

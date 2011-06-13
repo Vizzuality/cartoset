@@ -71,6 +71,7 @@ body > div#main_content{
 
   width: $app_width;
   margin: 120px auto;
+  overflow: hidden;
 
   div.table{
     width: 942px;
@@ -169,69 +170,127 @@ body > div#main_content{
 
 body > div#main_content div.content_box {
 
-  @include inline-block;
   position: relative;
-  width: 942px;
-  background: url(/images/bg_content_box.png) repeat-y 0 0 ;
+  width: 880px;
+  padding: 30px;
   @include border-radius(5px);
   margin: 0;
+  background-color: #FFFFFF;
   color: #333333;
   font-size: 15px;
   @include shadow(0px 3px 3px #407292);
-  
 
-  div.left {
-    float: left;
-    width: 581px;
-    padding: 30px;
+  h1 {
+    font-family: "MuseoSans500","Arial";
+    font-size: 27px;
+    font-weight: normal;
+    color: #333333;
+    margin: 0 0 30px 0;
+  }
 
-    h1 {
-      font-family: "MuseoSans500","Arial";
-      font-size: 27px;
-      font-weight: normal;
-      color: #333333;
-      margin: 0 0 30px 0;
-    }
+  .main_action {
+    margin: 40px 0 0 0;
+  }
 
-    input[type="text"] {
-      width: 300px;
-      @include border-radius(5px);
-      background: url(/images/bg_input.png) repeat-x 0 0 white;
-      height: 30px;
-      border: 1px solid #CCCCCC;
-      font: normal 15px Arial;
-      color: #999;
-      padding: 0 15px;
-      margin: 0 0 25px 0;
-    }
+  label {
+    display: block;
+    font-size: 11px;
+    font-family: Arial;
+    color: #999999;
+    font-weight: bold;
+    margin: 0 0 7px 0;
+    text-transform: uppercase;
+  }
 
-    .main_action {
-      margin: 40px 0 0 0;
-    }
+  input{
+    border: 0 none;
+    font: normal 15px Arial;
+    color: #999999;
+    padding: 0 15px;
+    margin: 0 0 25px 0;
+  }
 
-    label {
-      display: block;
-      font-size: 11px;
-      font-family: Arial;
-      color: #999999;
-      font-weight: bold;
-      margin: 0 0 7px 0;
+  input.string {
+    width: 389px;
+    @include sprite(-1px, -38px);
+    height: 34px;
+  }
+
+  input.number{
+    width: 120px;
+    @include sprite(0, -74px);
+    height: 36px;
+  }
+
+  input.date{
+    width: 102px;
+    @include sprite(0, -110px);
+    height: 34px;
+    display: none;
+    cursor: pointer;
+
+    &.active{
+      @include sprite(-132px, -110px);
+      margin: 0;
     }
   }
 
-  div.right {
+  div.date{
+    height: 28px;
+    padding: 20px;
+    width: 271px;
+    display: none;
 
-    float: right;
+    &.show{
+      display: block;
+    }
+
+    &.active{
+      @include sprite(-2px, -144px);
+      margin-bottom: 25px;
+      margin-left: 1px;
+      margin-top: -4px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+
+    li{
+      margin: 7px 0;
+      label{
+        display: inline;
+        margin: 5px 8px;
+      }
+      input{
+        margin: 0;
+      }
+    }
+  }
+
+  div.side_bar {
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 231px;
     height: 100%;
-    padding: 30px;
+    padding: 0 30px;
+    border-left: 1px solid #b0b0b0;
     @include border-radius(0 5px 5px 0);
+    background-color: #F5F5F5;
 
     a.back {
+      position: absolute;
+      top: 30px;
+      right: 30px;
       font-size: 14px;
-      float: right;
-      @include sprite(-48px,2px);
       padding: 0 0 0 21px ;
+
+      span{
+        @include sprite(0, -20px);
+        padding: 0 8px;
+        margin: 5px;
+      }
     }
 
     div.delete {
@@ -239,7 +298,6 @@ body > div#main_content div.content_box {
       width: 230px;
       bottom: 30px;
       span {
-        float: left;
         font-family: "MuseoSans500","Arial";
         font-size: 17px;
         font-weight: normal;
@@ -248,7 +306,6 @@ body > div#main_content div.content_box {
       }
 
       p {
-        float: left;
         font-family: "Arial";
         font-size: 13px;
         font-weight: normal;
@@ -257,11 +314,11 @@ body > div#main_content div.content_box {
       }
 
       a {
-        float: left;
         font-size: 15px;
       }
     }
   }
+
 }
 
 body > footer {

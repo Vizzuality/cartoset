@@ -60,7 +60,8 @@ body > header {
 
 body > div#main_content {
   width: 960px;
-  margin: 120px auto; }
+  margin: 120px auto;
+  overflow: hidden; }
   body > div#main_content div.table {
     width: 942px;
     margin: 0 0 50px 0;
@@ -172,87 +173,118 @@ body > div#main_content {
         text-decoration: none; }
 
 body > div#main_content div.content_box {
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: top;
-  zoom: 1;
-  *display: inline;
   position: relative;
-  width: 942px;
-  background: url(/images/bg_content_box.png) repeat-y 0 0;
+  width: 880px;
+  padding: 30px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   margin: 0;
+  background-color: #FFFFFF;
   color: #333333;
   font-size: 15px;
   -moz-box-shadow: 0px 3px 3px #407292;
   -webkit-box-shadow: 0px 3px 3px #407292;
   box-shadow: 0px 3px 3px #407292; }
-  body > div#main_content div.content_box div.left {
-    float: left;
-    width: 581px;
-    padding: 30px; }
-    body > div#main_content div.content_box div.left h1 {
-      font-family: "MuseoSans500","Arial";
-      font-size: 27px;
-      font-weight: normal;
-      color: #333333;
-      margin: 0 0 30px 0; }
-    body > div#main_content div.content_box div.left input[type="text"] {
-      width: 300px;
-      -moz-border-radius: 5px;
-      -webkit-border-radius: 5px;
-      border-radius: 5px;
-      background: url(/images/bg_input.png) repeat-x 0 0 white;
-      height: 30px;
-      border: 1px solid #CCCCCC;
-      font: normal 15px Arial;
-      color: #999;
-      padding: 0 15px;
-      margin: 0 0 25px 0; }
-    body > div#main_content div.content_box div.left .main_action {
-      margin: 40px 0 0 0; }
-    body > div#main_content div.content_box div.left label {
-      display: block;
-      font-size: 11px;
-      font-family: Arial;
-      color: #999999;
-      font-weight: bold;
-      margin: 0 0 7px 0; }
-  body > div#main_content div.content_box div.right {
-    float: right;
+  body > div#main_content div.content_box h1 {
+    font-family: "MuseoSans500","Arial";
+    font-size: 27px;
+    font-weight: normal;
+    color: #333333;
+    margin: 0 0 30px 0; }
+  body > div#main_content div.content_box .main_action {
+    margin: 40px 0 0 0; }
+  body > div#main_content div.content_box label {
+    display: block;
+    font-size: 11px;
+    font-family: Arial;
+    color: #999999;
+    font-weight: bold;
+    margin: 0 0 7px 0;
+    text-transform: uppercase; }
+  body > div#main_content div.content_box input {
+    border: 0 none;
+    font: normal 15px Arial;
+    color: #999999;
+    padding: 0 15px;
+    margin: 0 0 25px 0; }
+  body > div#main_content div.content_box input.string {
+    width: 389px;
+    background: transparent url("/images/sprites/admin.png") no-repeat scroll -1px -38px;
+    height: 34px; }
+  body > div#main_content div.content_box input.number {
+    width: 120px;
+    background: transparent url("/images/sprites/admin.png") no-repeat scroll 0 -74px;
+    height: 36px; }
+  body > div#main_content div.content_box input.date {
+    width: 102px;
+    background: transparent url("/images/sprites/admin.png") no-repeat scroll 0 -110px;
+    height: 34px;
+    display: none;
+    cursor: pointer; }
+    body > div#main_content div.content_box input.date.active {
+      background: transparent url("/images/sprites/admin.png") no-repeat scroll -132px -110px;
+      margin: 0; }
+  body > div#main_content div.content_box div.date {
+    height: 28px;
+    padding: 20px;
+    width: 271px;
+    display: none; }
+    body > div#main_content div.content_box div.date.show {
+      display: block; }
+    body > div#main_content div.content_box div.date.active {
+      background: transparent url("/images/sprites/admin.png") no-repeat scroll -2px -144px;
+      margin-bottom: 25px;
+      margin-left: 1px;
+      margin-top: -4px; }
+  body > div#main_content div.content_box ul {
+    list-style-type: none; }
+    body > div#main_content div.content_box ul li {
+      margin: 7px 0; }
+      body > div#main_content div.content_box ul li label {
+        display: inline;
+        margin: 5px 8px; }
+      body > div#main_content div.content_box ul li input {
+        margin: 0; }
+  body > div#main_content div.content_box div.side_bar {
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 231px;
     height: 100%;
-    padding: 30px;
+    padding: 0 30px;
+    border-left: 1px solid #b0b0b0;
     -moz-border-radius: 0 5px 5px 0;
     -webkit-border-radius: 0 5px 5px 0;
-    border-radius: 0 5px 5px 0; }
-    body > div#main_content div.content_box div.right a.back {
+    border-radius: 0 5px 5px 0;
+    background-color: #F5F5F5; }
+    body > div#main_content div.content_box div.side_bar a.back {
+      position: absolute;
+      top: 30px;
+      right: 30px;
       font-size: 14px;
-      float: right;
-      background: transparent url("/images/sprites/admin.png") no-repeat scroll -48px 2px;
       padding: 0 0 0 21px; }
-    body > div#main_content div.content_box div.right div.delete {
+      body > div#main_content div.content_box div.side_bar a.back span {
+        background: transparent url("/images/sprites/admin.png") no-repeat scroll 0 -20px;
+        padding: 0 8px;
+        margin: 5px; }
+    body > div#main_content div.content_box div.side_bar div.delete {
       position: absolute;
       width: 230px;
       bottom: 30px; }
-      body > div#main_content div.content_box div.right div.delete span {
-        float: left;
+      body > div#main_content div.content_box div.side_bar div.delete span {
         font-family: "MuseoSans500","Arial";
         font-size: 17px;
         font-weight: normal;
         color: #333333;
         margin: 0 0 10px 0; }
-      body > div#main_content div.content_box div.right div.delete p {
-        float: left;
+      body > div#main_content div.content_box div.side_bar div.delete p {
         font-family: "Arial";
         font-size: 13px;
         font-weight: normal;
         color: #666666;
         margin: 0 0 10px 0; }
-      body > div#main_content div.content_box div.right div.delete a {
-        float: left;
+      body > div#main_content div.content_box div.side_bar div.delete a {
         font-size: 15px; }
 
 body > footer {
