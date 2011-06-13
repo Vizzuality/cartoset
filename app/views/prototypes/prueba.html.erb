@@ -1,0 +1,32 @@
+  
+  <% content_for :javascripts do %>
+    <%= javascript_include_tag 'jquery.1.5.1.js', 'jHtmlArea-0.7.0.min.js', 'admin/pages/new.js' %>
+  <% end %>
+
+  <% content_for :stylesheets do %>
+    <%= stylesheet_link_tag 'admin/pages/new' %>
+  <% end %>
+
+
+  <div id="main_content"> 
+    <div class="content_box table"> 
+      <h1>New Page</h1> 
+
+      <label class="field_label" for="title">title<strong>*</strong></label> 
+      <input class="string" id="name" name="title" type="text" value="About Methane Gas Hydrates" /> 
+ 
+      <label class="field_label" for="body">body<strong>*</strong></label>
+      <textarea id="txtDefaultHtmlArea"></textarea>
+      
+      <label class="field_label permalink" for="permalink">permalink</label> 
+      <input class="string" id="name" name="permalink" type="text" value="" /> 
+      
+      <a href="/admin/dashboard" class="main_action">Save new page</a> 
+
+      <div class="side_bar">
+        
+        
+        <a href="/admin/dashboard" class="back"><span></span>Back to dashboard</a> 
+      </div> 
+    </div> 
+  </div>

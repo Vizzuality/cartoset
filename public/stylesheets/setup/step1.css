@@ -21,3 +21,103 @@ form {
     height: 0;
     clear: both;
     visibility: hidden; }
+
+ul {
+  display: inline-block;
+  width: 100%; }
+  ul li {
+    list-style: none; }
+    ul li div.top {
+      display: block;
+      width: 546px;
+      padding: 5px 0 0 0; }
+    ul li div.bottom {
+      display: block;
+      width: 546px;
+      padding: 0 0 5px 0; }
+    ul li div.middle {
+      display: inline-block;
+      width: 522px;
+      padding: 9px 12px; }
+    ul li a.radiobutton {
+      display: inline-block;
+      width: auto !important;
+      padding: 0 0 0 21px;
+      margin: 12px 0 0 0;
+      font: normal 15px Arial;
+      color: #333333;
+      text-transform: capitalize;
+      text-decoration: none;
+      background: url("/images/sprites/setup.png") no-repeat -550px -127px; }
+      ul li a.radiobutton:hover {
+        background: url("/images/sprites/setup.png") no-repeat -550px -102px; }
+    ul li div.options {
+      display: none; }
+    ul li.selected div.top {
+      background: url("/images/backgrounds/top_blue.png") no-repeat 0 0; }
+    ul li.selected div.bottom {
+      background: url("/images/backgrounds/bottom_blue.png") no-repeat 0 bottom; }
+    ul li.selected div.middle {
+      background: url("/images/backgrounds/mid_blue.png") repeat-y 0 0; }
+    ul li.selected div.options {
+      display: inline-block;
+      vertical-align: top;
+      background: none; }
+      ul li.selected div.options.bottom {
+        padding-bottom: 10px; }
+      ul li.selected div.options.right {
+        float: right; }
+    ul li.selected a.radiobutton {
+      background: url("/images/sprites/setup.png") no-repeat -550px -102px; }
+    ul li.selected a.radiobutton:hover {
+      cursor: default; }
+    ul li a.submit {
+      float: right;
+      width: auto;
+      vertical-align: top;
+      height: 43px;
+      margin: 0;
+      padding: 0 0 0 5px;
+      background: url("/images/sprites/setup.png") no-repeat -559px -54px;
+      text-decoration: none; }
+      ul li a.submit span {
+        float: right;
+        height: 19px;
+        width: auto;
+        padding: 12px 20px 12px 15px;
+        background: url("/images/sprites/setup.png") no-repeat right -148px;
+        font: normal 19px "Museo Sans";
+        color: white;
+        line-height: 19px;
+        text-shadow: 0 1px #698C24; }
+      ul li a.submit:hover {
+        background-position: -559px -236px; }
+      ul li a.submit:hover span {
+        background-position: right -191px; }
+      ul li a.submit.form {
+        margin: 0 46px 0 0; }
+    ul li form {
+      display: inline-block;
+      width: 482px;
+      margin: 0 0 0 20px; }
+      ul li form span.field {
+        display: inline-block;
+        width: 234px;
+        margin: 15px 0 0 0; }
+        ul li form span.field label {
+          position: relative;
+          width: 234px;
+          font: normal 12px "Museo Sans";
+          color: #333333; }
+        ul li form span.field input {
+          width: 214px;
+          height: 15px;
+          margin: 3px 0 0 0;
+          padding: 10px 10px 11px;
+          background: url("/images/sprites/setup.png") no-repeat 0 -107px;
+          border: none;
+          font: normal 15px Arial;
+          color: #666666;
+          line-height: 15px; }
+        ul li form span.field.last {
+          margin: 0 0 0 10px; }

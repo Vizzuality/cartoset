@@ -85,7 +85,7 @@ body > div#main_content{
     span.title{
       font-size: 25px;
       padding: 23px 30px;
-      @include inline-block;
+      float:left;
     }
 
     //Buttons for the footer of each box
@@ -234,11 +234,47 @@ body > div#main_content div.content_box {
       margin: 0;
     }
   }
+  
+  a.radiobutton {
+    display:inline-block;
+    width: auto!important;
+    padding:0 0 0 16px;
+    margin:2px 0 0 0;
+    font: normal 15px Arial;
+    color: #333333;
+    text-transform: capitalize;
+    text-decoration:none;
+    @include sprite(-410px,-12px);
+    
+    &:hover {
+      @include sprite(-410px,4px);
+    }
+    
+    &.selected {
+      @include sprite(-410px,4px);
+    }
+    
+    &.selected:hover {
+      cursor:default;
+    }
+  }
+
+  /* Spin buttons in input type number */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+      /*display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+  
+  input.hidden {
+    display:none;
+  }
 
   div.date{
     height: 28px;
-    padding: 20px;
     width: 271px;
+    padding: 20px;
     display: none;
 
     &.show{
@@ -247,10 +283,9 @@ body > div#main_content div.content_box {
 
     &.active{
       @include sprite(-2px, -144px);
-      margin-bottom: 25px;
-      margin-left: 1px;
-      margin-top: -4px;
+      margin: -4px 0 25px 1px;
     }
+
   }
 
   ul {
@@ -317,6 +352,53 @@ body > div#main_content div.content_box {
         font-size: 15px;
       }
     }
+  }
+  
+  
+  /* file input */
+
+  span.file_content {
+    display:block;
+    width:540px;
+    height:25px;
+    margin:20px 0 0 0;
+    padding:13px;
+    @include sprite(0, bottom);
+  }
+
+  .pf_wrap_class {
+    height: 1%;
+    overflow: hidden;
+  }
+
+  .pf_ph_cont {
+    width: 34em;
+    float: left;
+    overflow: hidden;
+  }
+
+  .pf_ph_cont strong {
+    float: left;
+    font-size: x-small;
+    padding: 0 0 0 0;
+    width: 72px;
+    height: 26px;
+    @include sprite(-35px, 0);
+  }
+
+  .pf_ph_cont strong span {
+    display: none;
+  }
+
+  .pf_ph {
+    float: left;
+    font: normal 15px Arial;
+    padding: 0.3em 0.5em 0.5em 0.8em;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 15.5em;
+    color:#999999;
+    font-style:italic;
   }
 
 }

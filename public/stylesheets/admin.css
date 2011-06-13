@@ -73,11 +73,7 @@ body > div#main_content {
     body > div#main_content div.table span.title {
       font-size: 25px;
       padding: 23px 30px;
-      display: -moz-inline-stack;
-      display: inline-block;
-      vertical-align: top;
-      zoom: 1;
-      *display: inline; }
+      float: left; }
     body > div#main_content div.table .main_action, body > div#main_content div.table .alternate_action, body > div#main_content div.table .pagination {
       display: -moz-inline-stack;
       display: inline-block;
@@ -185,7 +181,9 @@ body > div#main_content div.content_box {
   font-size: 15px;
   -moz-box-shadow: 0px 3px 3px #407292;
   -webkit-box-shadow: 0px 3px 3px #407292;
-  box-shadow: 0px 3px 3px #407292; }
+  box-shadow: 0px 3px 3px #407292;
+  /* Spin buttons in input type number */
+  /* file input */ }
   body > div#main_content div.content_box h1 {
     font-family: "MuseoSans500","Arial";
     font-size: 27px;
@@ -225,18 +223,40 @@ body > div#main_content div.content_box {
     body > div#main_content div.content_box input.date.active {
       background: transparent url("/images/sprites/admin.png") no-repeat scroll -132px -110px;
       margin: 0; }
+  body > div#main_content div.content_box a.radiobutton {
+    display: inline-block;
+    width: auto !important;
+    padding: 0 0 0 16px;
+    margin: 2px 0 0 0;
+    font: normal 15px Arial;
+    color: #333333;
+    text-transform: capitalize;
+    text-decoration: none;
+    background: transparent url("/images/sprites/admin.png") no-repeat scroll -410px -12px; }
+    body > div#main_content div.content_box a.radiobutton:hover {
+      background: transparent url("/images/sprites/admin.png") no-repeat scroll -410px 4px; }
+    body > div#main_content div.content_box a.radiobutton.selected {
+      background: transparent url("/images/sprites/admin.png") no-repeat scroll -410px 4px; }
+    body > div#main_content div.content_box a.radiobutton.selected:hover {
+      cursor: default; }
+  body > div#main_content div.content_box input::-webkit-outer-spin-button,
+  body > div#main_content div.content_box input::-webkit-inner-spin-button {
+    /*display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */ }
+  body > div#main_content div.content_box input.hidden {
+    display: none; }
   body > div#main_content div.content_box div.date {
     height: 28px;
-    padding: 20px;
     width: 271px;
+    padding: 20px;
     display: none; }
     body > div#main_content div.content_box div.date.show {
       display: block; }
     body > div#main_content div.content_box div.date.active {
       background: transparent url("/images/sprites/admin.png") no-repeat scroll -2px -144px;
-      margin-bottom: 25px;
-      margin-left: 1px;
-      margin-top: -4px; }
+      margin: -4px 0 25px 1px; }
   body > div#main_content div.content_box ul {
     list-style-type: none; }
     body > div#main_content div.content_box ul li {
@@ -286,6 +306,38 @@ body > div#main_content div.content_box {
         margin: 0 0 10px 0; }
       body > div#main_content div.content_box div.side_bar div.delete a {
         font-size: 15px; }
+  body > div#main_content div.content_box span.file_content {
+    display: block;
+    width: 540px;
+    height: 25px;
+    margin: 20px 0 0 0;
+    padding: 13px;
+    background: transparent url("/images/sprites/admin.png") no-repeat scroll 0 bottom; }
+  body > div#main_content div.content_box .pf_wrap_class {
+    height: 1%;
+    overflow: hidden; }
+  body > div#main_content div.content_box .pf_ph_cont {
+    width: 34em;
+    float: left;
+    overflow: hidden; }
+  body > div#main_content div.content_box .pf_ph_cont strong {
+    float: left;
+    font-size: x-small;
+    padding: 0 0 0 0;
+    width: 72px;
+    height: 26px;
+    background: transparent url("/images/sprites/admin.png") no-repeat scroll -35px 0; }
+  body > div#main_content div.content_box .pf_ph_cont strong span {
+    display: none; }
+  body > div#main_content div.content_box .pf_ph {
+    float: left;
+    font: normal 15px Arial;
+    padding: 0.3em 0.5em 0.5em 0.8em;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 15.5em;
+    color: #999999;
+    font-style: italic; }
 
 body > footer {
   bottom: -26px;

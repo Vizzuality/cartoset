@@ -144,7 +144,8 @@ div#pages_list div.pages_list_container {
   border-bottom: 1px solid #c2ccd2; }
   div#pages_list div.pages_list_container ul {
     padding: 30px 0;
-    list-style-type: none; }
+    list-style-type: none;
+    display: inline-block; }
     div#pages_list div.pages_list_container ul li {
       float: left;
       margin-left: 30px;

@@ -1,5 +1,5 @@
 <% content_for :javascripts do %>
-<%= javascript_include_tag 'jquery.1.5.1.js', 'admin/features/new.js' %>
+<%= javascript_include_tag 'jquery.1.5.1.js', 'prettyfile.js', 'admin/features/new.js' %>
 <% end %>
 
 <% content_for :stylesheets do %>
@@ -13,6 +13,10 @@
     <%= label_tag column[:name], column[:name], :class => 'field_label' %>
     <%= build_field_for_column(column) %>
   <% end %>
+  
+  <span class="file_content">
+    <%= file_field :post, :attached, :accept => 'text/html', :id=>"file_input" %>
+  </span>
 
   <%= link_to 'Save changes', admin_dashboard_index_path, :class => 'main_action' %>
 
