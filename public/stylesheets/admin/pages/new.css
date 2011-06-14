@@ -1,7 +1,55 @@
-label strong {
-  color: red;
-  font: bold 14px Georgia;
-  color: #FF3366; }
+label {
+  margin: 0 !important;
+  padding: 0 0 7px !important; }
+  label strong {
+    color: red;
+    font: bold 14px Georgia;
+    color: #FF3366; }
+
+span.submit {
+  display: inline-block;
+  width: 500px;
+  height: auto;
+  padding: 0;
+  margin: 20px 0 0 0; }
+  span.submit a {
+    margin: 0 !important; }
+  span.submit a.main_action {
+    display: inline-block; }
+  span.submit a.checkbox {
+    display: inline-block;
+    margin: 0 0 0 20px !important;
+    padding: 0 0 0 15px;
+    background: url("/images/sprites/htmlArea.png") no-repeat -210px 0px;
+    text-decoration: none;
+    font: normal 15px Arial;
+    color: #333333; }
+    span.submit a.checkbox:hover {
+      background-position: -210px -17px; }
+    span.submit a.checkbox.checked {
+      background-position: -210px -17px; }
+
+div.bubble {
+  position: absolute;
+  background: blue;
+  width: 233px;
+  padding: 6px 0 0 0;
+  background: url("/images/backgrounds/bubble_top.png") no-repeat -1px 0; }
+  div.bubble div.bottom {
+    background: url("/images/backgrounds/bubble_bottom.png") no-repeat 0 bottom;
+    width: 193px;
+    padding: 10px 21px 16px; }
+  div.bubble p {
+    font: normal 13px Arial;
+    color: #999999; }
+  div.bubble span.arrow {
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    width: 15px;
+    height: 15px;
+    margin: -7px 0 0 0;
+    background: url("/images/sprites/htmlArea.png") no-repeat -192px -16px; }
 
 div.jHtmlArea {
   display: inline-block;
@@ -11,8 +59,9 @@ div.jHtmlArea {
     margin: 0px; }
   div.jHtmlArea .ToolBar {
     float: left;
-    width: 562px !important;
-    height: 43px;
+    width: 552px !important;
+    height: 37px;
+    padding: 3px 10px;
     background: url("/images/sprites/htmlArea.png") no-repeat 0 -500px; }
   div.jHtmlArea .ToolBar ul {
     margin: 1px;
@@ -23,7 +72,7 @@ div.jHtmlArea {
       float: left;
       border: none;
       padding: 1px;
-      margin: 1px; }
+      margin: 7px 2px 0 !important; }
       div.jHtmlArea .ToolBar ul li:hover {
         border: solid 1px #ccc;
         background: #dddddd !important;

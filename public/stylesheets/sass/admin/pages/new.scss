@@ -1,15 +1,80 @@
 
   label {
+    margin:0!important;
+    padding:0 0 7px!important;
+    
     strong {
       color:red;
       font:bold 14px Georgia;
       color:#FF3366;
     }
+
   }
+  
+  span.submit {
+    display:inline-block;
+    width:500px;
+    height:auto;
+    padding:0;
+    margin:20px 0 0 0;
+    
+    a {
+      margin:0!important;
+    } 
+    
+    a.main_action {
+      display:inline-block;
+    }
+
+    a.checkbox {
+      display:inline-block;
+      margin:0 0 0 20px!important;
+      padding:0 0 0 15px;
+      background:url('/images/sprites/htmlArea.png') no-repeat -210px 0px;
+      text-decoration:none;
+      font:normal 15px Arial;
+      color:#333333;
+      
+      &:hover {
+        background-position: -210px -17px;
+      }
+      
+      &.checked {
+        background-position: -210px -17px;
+      }
+    }
+  }
+  
+
+  
   
   div.bubble {
     position:absolute;
-    background:red;
+    background:blue;
+    width:233px;
+    padding:6px 0 0 0;
+    background:url('/images/backgrounds/bubble_top.png') no-repeat -1px 0;
+
+    div.bottom {
+      background:url('/images/backgrounds/bubble_bottom.png') no-repeat 0 bottom;
+      width:193px;
+      padding:10px 21px 16px;
+    }
+    
+    p {
+      font:normal 13px Arial;
+      color:#999999;
+    }
+    
+    span.arrow {
+      position:absolute; 
+      left:-14px;
+      top:50%;
+      width:15px;
+      height:15px;
+      margin:-7px 0 0 0;
+      background:url('/images/sprites/htmlArea.png') no-repeat -192px -16px;
+    }
   }
   
   
@@ -22,9 +87,12 @@
       margin: 0px; }
     .ToolBar {
       float:left;
-      width:562px!important;
-      height:43px;
+      width:552px!important;
+      height:37px;
+      padding:3px 10px;
       background:url('/images/sprites/htmlArea.png') no-repeat 0 -500px;
+      
+      
     }
     .ToolBar ul {
       margin: 1px;
@@ -36,7 +104,7 @@
         float: left;
         border: none;
         padding: 1px;
-        margin: 1px;
+        margin: 7px 2px 0!important;
         &:hover {
           border: solid 1px #ccc;
           background: #dddddd!important;

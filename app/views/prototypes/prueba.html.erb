@@ -4,7 +4,7 @@
   <% end %>
 
   <% content_for :stylesheets do %>
-    <%= stylesheet_link_tag 'admin/pages/new' %>
+    <%= stylesheet_link_tag 'admin/pages/new.css' %>
   <% end %>
 
 
@@ -19,13 +19,14 @@
       <textarea id="txtDefaultHtmlArea"></textarea>
       
       <label class="field_label permalink" for="permalink">permalink</label> 
-      <input class="string" id="name" name="permalink" type="text" value="" /> 
+      <input class="string" id="permalink" name="permalink" type="text" value="Permalink" />
       
-      <a href="/admin/dashboard" class="main_action">Save new page</a> 
-
+      <span class="submit">
+        <a href="/admin/dashboard" class="main_action">Save new page</a> 
+        <a class="checkbox" href="#check">This page is visible</a>
+      </span>
+      
       <div class="side_bar">
-        
-        
         <a href="/admin/dashboard" class="back"><span></span>Back to dashboard</a> 
       </div> 
     </div> 

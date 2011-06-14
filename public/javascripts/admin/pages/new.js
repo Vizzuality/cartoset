@@ -22,9 +22,20 @@
           },500);
         }
     });
+    
+    $('a.checkbox').click(function(ev){
+      ev.stopPropagation();
+      ev.preventDefault();
+      if ($(this).hasClass('checked')) {
+        $(this).removeClass('checked')
+      } else {
+        $(this).addClass('checked')
+      }
+    });
 
+    //Html Area
+    $('.Toolbar').append('<a class="html_editor" href="#HTML">Show HTML</a>');
     $('.Toolbar').removeAttr('style');
-
     $('iframe').removeAttr('style');
     $('iframe').css('width',"548px");
     $('iframe').css('height',"440px");
