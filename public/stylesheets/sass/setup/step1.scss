@@ -1,66 +1,28 @@
-form {
-  position: relative;
-
-  label {
-    position: absolute;
-    left: 0px;
-    color: #999999;
-  }
-
-  label.oauth_key {
-    top: -4px;
-  }
-
-  label.oauth_secret {
-    top: 68px;
-  }
-
-  input#oauth_key, input#oauth_secret {
-    width: 552px;
-    margin: 16px 0 20px 0;
-    font-size: 19px;
-    color: #999999;
-  }
-
-  .main_action {
-    float: right;
-  }
-
-  &:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-  }
-}
-
-
 ul {
   display:inline-block;
   width:100%;
-  
+
   li {
     list-style:none;
-    
+
     div.top {
       display:block;
       width:546px;
       padding:5px 0 0 0;
     }
-    
+
     div.bottom {
       display:block;
       width:546px;
       padding:0 0 5px 0;
     }
-    
+
     div.middle {
       display:inline-block;
       width:522px;
       padding:9px 12px;
     }
-    
+
     a.radiobutton {
       display:inline-block;
       width: auto!important;
@@ -77,13 +39,13 @@ ul {
       }
 
     }
-    
+
     div.options {
       display:none;
     }
-    
+
     &.selected {
-      
+
       div.top {
         background:url('/images/backgrounds/top_blue.png') no-repeat 0 0;
       }
@@ -95,104 +57,83 @@ ul {
       div.middle {
         background:url('/images/backgrounds/mid_blue.png') repeat-y 0 0;
       }
-      
+
       div.options {
         display:inline-block;
         vertical-align:top;
         background:none;
-        
+
         &.bottom {
           padding-bottom:10px;
         }
-        
-        &.right {
-          float:right;
-        }
       }
-      
+
       a.radiobutton {
         background:url('/images/sprites/setup.png') no-repeat -550px -102px;
       }
-      
+
       a.radiobutton:hover {
         cursor:default;
       }
     }
-    
-    
-    
-    a.submit {
-      float:right;
-      width:auto;
-      vertical-align:top;
-      height:43px;
-      margin:0;
-      padding:0 0 0 5px;
-      background:url('/images/sprites/setup.png') no-repeat -559px -54px;
-      text-decoration:none;  
-        
-        span {
-          float:right;
-          height:19px;
-          width:auto;
-          padding:12px 20px 12px 15px;
-          background:url('/images/sprites/setup.png') no-repeat right -148px;
-          font:normal 19px "Museo Sans";
-          color:white;
-          line-height:19px;
-          text-shadow: 0 1px #698C24;
-        }
-        
-        &:hover {
-          background-position:-559px -236px;
-        }
-        
-        &:hover span {
-          background-position:right -191px;
-        }
-        
-        &.form {
-          margin:0 46px 0 0;
-        }
-    }
-    
-    
+
     form {
       display:inline-block;
       width:482px;
       margin:0 0 0 20px;
-      
-      span.field {
+
+      .field {
         display:inline-block;
         width:234px;
         margin:15px 0 0 0;
-        
+
         label {
           position:relative;
+          display: block;
           width:234px;
           font:normal 12px "Museo Sans";
           color:#333333;
+          text-transform: uppercase;
         }
-        
+
         input {
           width:214px;
           height:15px;
           margin:3px 0 0 0;
           padding:10px 10px 11px;
-          background:url('/images/sprites/setup.png') no-repeat 0 -107px;
-          border:none;
           font:normal 15px Arial;
           color:#666666;
           line-height:15px;
         }
-        
+
         &.last {
           margin:0 0 0 10px;
+        }
+
+        &.database{
+          width: 100%;
+        }
+
+        &.cartodb{
+          width: 100%;
+
+          input{
+            width: 461px;
+          }
+        }
+      }
+
+      .submit {
+        width: 100%;
+        text-align: right;
+
+        input{
+          margin: 20px 0 0;
         }
       }
     }
 
-    
+
   }
-  
+
 }

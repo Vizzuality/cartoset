@@ -45,7 +45,13 @@ en:
       continue: 'To continue, introduce your OAUTH key and secrets from your account in CartoDB:'
       oauth_key: 'Oauth key'
       oauth_secret: 'Oauth secret'
-      next_step: 'Connect'
+      connect_with_cartodb: 'Connect with CartoDB'
+      hostname: 'Hostname'
+      port: 'Port'
+      user: 'User'
+      password: 'Password'
+      database_name: 'Database Name'
+      connect: 'Connect'
     step2:
       title: 'Name your app'
       description: "Don't be afraid. You will be able to change it later."

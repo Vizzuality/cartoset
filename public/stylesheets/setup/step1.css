@@ -1,27 +1,3 @@
-form {
-  position: relative; }
-  form label {
-    position: absolute;
-    left: 0px;
-    color: #999999; }
-  form label.oauth_key {
-    top: -4px; }
-  form label.oauth_secret {
-    top: 68px; }
-  form input#oauth_key, form input#oauth_secret {
-    width: 552px;
-    margin: 16px 0 20px 0;
-    font-size: 19px;
-    color: #999999; }
-  form .main_action {
-    float: right; }
-  form:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-
 ul {
   display: inline-block;
   width: 100%; }
@@ -65,59 +41,43 @@ ul {
       background: none; }
       ul li.selected div.options.bottom {
         padding-bottom: 10px; }
-      ul li.selected div.options.right {
-        float: right; }
     ul li.selected a.radiobutton {
       background: url("/images/sprites/setup.png") no-repeat -550px -102px; }
     ul li.selected a.radiobutton:hover {
       cursor: default; }
-    ul li a.submit {
-      float: right;
-      width: auto;
-      vertical-align: top;
-      height: 43px;
-      margin: 0;
-      padding: 0 0 0 5px;
-      background: url("/images/sprites/setup.png") no-repeat -559px -54px;
-      text-decoration: none; }
-      ul li a.submit span {
-        float: right;
-        height: 19px;
-        width: auto;
-        padding: 12px 20px 12px 15px;
-        background: url("/images/sprites/setup.png") no-repeat right -148px;
-        font: normal 19px "Museo Sans";
-        color: white;
-        line-height: 19px;
-        text-shadow: 0 1px #698C24; }
-      ul li a.submit:hover {
-        background-position: -559px -236px; }
-      ul li a.submit:hover span {
-        background-position: right -191px; }
-      ul li a.submit.form {
-        margin: 0 46px 0 0; }
     ul li form {
       display: inline-block;
       width: 482px;
       margin: 0 0 0 20px; }
-      ul li form span.field {
+      ul li form .field {
         display: inline-block;
         width: 234px;
         margin: 15px 0 0 0; }
-        ul li form span.field label {
+        ul li form .field label {
           position: relative;
+          display: block;
           width: 234px;
           font: normal 12px "Museo Sans";
-          color: #333333; }
-        ul li form span.field input {
+          color: #333333;
+          text-transform: uppercase; }
+        ul li form .field input {
           width: 214px;
           height: 15px;
           margin: 3px 0 0 0;
           padding: 10px 10px 11px;
-          background: url("/images/sprites/setup.png") no-repeat 0 -107px;
-          border: none;
           font: normal 15px Arial;
           color: #666666;
           line-height: 15px; }
-        ul li form span.field.last {
+        ul li form .field.last {
           margin: 0 0 0 10px; }
+        ul li form .field.database {
+          width: 100%; }
+        ul li form .field.cartodb {
+          width: 100%; }
+          ul li form .field.cartodb input {
+            width: 461px; }
+      ul li form .submit {
+        width: 100%;
+        text-align: right; }
+        ul li form .submit input {
+          margin: 20px 0 0; }

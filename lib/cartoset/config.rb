@@ -23,8 +23,18 @@ class Cartoset::Config
     end
 
     def valid?
-      settings.present? && settings['cartodb_oauth_key'].present? && settings['cartodb_oauth_secret'].present? && settings['app_name'].present? && settings['features_table'].present?
+      settings.present? && (cartodb_settings? || local_postgis_settings?) && settings['app_name'].present? && settings['features_table'].present?
     end
+
+    def cartodb_settings?
+      settings['cartodb_oauth_key'].present? && settings['cartodb_oauth_secret'].present?
+    end
+    private :cartodb_settings?
+
+    def local_postgis_settings?
+      settings['host'].present? && settings['port'].present? && settings['user'].present? && settings['password'].present? && settings['database'].present?
+    end
+    private :local_postgis_settings?
 
     def [](key)
       settings[key]
