@@ -25,6 +25,10 @@
             <div class="options right">
               <%= form_tag setup_path(:step_id => 2) do %>
                 <div class="field cartodb">
+                  <%= label_tag 'oauth_host', t('.oauth_host'), :class => 'host' %>
+                  <%= text_field_tag 'oauth_host' %>
+                </div>
+                <div class="field cartodb">
                   <%= label_tag 'oauth_key', t('.oauth_key'), :class => 'oauth_key' %>
                   <%= text_field_tag 'oauth_key' %>
                 </div>

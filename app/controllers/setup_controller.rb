@@ -12,7 +12,8 @@ class SetupController < ApplicationController
     when "1"
       session[:return_to] = setup_path(:step_id => 2)
     when "2"
-      Cartoset::Config.update :cartodb_oauth_key    => params[:oauth_key],
+      Cartoset::Config.update :cartodb_host         => params[:oauth_host],
+                              :cartodb_oauth_key    => params[:oauth_key],
                               :cartodb_oauth_secret => params[:oauth_secret]
 
       Cartoset::Config.setup_cartodb
