@@ -8,13 +8,13 @@
     <% first_row = @rows.shift %>
     <tr>
       <% first_row.values.first(3).each do |cell| %>
-        <td class="first"><%= cell %></td>
+        <td class="first"><%= truncate(cell.to_s, :length => 35) %></td>
       <% end %>
     </tr>
     <% @rows.each do |row| %>
       <tr class="item <%= cycle('odd', 'even') %>">
         <% row.values.first(3).each do |cell| %>
-          <td><%= cell %></td>
+          <td><%= truncate(cell.to_s, :length => 35) %></td>
         <% end %>
       </tr>
     <% end %>
