@@ -2,7 +2,7 @@
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
   <%= javascript_include_tag 'jquery.1.5.1.js', 'utils.js', 'features/index.js' %>
   <script type="text/javascript" charset="utf-8">
-    var features = <%= @features.to_json.html_safe %>;
+    var features = <%= @features_json %>;
   </script>
 <% end %>
 

@@ -15,7 +15,7 @@ $(function(){
 
       marker = new google.maps.Marker({
         position: latlng,
-        title: feature['name']
+        title: feature['title']
       });
 
       marker.setMap(map);
