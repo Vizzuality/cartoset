@@ -27,4 +27,4 @@ Setting up a new Cartoset based project.
 
 7. Go through the setup wizard and when you finish it, you will have your cartoset project configured!
 
-8. Customize your cartoset project, adding some css styles and givint it some love!
+8. Customize your cartoset project, adding some css styles and giving it some love!
