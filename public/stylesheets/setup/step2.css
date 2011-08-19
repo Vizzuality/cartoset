@@ -1,12 +1,13 @@
 form {
   position: relative; }
   form label {
+    display: none;
     position: absolute;
     top: 27px;
     left: 10px;
     font-size: 19px;
     color: #999999; }
-  form input#app_name {
+  form input#settings_app_name {
     width: 552px;
     margin: 20px 0 20px 0;
     font-size: 19px;

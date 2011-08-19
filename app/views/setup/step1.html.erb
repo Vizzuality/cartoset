@@ -3,7 +3,7 @@
 <% end %>
 
 <% content_for :javascripts do %>
-  <%= javascript_include_tag 'jquery.1.5.1.js', 'setup/step1.js' %>
+  <%= javascript_include_tag 'jquery.1.5.1.js', 'spin.js', 'setup/step1.js' %>
 <% end %>
 
 <%= render 'step_indicator', :step => 1 %>
@@ -15,24 +15,22 @@
   <p><%= t('.continue') %></p>
   <br />
 
-  <div class="options right">
-    <%= form_for @settings, :as => :settings, :url => setup_cartodb_path, :html => { :method => :get } do |form| %>
-      <div class="field cartodb">
-        <%= form.label 'cartodb_host', t('.oauth_host'), :class => 'host' %>
-        <%= form.text_field 'cartodb_host' %>
-      </div>
-      <div class="field cartodb">
-        <%= form.label 'cartodb_oauth_key', t('.oauth_key'), :class => 'oauth_key' %>
-        <%= form.text_field 'cartodb_oauth_key' %>
-      </div>
-      <div class="field cartodb">
-        <%= form.label 'cartodb_oauth_secret', t('.oauth_secret'), :class => 'oauth_secret' %>
-        <%= form.text_field 'cartodb_oauth_secret' %>
-      </div>
-      <div class="submit">
-        <%= form.submit t('.connect_with_cartodb'), :class => 'main_action' %>
-      </div>
-    <% end %>
-  </div>
+  <%= form_for @settings, :as => :settings, :url => setup_cartodb_path, :html => { :method => :get } do |form| %>
+    <div class="field">
+      <%= form.label 'cartodb_host', t('.oauth_host'), :class => 'host' %>
+      <%= form.text_field 'cartodb_host' %>
+    </div>
+    <div class="field">
+      <%= form.label 'cartodb_oauth_key', t('.oauth_key'), :class => 'oauth_key' %>
+      <%= form.text_field 'cartodb_oauth_key' %>
+    </div>
+    <div class="field">
+      <%= form.label 'cartodb_oauth_secret', t('.oauth_secret'), :class => 'oauth_secret' %>
+      <%= form.text_field 'cartodb_oauth_secret' %>
+    </div>
+    <div class="submit">
+      <%= form.submit t('.connect_with_cartodb'), :class => 'main_action' %>
+    </div>
+  <% end %>
 
 </div>

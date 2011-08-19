@@ -123,6 +123,14 @@ table.data {
 }
 
 .small_content_box{
+  position: relative;
+
+  #spinner{
+    position: absolute;
+    left: 52px;
+    bottom: 52px;
+  }
+
   #use_this_table{
     float: right;
   }

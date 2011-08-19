@@ -1,6 +1,7 @@
 .jspContainer {
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  padding-bottom: 10px; }
 
 .jspPane {
   position: absolute; }
@@ -18,7 +19,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  margin: 0;
+  margin: 0 10px 10px 10px;
   height: 10px;
   width: 100%;
   background: transparent; }

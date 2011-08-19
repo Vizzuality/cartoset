@@ -125,14 +125,20 @@ table.data {
   overflow: auto;
   overflow-y: hidden; }
 
-.small_content_box #use_this_table {
-  float: right; }
-.small_content_box:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden; }
+.small_content_box {
+  position: relative; }
+  .small_content_box #spinner {
+    position: absolute;
+    left: 52px;
+    bottom: 52px; }
+  .small_content_box #use_this_table {
+    float: right; }
+  .small_content_box:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
 
 /****************************/
 /*    TABLE DATA UPLOAD     */

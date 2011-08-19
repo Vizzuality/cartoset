@@ -4,6 +4,7 @@ form{
   position: relative;
 
   label{
+    display: none;
     position: absolute;
     top: 27px;
     left: 10px;
@@ -11,7 +12,7 @@ form{
     color: #999999;
   }
 
-  input#app_name {
+  input#settings_app_name {
     width: 552px;
     margin: 20px 0 20px 0;
     font-size: 19px;

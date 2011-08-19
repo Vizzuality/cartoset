@@ -15,6 +15,6 @@
 
 <ul>
   <% @features.each do |feature| %>
-    <li><%= link_to feature.name, feature_path(feature.cartodb_id) %></li>
+    <li><%= link_to feature.title, feature_path(feature.cartodb_id) %></li>
   <% end %>
 </ul>

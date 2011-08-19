@@ -1,5 +1,5 @@
 <% content_for :javascripts do %>
-<%= javascript_include_tag 'jquery.1.5.1.js', 'fileuploader.js', 'jquery.jscrollpane.min.js', 'jquery.mousewheel.js', 'setup/step3.js' %>
+<%= javascript_include_tag 'jquery.1.5.1.js', 'fileuploader.js', 'spin.js', 'jquery.jscrollpane.min.js', 'jquery.mousewheel.js', 'setup/step3.js' %>
 <% end %>
 
 <% content_for :stylesheets do %>
@@ -37,7 +37,7 @@
       <span class="select_file message">Select a data file (CSV,XLS) from your computer</span>
       <span class="processing message">Processing your file...</span>
     </div>
-
+    <div id="spinner"></div>
     <%= submit_tag t('.use_this_table'), :id => 'use_this_table', :class => 'main_action right', :disabled => true %>
   </div>
 <% end %>
