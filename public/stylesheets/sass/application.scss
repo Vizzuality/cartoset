@@ -6,9 +6,14 @@ body{
   margin: 20px 0;
 }
 
+body > div.header,
 body > div#main_content{
   width: $app_width;
   margin: 0 auto;
+}
+
+body > div.header{
+  text-align: right;
 }
 
 h1{

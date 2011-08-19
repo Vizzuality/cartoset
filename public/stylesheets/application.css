@@ -3,9 +3,13 @@ body {
   font-size: 16px;
   margin: 20px 0; }
 
+body > div.header,
 body > div#main_content {
   width: 960px;
   margin: 0 auto; }
+
+body > div.header {
+  text-align: right; }
 
 h1 {
   font-size: 4em; }
