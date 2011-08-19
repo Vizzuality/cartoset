@@ -41,37 +41,23 @@
 </div>
 
 <div id="pages_list" class="table">
-  <span class="title">Your pages</span>
+  <div class="title"><%= t('.your_pages') %></div>
   <div class="pages_list_container">
     <ul>
+      <% @pages.each do |page| %>
       <li>
         <div>
-          <p>About your catoset</p>
-          <p class="link"><a href="#">edit this page</a></p>
+          <p><%= page['title'] %></p>
+          <p class="link">
+            <%= link_to t('.edit_this_page'), edit_admin_page_path(page['id'].to_i) %>
+          </p>
         </div>
       </li>
-      <li>
-        <div>
-          <p>About your catoset</p>
-          <p class="link"><a href="#">edit this page</a></p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <p>About your catoset</p>
-          <p class="link"><a href="#">edit this page</a></p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <p>About your catoset</p>
-          <p class="link"><a href="#">edit this page</a></p>
-        </div>
-      </li>
+      <% end %>
     </ul>
   </div>
   <div class="pages_footer">
-    <a href="#" class="main_action">Create new page</a>
+    <%= link_to t('.create_new_page'), new_admin_page_path, :class => 'main_action' %>
   </div>
 </div>
 

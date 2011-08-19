@@ -70,7 +70,7 @@ body > div#main_content {
     border-radius: 3px;
     background-color: #ecf2f6;
     font-size: 15px; }
-    body > div#main_content div.table span.title {
+    body > div#main_content div.table .title {
       font-size: 25px;
       padding: 23px 30px;
       float: left; }

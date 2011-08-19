@@ -11,8 +11,11 @@ class Cartoset::Config
   class << self
 
     def update(values)
+      return if values.nil?
+
       values.each do |key, value|
-        settings[key.to_s] = value
+        value = value.add_https_if_required! if key.to_sym == :cartodb_host
+        @@settings[key.to_s] = value
       end
       consolidate_settings
     end
@@ -36,6 +39,17 @@ class Cartoset::Config
     end
     private :local_postgis_settings?
 
+    def set_cartodb_access_token(request)
+      return if settings['cartodb_oauth_access_token'].present? && settings['cartodb_oauth_access_token_secret'].present?
+
+      credentials = request.env['omniauth.auth']['credentials']
+
+      update :cartodb_oauth_access_token => credentials['token'],
+             :cartodb_oauth_access_token_secret => credentials['secret']
+
+      setup_cartodb
+    end
+
     def [](key)
       settings[key]
     end
@@ -52,9 +66,11 @@ class Cartoset::Config
       if settings['cartodb_oauth_key'].present? && settings['cartodb_oauth_secret'].present?
 
         cartodb_settings = {
-          'host'         => settings['cartodb_host'] || CARTODB_DEFAULT_HOST,
-          'oauth_key'    => settings['cartodb_oauth_key'],
-          'oauth_secret' => settings['cartodb_oauth_secret']
+          'host'                      => settings['cartodb_host'] || CARTODB_DEFAULT_HOST,
+          'oauth_key'                 => settings['cartodb_oauth_key'],
+          'oauth_secret'              => settings['cartodb_oauth_secret'],
+          'oauth_access_token'        => settings['cartodb_oauth_access_token'],
+          'oauth_access_token_secret' => settings['cartodb_oauth_access_token_secret']
         }
 
         CartoDB::Init.start Cartoset::Application, cartodb_settings
@@ -74,7 +90,6 @@ class Cartoset::Config
         {}
       end
     end
-    private :settings
 
     def consolidate_settings
       File.open(path, "w") do |f|

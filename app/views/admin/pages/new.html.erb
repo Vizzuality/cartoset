@@ -1,0 +1,15 @@
+
+  <% content_for :stylesheets do %>
+    <%= stylesheet_link_tag 'admin/pages/new.css' %>
+  <% end %>
+
+
+  <div id="main_content">
+    <div class="content_box table">
+      <h1><%= t('.title') %></h1>
+      <%= render 'form', :action => :create, :url => admin_pages_path, :method => :post %>
+      <div class="side_bar">
+        <a href="/admin/dashboard" class="back"><span></span><%= t('.back') %></a>
+      </div>
+    </div>
+  </div>

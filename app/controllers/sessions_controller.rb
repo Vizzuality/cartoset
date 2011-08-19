@@ -9,10 +9,9 @@ class SessionsController < ApplicationController
   end
 
   def create
+    Cartoset::Config.set_cartodb_access_token request
     env['warden'].authenticate(:cartodb_oauth)
-    redirect_to session[:return_to]
-  rescue ActionController::ActionControllerError
-    redirect_to features_path
+    redirect_back_or_default root_path
   end
 
   def destroy

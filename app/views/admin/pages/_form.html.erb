@@ -1,0 +1,28 @@
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    var texts = <%= t('.help').to_json.html_safe %>;
+  </script>
+  <%= javascript_include_tag 'jquery.1.5.1.js', 'jHtmlArea-0.7.0.min.js', 'admin/pages/new.js' %>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'admin/pages/form.css' %>
+<% end %>
+
+<%= form_for @page, :as => :page, :url => url, :html => { :method => method } do |form| %>
+  <%= form.hidden_field :id %>
+  <%= form.label :title, raw(t('.title') + content_tag(:strong, '*')), :class => :field_label %>
+  <%= form.text_field :title, :class => :string %>
+
+  <%= form.label :body, raw(t('.body') + content_tag(:strong, '*')), :class => :field_label %>
+  <%= form.text_area :body, :class => :string %>
+
+  <%= form.label :permalink, raw(t('.permalink') + content_tag(:strong, '*')), :class => 'field_label permalink' %>
+  <%= form.text_field :permalink, :class => :string %>
+
+  <span class="submit">
+    <%= form.submit t(".#{action}.save"), :class => 'main_action' %>
+    <%= form.check_box :visible, :class => :checkbox %>
+    <%= form.label :visible, t('.visible'), :class => 'field_label visible' %>
+  </span>
+<% end %>

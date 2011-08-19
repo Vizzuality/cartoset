@@ -15,72 +15,24 @@
   <p><%= t('.continue') %></p>
   <br />
 
-
-  <ul>
-    <li class="selected">
-      <div class="top">
-        <div class="bottom">
-          <div class="middle">
-            <a class="radiobutton" href="#">Use CartoDB</a>
-            <div class="options right">
-              <%= form_tag setup_path(:step_id => 2) do %>
-                <div class="field cartodb">
-                  <%= label_tag 'oauth_host', t('.oauth_host'), :class => 'host' %>
-                  <%= text_field_tag 'oauth_host' %>
-                </div>
-                <div class="field cartodb">
-                  <%= label_tag 'oauth_key', t('.oauth_key'), :class => 'oauth_key' %>
-                  <%= text_field_tag 'oauth_key' %>
-                </div>
-                <div class="field cartodb">
-                  <%= label_tag 'oauth_secret', t('.oauth_secret'), :class => 'oauth_secret' %>
-                  <%= text_field_tag 'oauth_secret' %>
-                </div>
-                <div class="submit">
-                  <%= submit_tag t('.connect_with_cartodb'), :class => 'main_action' %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
+  <div class="options right">
+    <%= form_for @settings, :as => :settings, :url => setup_cartodb_path, :html => { :method => :get } do |form| %>
+      <div class="field cartodb">
+        <%= form.label 'cartodb_host', t('.oauth_host'), :class => 'host' %>
+        <%= form.text_field 'cartodb_host' %>
       </div>
-    </li>
-    <li>
-      <div class="top">
-        <div class="bottom">
-          <div class="middle">
-            <a class="radiobutton" href="#">Use your own database</a>
-            <div class="options bottom">
-              <%= form_tag setup_path(:step_id => 2) do %>
-                <div class="field">
-                  <%= label_tag 'hostname', t('.hostname'), :class => 'hostname' %>
-                  <%= text_field_tag 'hostname' %>
-                </div>
-                <div class="field last">
-                  <%= label_tag 'port', t('.port'), :class => 'port' %>
-                  <%= text_field_tag 'port' %>
-                </div>
-                <div class="field">
-                  <%= label_tag 'user', t('.user'), :class => 'user' %>
-                  <%= text_field_tag 'user' %>
-                </div>
-                <div class="field last">
-                  <%= label_tag 'password', t('.password'), :class => 'password' %>
-                  <%= text_field_tag 'password' %>
-                </div>
-                <div class="field database">
-                  <%= label_tag 'database_name', t('.database_name'), :class => 'database_name' %>
-                  <%= text_field_tag 'database_name' %>
-                </div>
-                <div class="submit">
-                  <%= submit_tag t('.connect'), :class => 'main_action' %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
+      <div class="field cartodb">
+        <%= form.label 'cartodb_oauth_key', t('.oauth_key'), :class => 'oauth_key' %>
+        <%= form.text_field 'cartodb_oauth_key' %>
       </div>
-    </li>
-  </ul>
+      <div class="field cartodb">
+        <%= form.label 'cartodb_oauth_secret', t('.oauth_secret'), :class => 'oauth_secret' %>
+        <%= form.text_field 'cartodb_oauth_secret' %>
+      </div>
+      <div class="submit">
+        <%= form.submit t('.connect_with_cartodb'), :class => 'main_action' %>
+      </div>
+    <% end %>
+  </div>
 
 </div>

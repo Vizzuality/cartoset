@@ -11,15 +11,16 @@ Cartoset::Application.routes.draw do
   match '/admin' => 'admin/dashboard#index', :as => :admin
 
   match '/setup(/steps/:step_id)'    => 'setup#step', :as => :setup
+  match '/setup/cartodb' => 'setup#cartodb', :as => :setup_cartodb
   match '/setup/features_table_data' => 'setup#features_table_data'
   match '/setup/create_features_table' => 'setup#create_features_table', :as => :create_table
 
-  match "/auth/cartodb", :as => :authorize
+  match "/auth/cartodb", :as => :cartodb_authorize
   match "/auth/:provider/callback" => "sessions#create"
 
   get '/login' => 'sessions#create', :as => :login
   get '/logout' => 'sessions#destroy', :as => :logout
-  
+
   match ':controller(/:action(/:id))'
 
   resources :features

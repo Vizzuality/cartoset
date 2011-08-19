@@ -138,6 +138,8 @@ div#features_list {
       div#features_list #search #scroll_right span {
         background: transparent url("/images/sprites/admin.png") no-repeat scroll -22px 0; }
 
+div#pages_list .title {
+  width: 100%; }
 div#pages_list div.pages_list_container {
   background-color: #FFFFFF;
   border-top: 1px solid #c2ccd2;

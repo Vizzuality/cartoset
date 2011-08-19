@@ -5,77 +5,103 @@ en:
   admin:
     shared:
       header:
-        features: 'Features'
-        pages: 'Pages'
-        settings: 'Settings'
-        close_session: 'Close session'
+        features: Features
+        pages: Pages
+        settings: Settings
+        close_session: Close session
     dashboard:
       index:
-        your_features: 'Your features'
-        search: 'Search!'
-        search_label: 'Search by any field'
-        scroll_left: 'Scroll left'
-        scroll_right: 'Scroll right'
-        create_feature: 'Create new feature'
-        edit_in_cartodb: 'or edit them in CartoDB'
+        your_features: Your features
+        search: Search!
+        search_label: Search by any field
+        scroll_left: Scroll left
+        scroll_right: Scroll right
+        create_feature: Create new feature
+        edit_in_cartodb: or edit them in CartoDB
+        your_pages: Your pages
+        edit_this_page: Edit this page
+        create_new_page: Create new page
+    pages:
+      form:
+        title: Title
+        body: Body
+        permalink: Permalink
+        visible: This page is visible
+        help:
+          page_title: 'This value will be used as the title of the page, in the browser window.'
+          page_body: 'This is the main content of the page. You can use the visual editor or switch to the HTML editor.'
+          page_permalink: 'The permalink value will be used to construct the URL of the page.'
+        create:
+          save: Save new page
+        update:
+          save: Update page
+      new:
+        title: New page
+        new_page: New page
+        permalink: permalink
+        back: Back to dashboard
+      edit:
+        title: Edit page
+        back: Back to dashboard
+
   home:
     index:
-      welcome: 'Welcome to CartoSet!'
+      welcome: Welcome to CartoSet!
       disclaimer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
       features_list: 'You can see a list of %{features_link}'
-      features_link: 'features'
+      features_link: features
   features:
     index:
-      title: 'Features list'
+      title: Features list
   setup:
     help:
       problems: 'If you get stuck or have any problem, %{contact_us}'
-      contact_us: 'contact us'
+      contact_us: contact us
     step_indicator:
-      step_1: 'Your CartoDB'
-      step_2: 'Your CartoSet'
-      step_3: 'Your Data'
+      step_1: Your CartoDB
+      step_2: Your CartoSet
+      step_3: Your Data
     step0:
-      congrats: 'Congratulations!'
+      congrats: Congratulations!
       success: "CartosSet has been succesfully installed. It's time to adapt it to your needs."
-      start: 'Start configuration'
+      start: Start configuration
     step1:
-      title: 'Connect your app with CartoDB'
+      title: Connect your app with CartoDB
       description: 'CartoSet stores its data in CartoDB, a powerful cloud-based database for geolocated data.'
       continue: 'To continue, introduce your OAUTH key and secrets from your account in CartoDB:'
-      oauth_host: 'CartoDB Host'
-      oauth_key: 'Oauth key'
-      oauth_secret: 'Oauth secret'
-      connect_with_cartodb: 'Connect with CartoDB'
-      hostname: 'Hostname'
-      port: 'Port'
-      user: 'User'
-      password: 'Password'
-      database_name: 'Database Name'
-      connect: 'Connect'
+      oauth_host: CartoDB Host
+      oauth_key: Oauth key
+      oauth_secret: Oauth secret
+      connect_with_cartodb: Connect with CartoDB
+      hostname: Hostname
+      port: Port
+      user: User
+      password: Password
+      database_name: Database Name
+      connect: Connect
     step2:
-      title: 'Name your app'
+      title: Name your app
       description: "Don't be afraid. You will be able to change it later."
-      next_step: 'Save and continue'
+      next_step: Save and continue
       app_name: "'Pandas in the world', 'Elvis sightings'..."
     step3:
-      title: 'Import your data'
+      title: Import your data
       description: "Select which CartoDB table you want to use for this CartoSet. If you don't have tables created you will be able to create a new one."
       or: 'or %{link}'
-      create_a_new_one: 'create a new one'
-      use_this_table: 'Use this table'
+      create_a_new_one: create a new one
+      use_this_table: Use this table
     step4:
-      title: 'Done!'
-      description: 'It looks like you have your CartoSet running in your server. Now...'
+      title: Done!
+      description: It looks like you have your CartoSet running in your server. Now...
       manage_data:
-        title: 'Manage your data'
+        title: Manage your data
         description: 'Change and clean your data, geolocalize your features...'
-        link: 'CartoDB table'
+        link: CartoDB table
       manage_site:
-        title: 'Manage your site'
+        title: Manage your site
         description: 'Add images and videos, create additional pages...'
-        link: 'CartoSet backoffice'
+        link: CartoSet backoffice
       public_site:
-        title: 'Go to your site'
-        description: 'Check how your users will see your site...'
-        link: 'Public site'
+        title: Go to your site
+        description: Check how your users will see your site...
+        link: Public site

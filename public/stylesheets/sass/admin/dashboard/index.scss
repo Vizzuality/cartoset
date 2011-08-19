@@ -161,6 +161,10 @@ div#features_list{
 
 div#pages_list{
 
+  .title{
+    width: 100%
+  }
+
   div.pages_list_container{
     background-color: #FFFFFF;
     border-top: 1px solid $table_header_border_top;
@@ -170,7 +174,7 @@ div#pages_list{
       padding: 30px 0;
       list-style-type: none;
       display:inline-block;
-      
+
       li{
         float: left;
         margin-left: 30px;

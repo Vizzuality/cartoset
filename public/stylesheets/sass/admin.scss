@@ -82,7 +82,7 @@ body > div#main_content{
 
     font-size: 15px;
 
-    span.title{
+    .title{
       font-size: 25px;
       padding: 23px 30px;
       float:left;
@@ -234,7 +234,7 @@ body > div#main_content div.content_box {
       margin: 0;
     }
   }
-  
+
   a.radiobutton {
     display:inline-block;
     width: auto!important;
@@ -245,15 +245,15 @@ body > div#main_content div.content_box {
     text-transform: capitalize;
     text-decoration:none;
     @include sprite(-410px,-12px);
-    
+
     &:hover {
       @include sprite(-410px,4px);
     }
-    
+
     &.selected {
       @include sprite(-410px,4px);
     }
-    
+
     &.selected:hover {
       cursor:default;
     }
@@ -266,7 +266,7 @@ body > div#main_content div.content_box {
       -webkit-appearance: none;
       margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
   }
-  
+
   input.hidden {
     display:none;
   }
@@ -353,8 +353,8 @@ body > div#main_content div.content_box {
       }
     }
   }
-  
-  
+
+
   /* file input */
 
   span.file_content {

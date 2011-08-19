@@ -1,0 +1,9 @@
+<div id="main_content">
+  <div class="content_box table">
+    <h1><%= t('.title') %></h1>
+    <%= render 'form', :action => :update, :url => admin_page_path(@page.id.to_i), :method => :put %>
+    <div class="side_bar">
+      <a href="/admin/dashboard" class="back"><span></span><%= t('.back') %></a>
+    </div>
+  </div>
+</div>

@@ -11,14 +11,11 @@ class SetupController < ApplicationController
 
     case step_id
     when "1"
+      @settings = OpenStruct.new Cartoset::Config.settings
     when "2"
-      Cartoset::Config.update :cartodb_host         => params[:oauth_host],
-                              :cartodb_oauth_key    => params[:oauth_key],
-                              :cartodb_oauth_secret => params[:oauth_secret]
-
-      Cartoset::Config.setup_cartodb
+      @settings = OpenStruct.new Cartoset::Config.settings
     when "3"
-      Cartoset::Config.update :app_name => params[:app_name]
+      Cartoset::Config.update params[:settings]
 
       result = CartoDB::Connection.tables || []
       @tables = result.tables
@@ -28,6 +25,16 @@ class SetupController < ApplicationController
     end
 
     render "step#{step_id}"
+  end
+
+  def cartodb
+      Cartoset::Config.update params[:settings]
+
+      Cartoset::Config.setup_cartodb
+
+      session[:return_to] = setup_path(:step_id => 2)
+
+      redirect_to cartodb_authorize_path and return
   end
 
   def features_table_data

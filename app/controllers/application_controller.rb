@@ -21,4 +21,25 @@ class ApplicationController < ActionController::Base
     Rails.env.development? || Rails.env.test?
   end
   private :environment_valid?
+
+  def redirect_back_or_default(*default)
+    if session[:return_to].nil?
+      redirect_to default
+    else
+      redirect_to session[:return_to]
+      session[:return_to] = nil
+    end
+  end
+  private :redirect_back_or_default
+
+  def redirect_back_or_render_action(action)
+    if session[:return_to].nil?
+      render action
+    else
+      redirect_to session[:return_to]
+      session[:return_to] = nil
+    end
+  end
+  private :redirect_back_or_render_action
+
 end
