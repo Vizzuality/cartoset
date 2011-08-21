@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def show_setup_wizard_if_uninstalled
-    redirect_to setup_path unless application_installed? && environment_valid?
+    redirect_to setup_path unless application_installed? && environment_not_valid?
   end
   private :show_setup_wizard_if_uninstalled
 
@@ -17,10 +17,10 @@ class ApplicationController < ActionController::Base
   end
   private :application_installed?
 
-  def environment_valid?
-    Rails.env.development? || Rails.env.test?
+  def environment_not_valid?
+    Rails.env.staging? || Rails.env.production?
   end
-  private :environment_valid?
+  private :environment_not_valid?
 
   def redirect_back_or_default(default)
     if session[:return_to].nil?

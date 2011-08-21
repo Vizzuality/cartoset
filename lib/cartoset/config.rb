@@ -30,7 +30,7 @@ class Cartoset::Config
     end
 
     def cartodb_settings?
-      settings['cartodb_oauth_key'].present? && settings['cartodb_oauth_secret'].present?
+      settings['cartodb_oauth_key'].present? && settings['cartodb_oauth_secret'].present? && settings['cartodb_oauth_access_token'].present? && settings['cartodb_oauth_access_token_secret'].present?
     end
     private :cartodb_settings?
 
