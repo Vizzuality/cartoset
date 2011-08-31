@@ -2,7 +2,7 @@
   <script type="text/javascript" charset="utf-8">
     var texts = <%= t('.help').to_json.html_safe %>;
   </script>
-  <%= javascript_include_tag 'jquery.1.5.1.js', 'jHtmlArea-0.7.0.min.js', 'admin/pages/new.js' %>
+  <%= javascript_include_tag 'jquery.min.js', 'jHtmlArea-0.7.0.min.js', 'admin/pages/new.js' %>
 <% end %>
 
 <% content_for :stylesheets do %>

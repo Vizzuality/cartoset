@@ -1,6 +1,6 @@
-  
+
   <% content_for :javascripts do %>
-    <%= javascript_include_tag 'jquery.1.5.1.js', 'jHtmlArea-0.7.0.min.js', 'admin/pages/new.js' %>
+    <%= javascript_include_tag 'jquery.min.js', 'jHtmlArea-0.7.0.min.js', 'admin/pages/new.js' %>
   <% end %>
 
   <% content_for :stylesheets do %>
@@ -8,26 +8,26 @@
   <% end %>
 
 
-  <div id="main_content"> 
-    <div class="content_box table"> 
-      <h1>New Page</h1> 
+  <div id="main_content">
+    <div class="content_box table">
+      <h1>New Page</h1>
 
-      <label class="field_label" for="title">title<strong>*</strong></label> 
-      <input class="string" id="name" name="title" type="text" value="About Methane Gas Hydrates" /> 
- 
+      <label class="field_label" for="title">title<strong>*</strong></label>
+      <input class="string" id="name" name="title" type="text" value="About Methane Gas Hydrates" />
+
       <label class="field_label" for="body">body<strong>*</strong></label>
       <textarea id="txtDefaultHtmlArea"></textarea>
-      
-      <label class="field_label permalink" for="permalink">permalink</label> 
+
+      <label class="field_label permalink" for="permalink">permalink</label>
       <input class="string" id="permalink" name="permalink" type="text" value="Permalink" />
-      
+
       <span class="submit">
-        <a href="/admin/dashboard" class="main_action">Save new page</a> 
+        <a href="/admin/dashboard" class="main_action">Save new page</a>
         <a class="checkbox" href="#check">This page is visible</a>
       </span>
-      
+
       <div class="side_bar">
-        <a href="/admin/dashboard" class="back"><span></span>Back to pages</a> 
-      </div> 
-    </div> 
+        <a href="/admin/dashboard" class="back"><span></span>Back to pages</a>
+      </div>
+    </div>
   </div>

@@ -1,60 +1,60 @@
-<!DOCTYPE html> 
-<html> 
-  <head> 
-    <title>Cartoset - Administration Panel</title> 
-    <link href="/stylesheets/reset.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="/stylesheets/admin.css" media="screen" rel="stylesheet" type="text/css" /> 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cartoset - Administration Panel</title>
+    <link href="/stylesheets/reset.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/admin.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="/stylesheets/sass/admin/pages/new.scss" media="screen" rel="stylesheet" type="text/css" />
     <link href="/stylesheets/admin/pages/new.css" media="screen" rel="stylesheet" type="text/css" />
- 
- 
-    <meta name="csrf-param" content="authenticity_token"/> 
-    <meta name="csrf-token" content="ZexiE4WdZ0RHZ28pvI0jdpIAaIcXe64/3lVjySNg13U="/> 
-  </head> 
-  <body> 
-    <header> 
-      <div id="header_content"> 
-        <h1 id="logo">CartoSet</h1> 
-        <nav> 
-          <ul> 
-            <li><a href="#" id="features_menu_link">Features</a></li> 
-            <li><a href="#" id="pages_menu_link">Pages</a></li> 
-            <li><a href="#" class="close_session">Close session</a></li> 
-          </ul> 
-        </nav> 
-      </div> 
-    </header>
-    
 
-    <div id="main_content"> 
-      <div class="content_box table"> 
-        <h1>New Page</h1> 
- 
-        <label class="field_label" for="title">name<strong>*</strong></label> 
-        <input class="string" id="name" name="name" type="text" value="About Methane Gas Hydrates" /> 
-   
+
+    <meta name="csrf-param" content="authenticity_token"/>
+    <meta name="csrf-token" content="ZexiE4WdZ0RHZ28pvI0jdpIAaIcXe64/3lVjySNg13U="/>
+  </head>
+  <body>
+    <header>
+      <div id="header_content">
+        <h1 id="logo">CartoSet</h1>
+        <nav>
+          <ul>
+            <li><a href="#" id="features_menu_link">Features</a></li>
+            <li><a href="#" id="pages_menu_link">Pages</a></li>
+            <li><a href="#" class="close_session">Close session</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <div id="main_content">
+      <div class="content_box table">
+        <h1>New Page</h1>
+
+        <label class="field_label" for="title">name<strong>*</strong></label>
+        <input class="string" id="name" name="name" type="text" value="About Methane Gas Hydrates" />
+
         <label class="field_label" for="body">body<strong>*</strong></label>
         <textarea id="txtDefaultHtmlArea"></textarea>
-        
-        <label class="field_label permalink" for="permalink">permalink</label> 
-        <input class="string" id="name" name="permalink" type="text" value="" /> 
-        
-        <a href="/admin/dashboard" class="main_action">Save new page</a> 
- 
-        <div class="side_bar"> 
-          <a href="/admin/dashboard" class="back"><span></span>Back to dashboard</a> 
-        </div> 
-      </div> 
+
+        <label class="field_label permalink" for="permalink">permalink</label>
+        <input class="string" id="name" name="permalink" type="text" value="" />
+
+        <a href="/admin/dashboard" class="main_action">Save new page</a>
+
+        <div class="side_bar">
+          <a href="/admin/dashboard" class="back"><span></span>Back to dashboard</a>
+        </div>
+      </div>
     </div>
-    
-    
-    <footer> 
-      <div id="footer_content">POWERED BY <a href="">CARTOSET</a></div> 
+
+
+    <footer>
+      <div id="footer_content">POWERED BY <a href="">CARTOSET</a></div>
     </footer>
 
-    <script src="/javascripts/jquery.1.5.1.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery.min.js" type="text/javascript"></script>
     <script src="/javascripts/jHtmlArea-0.7.0.min.js" type="text/javascript"></script>
     <script src="/javascripts/admin/pages/new.js"></script>
 
-  </body> 
+  </body>
 </html>

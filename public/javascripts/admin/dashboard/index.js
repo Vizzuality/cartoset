@@ -35,7 +35,7 @@ $(document).ready(function() {
   $('span.cancel_value a').click(function(e) {
     e.preventDefault();
     e.stopPropagation();
-    console.log("cancelando");
+
     var clickedId = $(this).parent().parent().parent().attr("id");
     $(this).parent().parent().hide();
     $('div.settings_list_container ul li#'+clickedId+' div.setting_value').show();
@@ -44,20 +44,43 @@ $(document).ready(function() {
   });
 
   var column_width = null,
-      first_column_position = 1;
+      first_column_position = 1,
+      table_container_width = parseInt($('#features_table').outerWidth()),
+      columns_widths = $('div#features_table table tr.header th').map(function(){
+        return parseInt($(this).outerWidth());
+      }),
+      visible_columns_width = 0,
+      current_pos = -1,
+      moves = $.map(columns_widths, function(val, i){
+        visible_columns_width += val;
+        value = -(visible_columns_width - table_container_width);
+        if (value < 0) {
+          return value;
+        };
+      });
 
   $('#scroll_left').click(function(evt){
     evt.preventDefault();
-    if (parseInt($('#features_table table').css('left')) == 0) {return;};
-    first_column_position--;
-    column_width = $('div#features_table table tr.header th:nth-child(' + first_column_position + ')').outerWidth();
-    $('#features_table table').animate({'left': '+='+column_width}, 'fast');
+
+    if (current_pos < 0) {
+      return;
+    }else if(current_pos >= 0){
+      current_pos -= 1;
+    };
+
+    $('#features_table table').animate({'left': (moves[current_pos] || 0) + 'px'}, 'fast');
   })
+
   $('#scroll_right').click(function(evt){
     evt.preventDefault();
-    column_width = $('div#features_table table tr.header th:nth-child(' + first_column_position + ')').outerWidth();
-    $('#features_table table').animate({'left': '-='+column_width}, 'fast');
-    first_column_position++;
+
+    if (current_pos < 0) {
+      current_pos = 0;
+    }else if (current_pos >= 0 && current_pos < moves.length - 1) {
+      current_pos += 1;
+    };
+
+    $('#features_table table').animate({'left': moves[current_pos] + 'px'}, 'fast');
   })
 
  });
