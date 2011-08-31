@@ -1,10 +1,10 @@
 <header>
   <div id="header_content">
-    <h1 id="logo">CartoSet</h1>
+    <h1 id="logo"><%= link_to 'CartoSet', admin_path %></h1>
     <nav>
       <ul>
-        <li><%= link_to t('.features'), '#' , :id => 'features_menu_link' %></li>
-        <li><%= link_to t('.pages'), '#', :id => 'pages_menu_link' %></li>
+        <li><%= link_to t('.features'), admin_path(:anchor => 'features'), :id => 'features_menu_link' %></li>
+        <li><%= link_to t('.pages'), admin_path(:anchor => 'pages'), :id => 'pages_menu_link' %></li>
         <% if false %><li><%= link_to t('.settings'), '#' , :id => 'settings_menu_link'%></li><% end %>
         <li><%= link_to t('.close_session'), logout_path, :class => 'close_session' %></li>
       </ul>

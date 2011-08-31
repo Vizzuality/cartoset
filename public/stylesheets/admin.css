@@ -44,6 +44,9 @@ body > header {
       font-weight: normal;
       color: white;
       line-height: 55px; }
+      body > header div#header_content #logo a {
+        color: white;
+        text-decoration: none; }
     body > header div#header_content nav {
       float: right; }
       body > header div#header_content nav ul li {
@@ -73,7 +76,11 @@ body > div#main_content {
     body > div#main_content div.table .title {
       font-size: 25px;
       padding: 23px 30px;
-      float: left; }
+      display: -moz-inline-stack;
+      display: inline-block;
+      vertical-align: top;
+      zoom: 1;
+      *display: inline; }
     body > div#main_content div.table .main_action, body > div#main_content div.table .alternate_action, body > div#main_content div.table .pagination {
       display: -moz-inline-stack;
       display: inline-block;

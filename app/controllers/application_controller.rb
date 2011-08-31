@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def show_setup_wizard_if_uninstalled
-    redirect_to setup_path unless application_installed? && environment_not_valid?
+    redirect_to setup_path unless application_installed? || environment_not_valid?
   end
   private :show_setup_wizard_if_uninstalled
 
