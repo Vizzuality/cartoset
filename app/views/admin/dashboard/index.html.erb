@@ -27,7 +27,7 @@
       </tr>
       <% @features.each do |feature| %>
         <tr class="item <%= cycle('odd', 'even') %>">
-          <td class="cartodb_id"><%= link_to feature.cartodb_id, admin_features_path(feature.cartodb_id) %></td>
+          <td class="cartodb_id"><%= link_to feature.cartodb_id, admin_feature_path(feature.cartodb_id) %></td>
           <% @features_columns.each do |column| %>
             <td class="<%= column.first %>"><%= feature.send(column[:name]).to_s.truncate(28) %></td>
           <% end %>
