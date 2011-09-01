@@ -1,6 +1,6 @@
 module Admin::AdminHelper
   def build_field_for_column(column, value = nil)
-puts value
+
     case column[:type]
     when 'boolean'
       ul_content = ''

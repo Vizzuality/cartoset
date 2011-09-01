@@ -9,10 +9,10 @@
 <div id="features_list" class="table">
   <span class="title"><%= t('.your_features') %></span>
   <div id="search">
-    <%= form_tag '/', :method => :get do %>
-      <%= label_tag 'search', t('.search_label') %>
-      <%= text_field_tag 'search' %>
-      <%= submit_tag t('.search') %>
+    <%= form_for :search, :url => admin_path, :html => {:method => :get} do |f|%>
+      <%= f.label 'q', t('.search_label') %>
+      <%= f.text_field 'q' %>
+      <%= f.submit t('.search') %>
     <% end %>
     <%= link_to content_tag(:span, t('.scroll_right')), '#', :id => 'scroll_right' %>
     <%= link_to content_tag(:span, t('.scroll_left')), '#', :id => 'scroll_left' %>
@@ -37,7 +37,7 @@
   </div>
   <%= link_to t('.create_feature'), new_admin_feature_path, :id => 'create_feature', :class => 'main_action' %>
   <%= link_to t('.edit_in_cartodb'), "#{@cartodb_host}/tables/#{@table_id}", :id => 'edit_in_cartodb', :class => 'alternate_action' %>
-  <%= raw paginate @features, @page, @features_count %>
+  <%= raw paginate @features, @page, @features_count, params %>
 </div>
 
 <div id="pages_list" class="table">

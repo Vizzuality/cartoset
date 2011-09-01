@@ -6,4 +6,8 @@ class String
     (0..size).map{ @@chars[rand(@@chars.length)] }.join
   end
 
+  def sanitize_sql!
+    self.gsub(/\\/, '\&\&').gsub(/'/, "''")
+  end
+
 end
