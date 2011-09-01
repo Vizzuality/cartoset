@@ -1,7 +1,7 @@
-
+body > div#main_content div.content_box {
   label {
-    margin:0!important;
-    padding:0 0 7px!important;
+    margin:0;
+    padding:0 0 7px;
 
     strong {
       color:red;
@@ -24,11 +24,13 @@
 
     .main_action {
       display:inline-block;
+      vertical-align: middle;
     }
 
     .checkbox {
       display:inline-block;
-      margin:0 0 0 20px!important;
+      vertical-align: middle;
+      margin:40px 0 0 20px!important;
       padding:0 0 0 15px;
       background:url('/images/sprites/htmlArea.png') no-repeat -210px 0px;
       text-decoration:none;
@@ -43,10 +45,13 @@
         background-position: -210px -17px;
       }
     }
+
+    label.visible{
+      display: inline-block;
+      vertical-align: middle;
+      margin: 46px 0 0 5px;
+    }
   }
-
-
-
 
   div.bubble {
     position:absolute;
@@ -201,3 +206,4 @@
           &.forecolor {
             background-position: -80px -32px; } } } } }
 
+}
