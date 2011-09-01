@@ -37,7 +37,7 @@
   </div>
   <%= link_to t('.create_feature'), new_admin_feature_path, :id => 'create_feature', :class => 'main_action' %>
   <%= link_to t('.edit_in_cartodb'), "#{@cartodb_host}/tables/#{@table_id}", :id => 'edit_in_cartodb', :class => 'alternate_action' %>
-  <%= paginate @features, 1, @features.count %>
+  <%= raw paginate @features, @page, @features_count %>
 </div>
 
 <div id="pages_list" class="table">
