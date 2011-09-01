@@ -1,17 +1,17 @@
 GIT
   remote: git@github.com:Vizzuality/cartodb-rb-client.git
-  revision: d0da0b6fa9816d5b7a6b03a887c75a1143f485aa
+  revision: 8520a91514d432bfab0e1872418450f15b6fc638
   specs:
     cartodb-rb-client (0.0.1)
       activesupport (= 3.0.5)
       i18n (= 0.5.0)
-      json (= 1.5.1)
+      json (= 1.5.3)
       mime-types (= 1.16)
       omniauth (= 0.1.6)
       pg (= 0.11.0)
       rails_warden (= 0.5.2)
       rgeo (= 0.3.2)
-      rgeo-geojson (= 0.2.0)
+      rgeo-geojson (= 0.2.1)
       typhoeus (= 0.2.4)
       warden (= 1.0.3)
 
@@ -74,7 +74,7 @@ GEM
     ffi (1.0.7)
       rake (>= 0.8.7)
     i18n (0.5.0)
-    json (1.5.1)
+    json (1.5.3)
     json_pure (1.5.1)
     launchy (0.4.0)
       configuration (>= 0.0.5)
@@ -151,11 +151,11 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.8.7)
-    rest-client (1.6.3)
+    rest-client (1.6.7)
       mime-types (>= 1.16)
     rgeo (0.3.2)
-    rgeo-geojson (0.2.0)
-      rgeo (>= 0.2.0)
+    rgeo-geojson (0.2.1)
+      rgeo (>= 0.2.8)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
       rspec-expectations (~> 2.5.0)

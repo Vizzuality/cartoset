@@ -21,6 +21,22 @@ en:
         your_pages: Your pages
         edit_this_page: Edit this page
         create_new_page: Create new page
+    features:
+      new:
+        new_feature: New Feature
+        save_changes: Save changes
+        sidebar:
+          back_dashboard: Back to dashboard
+      show:
+        feature_id: 'Feature %{id}'
+        save_changes: Save changes
+        sidebar:
+          back_dashboard: Back to dashboard
+          delete:
+            title: DELETE THIS FEATURE
+            hint: Clicking the link below will permanently delete this feature and its references within the site
+            link: Delete this feature
+            confirm: Are you sure?
     pages:
       form:
         title: Title

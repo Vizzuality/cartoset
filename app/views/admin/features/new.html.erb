@@ -2,30 +2,25 @@
 <%= javascript_include_tag 'jquery.min.js', 'prettyfile.js', 'admin/features/new.js' %>
 <% end %>
 
-<% content_for :stylesheets do %>
-  <%= stylesheet_link_tag 'admin/features/new.css' %>
-<% end %>
-
 <div class="content_box table">
-  <h1>New Feature</h1>
+  <h1><%= t('.new_feature') %></h1>
 
-  <% @features_fields.each do |column| %>
-    <%= label_tag column[:name], column[:name], :class => 'field_label' %>
-    <%= build_field_for_column(column) %>
+  <%= form_tag admin_features_path do %>
+    <% @features_fields.each do |column| %>
+      <%= label_tag column[:name], column[:name], :class => 'field_label' %>
+      <%= build_field_for_column(column) %>
+    <% end %>
+
+    <!-- <span class="file_content">
+      <%= file_field :post, :attached, :accept => 'text/html', :id=>"file_input" %>
+    </span> -->
+
+    <div>
+      <%= submit_tag t('.save_changes'), :class => 'main_action' %>
+    </div>
   <% end %>
 
-  <span class="file_content">
-    <%= file_field :post, :attached, :accept => 'text/html', :id=>"file_input" %>
-  </span>
-
-  <%= link_to 'Save changes', admin_dashboard_index_path, :class => 'main_action' %>
-
   <div class="side_bar">
-    <%= link_to (content_tag(:span) + 'Back to dashboard'), admin_dashboard_index_path, :class => 'back' %>
-    <div class="delete">
-      <span>DELETE THIS FEATURE</span>
-      <p>Clicking the link below will permanently delete this feature and its references within the site</p>
-      <a href="">Delete this feature</a>
-    </div>
+    <%= link_to (content_tag(:span) + t('.sidebar.back_dashboard')), admin_dashboard_index_path, :class => 'back' %>
   </div>
 </div>

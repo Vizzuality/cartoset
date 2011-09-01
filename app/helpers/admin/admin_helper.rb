@@ -1,11 +1,12 @@
 module Admin::AdminHelper
   def build_field_for_column(column, value = nil)
+puts value
     case column[:type]
     when 'boolean'
       ul_content = ''
       selected = "selected"
       value = (value.blank?)? 'null' : value.to_s
-      puts value
+
       ul_content << '<li><a class="radiobutton '+((value=="true")? selected:'')+'" href="#true">true</a></li>'
       ul_content << '<li><a class="radiobutton '+((value=="false")? selected:'')+'" href="#false">false</a></li>'
       ul_content << '<li><a class="radiobutton '+((value=="null")? selected:'')+'" href="#null">null</a></li>'
@@ -19,6 +20,6 @@ module Admin::AdminHelper
       text_field_tag(column[:name], value, :readonly => "readonly", :id => column[:name], :class => column[:type]) + content_tag(:div, date_select(column[:name], :name), :class => 'date show')
     else
       text_field_tag column[:name], value, :id => column[:name], :class => column[:type]
-    end    
+    end
   end
 end

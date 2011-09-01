@@ -1,43 +1,30 @@
 <% content_for :javascripts do %>
-<%= javascript_include_tag 'jquery.min.js' %>
+<%= javascript_include_tag 'jquery.min', 'rails' %>
 <% end %>
 
-<% content_for :stylesheets do %>
-  <%= stylesheet_link_tag 'admin/features/index.css' %>
-<% end %>
-
-
-<div class="content_box">
+<div class="content_box table">
   <div class="left">
-    <h1>Feature <%=params[:id]%></h1>
+    <h1><%= t('.feature_id', :id => params[:id]) %></h1>
 
-    <label for="name" class="field_label">NAME</label>
-    <input type="text" id="name"/>
+    <%= form_tag admin_feature_path(params[:id]), :method => :put do %>
+      <% @features_fields.each do |column| %>
+      <label for="<%= column[:name] %>" class="field_label"><%= column[:name].upcase %></label>
+      <%= build_field_for_column column, @feature[column[:name].to_sym] %>
+      <% end %>
 
-    <label for="description" class="field_label">DESCRIPTION</label>
-    <input type="text" id="description"/>
-
-    <label for="employee_number" class="field_label">EMPLOYEE NUMBER</label>
-    <input type="text" id="employee_number"/>
-
-    <label for="iso_certification" class="field_label">ISO 9001 CERTIFICATION</label>
-    <input type="radio" name="iso_certification" value="Yes"/> Yes<br/>
-    <input type="radio" name="iso_certification" value="No"/> No<br/>
-    <input type="radio" name="iso_certification" value="Not informed"/> Not informed<br/>
-
-    <a href="/admin/" class="main_action">Save changes</a>
+      <div>
+        <%= submit_tag t('.save_changes'), :class => 'main_action' %>
+      </div>
+    <% end %>
 
   </div>
 
-  <div class="right">
-    <a href="/admin/" class="back">Back to dashboard</a>
+  <div class="side_bar">
+    <a href="/admin/" class="back"><%= t('.sidebar.back_dashboard') %></a>
     <div class="delete">
-      <span>DELETE THIS FEATURE</span>
-      <p>Clicking the link below will permanently delete this feature and its references within the site</p>
-      <a href="">Delete this feature</a>
+      <span><%= t('.sidebar.delete.title') %></span>
+      <p><%= t('.sidebar.delete.hint') %></p>
+      <%= link_to t('.sidebar.delete.link'), admin_feature_path(@feature.cartodb_id), :confirm => t('.sidebar.delete.confirm'), :method => :delete %>
     </div>
   </div>
-  <div class="clear"></div>
 </div>
-
-<div class="clear"></div>
