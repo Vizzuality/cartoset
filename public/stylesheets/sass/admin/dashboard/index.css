@@ -1,0 +1,239 @@
+/* BASE */
+/* ADMIN LAYOUT */
+/* DASHBOARD */
+/*************/
+/* Pages*/
+div#features_list {
+  overflow-x: hidden; }
+  div#features_list #features_table {
+    width: 100%; }
+    div#features_list #features_table table {
+      width: 100%;
+      font-weight: normal;
+      position: relative; }
+      div#features_list #features_table table tr th, div#features_list #features_table table tr td {
+        padding-left: 20px; }
+      div#features_list #features_table table tr.header {
+        height: 30px;
+        background-image: -moz-linear-gradient(top, #dbe7ee, #d1dde4);
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #dbe7ee), color-stop(1, #d1dde4));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+        border-top: 1px solid #c2ccd2;
+        border-bottom: 1px solid #a5aaac;
+        font-size: 11px;
+        color: #26465b;
+        text-transform: uppercase;
+        text-shadow: 0 1px 0 white;
+        line-height: 30px;
+        text-align: left; }
+        div#features_list #features_table table tr.header th .id {
+          width: 60px; }
+        div#features_list #features_table table tr.header th .string {
+          width: 200px; }
+        div#features_list #features_table table tr.header th .number, div#features_list #features_table table tr.header th .boolean, div#features_list #features_table table tr.header th .latitude, div#features_list #features_table table tr.header th .longitude {
+          width: 100px; }
+      div#features_list #features_table table tr.item {
+        margin-top: 1px;
+        height: 69px;
+        color: rgba(102, 102, 102, 0.7);
+        font-size: 15px;
+        line-height: 69px; }
+        div#features_list #features_table table tr.item td:first-child {
+          border-left: 0 none; }
+        div#features_list #features_table table tr.item td {
+          border-width: 0 1px 1px 1px;
+          border-style: solid;
+          border-color: #e5e5e5;
+          border-collapse: collapse;
+          border-spacing: 10px; }
+      div#features_list #features_table table tr.item.odd {
+        background-color: white; }
+      div#features_list #features_table table tr.item.even {
+        background-color: #fafafa; }
+  div#features_list #search {
+    float: right;
+    position: relative;
+    width: 487px;
+    margin: 23px 0; }
+    div#features_list #search label {
+      display: none;
+      position: absolute;
+      left: 5px;
+      color: #999999;
+      line-height: 30px;
+      z-index: 1; }
+    div#features_list #search input[type=text] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 371px;
+      margin: 0;
+      padding: 5px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #cccccc;
+      -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      border-radius: 6px;
+      -moz-box-shadow: inset 0px 7px 7px #efefef;
+      -webkit-box-shadow: inset 0px 7px 7px #efefef;
+      box-shadow: inset 0px 7px 7px #efefef;
+      font-size: inherit; }
+    div#features_list #search input[type=submit] {
+      position: absolute;
+      top: 7px;
+      left: 350px;
+      width: 16px;
+      height: 16px;
+      border: 0 none;
+      color: transparent;
+      background: transparent url("/images/sprites/admin.png") no-repeat scroll 0 0; }
+    div#features_list #search #scroll_left, div#features_list #search #scroll_right {
+      position: absolute;
+      top: 0px;
+      display: block;
+      width: 35px;
+      height: 28px;
+      background-image: -moz-linear-gradient(top, #4880a5, #3a6988);
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #4880a5), color-stop(1, #3a6988));
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+      border: 1px solid black;
+      color: transparent; }
+      div#features_list #search #scroll_left:hover, div#features_list #search #scroll_right:hover {
+        background-image: -moz-linear-gradient(top, #3a6988, #4880a5);
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3a6988), color-stop(1, #4880a5));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')"; }
+      div#features_list #search #scroll_left:active, div#features_list #search #scroll_right:active {
+        background-image: -moz-linear-gradient(top, #3a6988, #4880a5);
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3a6988), color-stop(1, #4880a5));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+        -moz-box-shadow: inset 0px 3px 7px #333333;
+        -webkit-box-shadow: inset 0px 3px 7px #333333;
+        box-shadow: inset 0px 3px 7px #333333; }
+      div#features_list #search #scroll_left span, div#features_list #search #scroll_right span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -3px;
+        margin-top: -4px;
+        display: block;
+        width: 6px;
+        height: 9px; }
+    div#features_list #search #scroll_left {
+      -moz-border-radius: 7px 0 0 7px;
+      -webkit-border-radius: 7px 0 0 7px;
+      border-radius: 7px 0 0 7px;
+      left: 391px; }
+      div#features_list #search #scroll_left span {
+        background: transparent url("/images/sprites/admin.png") no-repeat scroll -16px 0; }
+    div#features_list #search #scroll_right {
+      -moz-border-radius: 0 7px 7px 0;
+      -webkit-border-radius: 0 7px 7px 0;
+      border-radius: 0 7px 7px 0;
+      left: 426px; }
+      div#features_list #search #scroll_right span {
+        background: transparent url("/images/sprites/admin.png") no-repeat scroll -22px 0; }
+
+div#pages_list .title {
+  width: 100%; }
+div#pages_list div.pages_list_container {
+  background-color: #FFFFFF;
+  border-top: 1px solid #c2ccd2;
+  border-bottom: 1px solid #c2ccd2; }
+  div#pages_list div.pages_list_container ul {
+    padding: 30px 0;
+    list-style-type: none;
+    display: inline-block; }
+    div#pages_list div.pages_list_container ul li {
+      float: left;
+      margin-left: 30px;
+      margin-bottom: 30px; }
+      div#pages_list div.pages_list_container ul li div {
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        background-color: #dfe5eb;
+        width: 275px;
+        height: 52px;
+        padding: 50px 0; }
+        div#pages_list div.pages_list_container ul li div p {
+          text-align: center; }
+        div#pages_list div.pages_list_container ul li div p.link {
+          margin: 10px 0; }
+    div#pages_list div.pages_list_container ul:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
+div#settings_list div.settings_list_container {
+  background-color: #FFFFFF;
+  float: left;
+  border-top: 1px solid #c2ccd2;
+  border-bottom: 1px solid #c2ccd2; }
+  div#settings_list div.settings_list_container ul li {
+    position: relative;
+    display: inline;
+    float: left;
+    width: 882px;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 15px 30px; }
+    div#settings_list div.settings_list_container ul li.last {
+      border: none; }
+    div#settings_list div.settings_list_container ul li.even {
+      background-color: #FAFAFA; }
+    div#settings_list div.settings_list_container ul li div.name {
+      width: 305px;
+      float: left;
+      display: block; }
+      div#settings_list div.settings_list_container ul li div.name p.setting_name {
+        color: #666666;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Arial; }
+      div#settings_list div.settings_list_container ul li div.name p.setting_description {
+        color: #9F9F9F;
+        font-size: 13px;
+        font-family: Arial;
+        margin: 6px 0 0 0; }
+    div#settings_list div.settings_list_container ul li div.setting_value {
+      position: absolute;
+      left: 360px;
+      margin: 10px 0 0 0;
+      font-size: 15px; }
+    div#settings_list div.settings_list_container ul li div.edit_value {
+      position: absolute;
+      left: 340px;
+      display: none;
+      margin: 4px 0 0 0;
+      float: left;
+      color: #666666;
+      font-size: 13px;
+      position: absolute; }
+      div#settings_list div.settings_list_container ul li div.edit_value input[type="text"] {
+        float: left;
+        width: 300px;
+        -moz-border-radius: 5px 0 0 5px;
+        -webkit-border-radius: 5px 0 0 5px;
+        border-radius: 5px 0 0 5px;
+        background: url(/images/bg_textbox.png) repeat-x 0 0 white;
+        height: 30px;
+        border: 1px solid #CCCCCC;
+        font: normal 15px Arial;
+        color: #999;
+        padding: 0 15px; }
+      div#settings_list div.settings_list_container ul li div.edit_value input[type="text"]:focus {
+        outline: none; }
+    div#settings_list div.settings_list_container ul li span.cancel_value {
+      float: left;
+      margin: 10px 0 0 15px;
+      color: #666666;
+      font-size: 13px; }
+div#settings_list div.settings_footer {
+  clear: both;
+  height: 75px; }

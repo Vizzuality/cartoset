@@ -1,0 +1,362 @@
+@font-face {
+  font-family: 'MuseoSans500';
+  src: url("/fonts/museosans_500-webfont.eot");
+  src: url("/fonts/museosans_500-webfont.eot?iefix") format("eot"), url("/fonts/museosans_500-webfont.woff") format("woff"), url("/fonts/museosans_500-webfont.ttf") format("truetype"), url("/fonts/museosans_500-webfont.svg#webfontaJIEhST4") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* BASE */
+/* ADMIN LAYOUT */
+/* DASHBOARD */
+/*************/
+/* Pages*/
+body {
+  background-color: #4780a5;
+  font-family: Arial;
+  font-size: 16px;
+  margin: 0; }
+
+a {
+  color: #ff3366; }
+
+body > header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 57px;
+  margin-bottom: 60px;
+  background-image: -moz-linear-gradient(top, #353535, #171717);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #353535), color-stop(1, #171717));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+  -moz-box-shadow: 0 5px 10px #305771;
+  -webkit-box-shadow: 0 5px 10px #305771;
+  box-shadow: 0 5px 10px #305771;
+  z-index: 100000; }
+  body > header div#header_content {
+    width: 960px;
+    margin: 0 auto; }
+    body > header div#header_content #logo {
+      float: left;
+      display: inline;
+      font-family: "MuseoSans500","Arial";
+      font-size: 19px;
+      font-weight: normal;
+      color: white;
+      line-height: 55px; }
+      body > header div#header_content #logo a {
+        color: white;
+        text-decoration: none; }
+    body > header div#header_content nav {
+      float: right; }
+      body > header div#header_content nav ul li {
+        display: inline;
+        margin: 0 20px; }
+        body > header div#header_content nav ul li a {
+          font-family: "MuseoSans500","Arial";
+          font-weight: normal;
+          color: white;
+          text-decoration: none;
+          line-height: 55px; }
+        body > header div#header_content nav ul li a.close_session {
+          color: #666666; }
+
+body > div#main_content {
+  width: 960px;
+  margin: 120px auto;
+  overflow: hidden; }
+  body > div#main_content div.table {
+    width: 942px;
+    margin: 0 0 50px 0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #ecf2f6;
+    font-size: 15px; }
+    body > div#main_content div.table .title {
+      font-size: 25px;
+      padding: 23px 30px;
+      display: -moz-inline-stack;
+      display: inline-block;
+      vertical-align: top;
+      zoom: 1;
+      *display: inline; }
+    body > div#main_content div.table .main_action, body > div#main_content div.table .alternate_action, body > div#main_content div.table .pagination {
+      display: -moz-inline-stack;
+      display: inline-block;
+      vertical-align: top;
+      zoom: 1;
+      *display: inline;
+      vertical-align: middle;
+      margin: 25px 10px;
+      padding: 7px 15px;
+      font-size: 17px; }
+    body > div#main_content div.table .main_action {
+      margin-left: 30px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      background-image: -moz-linear-gradient(top, #95c700, #88b600);
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #95c700), color-stop(1, #88b600));
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+      border: 1px solid #6e9400;
+      font-family: "MuseoSans500","Arial";
+      font-size: 19px;
+      font-weight: normal;
+      color: white;
+      text-shadow: 0 1px 0 #537000;
+      text-decoration: none; }
+      body > div#main_content div.table .main_action:hover {
+        background-image: -moz-linear-gradient(top, #88b600, #95c700);
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #88b600), color-stop(1, #95c700));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')"; }
+      body > div#main_content div.table .main_action:active {
+        background-image: -moz-linear-gradient(top, #88b600, #95c700);
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #88b600), color-stop(1, #95c700));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+        -moz-box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7);
+        -webkit-box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7);
+        box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7); }
+    body > div#main_content div.table .action_input {
+      float: left;
+      height: 18px;
+      vertical-align: middle;
+      padding: 6px 15px;
+      margin-left: 0;
+      -moz-border-radius: 0 4px 4px 0;
+      -webkit-border-radius: 0 4px 4px 0;
+      border-radius: 0 4px 4px 0;
+      background-image: -moz-linear-gradient(top, #95c700, #88b600);
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #95c700), color-stop(1, #88b600));
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+      border: 1px solid #6e9400;
+      font-size: 15px;
+      font-weight: normal;
+      color: white;
+      text-shadow: 0 1px 0 #537000;
+      text-decoration: none; }
+      body > div#main_content div.table .action_input:hover {
+        background-image: -moz-linear-gradient(top, #88b600, #95c700);
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #88b600), color-stop(1, #95c700));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')"; }
+      body > div#main_content div.table .action_input:active {
+        background-image: -moz-linear-gradient(top, #88b600, #95c700);
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #88b600), color-stop(1, #95c700));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$top_color', EndColorStr='$bottom_color')";
+        -moz-box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7);
+        -webkit-box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7);
+        box-shadow: inset 0 3px 3px rgba(102, 102, 102, 0.7); }
+    body > div#main_content div.table .alternate_action {
+      margin: 25px 0;
+      padding: 10px 0; }
+    body > div#main_content div.table .pagination {
+      float: right; }
+      body > div#main_content div.table .pagination a {
+        margin: 0 4px; }
+      body > div#main_content div.table .pagination a.current {
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: top;
+        zoom: 1;
+        *display: inline;
+        padding: 0 5px;
+        background-color: white;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        border: 1px solid transparent;
+        font-weight: bold;
+        color: #666666;
+        text-decoration: none; }
+
+body > div#main_content div.content_box {
+  position: relative;
+  width: 880px;
+  padding: 30px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0;
+  background-color: #FFFFFF;
+  color: #333333;
+  font-size: 15px;
+  -moz-box-shadow: 0px 3px 3px #407292;
+  -webkit-box-shadow: 0px 3px 3px #407292;
+  box-shadow: 0px 3px 3px #407292;
+  /* Spin buttons in input type number */
+  /* file input */ }
+  body > div#main_content div.content_box h1 {
+    font-family: "MuseoSans500","Arial";
+    font-size: 27px;
+    font-weight: normal;
+    color: #333333;
+    margin: 0 0 30px 0; }
+  body > div#main_content div.content_box .main_action {
+    margin: 40px 0 0 0; }
+  body > div#main_content div.content_box label {
+    display: block;
+    font-size: 11px;
+    font-family: Arial;
+    color: #999999;
+    font-weight: bold;
+    margin: 0 0 7px 0;
+    text-transform: uppercase; }
+  body > div#main_content div.content_box input {
+    border: 0 none;
+    font: normal 15px Arial;
+    color: #999999;
+    padding: 0 15px;
+    margin: 0 0 25px 0; }
+  body > div#main_content div.content_box input.string {
+    width: 389px;
+    background: transparent url("/images/sprites/admin.png") no-repeat scroll -1px -38px;
+    height: 34px; }
+  body > div#main_content div.content_box input.number {
+    width: 120px;
+    background: transparent url("/images/sprites/admin.png") no-repeat scroll 0 -74px;
+    height: 36px; }
+  body > div#main_content div.content_box input.date {
+    width: 102px;
+    background: transparent url("/images/sprites/admin.png") no-repeat scroll 0 -110px;
+    height: 34px;
+    display: none;
+    cursor: pointer; }
+    body > div#main_content div.content_box input.date.active {
+      background: transparent url("/images/sprites/admin.png") no-repeat scroll -132px -110px;
+      margin: 0; }
+  body > div#main_content div.content_box a.radiobutton {
+    display: inline-block;
+    width: auto !important;
+    padding: 0 0 0 16px;
+    margin: 2px 0 0 0;
+    font: normal 15px Arial;
+    color: #333333;
+    text-transform: capitalize;
+    text-decoration: none;
+    background: transparent url("/images/sprites/admin.png") no-repeat scroll -410px -12px; }
+    body > div#main_content div.content_box a.radiobutton:hover {
+      background: transparent url("/images/sprites/admin.png") no-repeat scroll -410px 4px; }
+    body > div#main_content div.content_box a.radiobutton.selected {
+      background: transparent url("/images/sprites/admin.png") no-repeat scroll -410px 4px; }
+    body > div#main_content div.content_box a.radiobutton.selected:hover {
+      cursor: default; }
+  body > div#main_content div.content_box input::-webkit-outer-spin-button,
+  body > div#main_content div.content_box input::-webkit-inner-spin-button {
+    /*display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */ }
+  body > div#main_content div.content_box input.hidden {
+    display: none; }
+  body > div#main_content div.content_box div.date {
+    height: 28px;
+    width: 271px;
+    padding: 20px;
+    display: none; }
+    body > div#main_content div.content_box div.date.show {
+      display: block; }
+    body > div#main_content div.content_box div.date.active {
+      background: transparent url("/images/sprites/admin.png") no-repeat scroll -2px -144px;
+      margin: -4px 0 25px 1px; }
+  body > div#main_content div.content_box ul {
+    list-style-type: none; }
+    body > div#main_content div.content_box ul li {
+      margin: 7px 0; }
+      body > div#main_content div.content_box ul li label {
+        display: inline;
+        margin: 5px 8px; }
+      body > div#main_content div.content_box ul li input {
+        margin: 0; }
+  body > div#main_content div.content_box div.side_bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 231px;
+    height: 100%;
+    padding: 0 30px;
+    border-left: 1px solid #b0b0b0;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    background-color: #F5F5F5; }
+    body > div#main_content div.content_box div.side_bar a.back {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 14px;
+      padding: 0 0 0 21px; }
+      body > div#main_content div.content_box div.side_bar a.back span {
+        background: transparent url("/images/sprites/admin.png") no-repeat scroll 0 -20px;
+        padding: 0 8px;
+        margin: 5px; }
+    body > div#main_content div.content_box div.side_bar div.delete {
+      position: absolute;
+      width: 230px;
+      bottom: 30px; }
+      body > div#main_content div.content_box div.side_bar div.delete span {
+        font-family: "MuseoSans500","Arial";
+        font-size: 17px;
+        font-weight: normal;
+        color: #333333;
+        margin: 0 0 10px 0; }
+      body > div#main_content div.content_box div.side_bar div.delete p {
+        font-family: "Arial";
+        font-size: 13px;
+        font-weight: normal;
+        color: #666666;
+        margin: 0 0 10px 0; }
+      body > div#main_content div.content_box div.side_bar div.delete a {
+        font-size: 15px; }
+  body > div#main_content div.content_box span.file_content {
+    display: block;
+    width: 540px;
+    height: 25px;
+    margin: 20px 0 0 0;
+    padding: 13px;
+    background: transparent url("/images/sprites/admin.png") no-repeat scroll 0 bottom; }
+  body > div#main_content div.content_box .pf_wrap_class {
+    height: 1%;
+    overflow: hidden; }
+  body > div#main_content div.content_box .pf_ph_cont {
+    width: 34em;
+    float: left;
+    overflow: hidden; }
+  body > div#main_content div.content_box .pf_ph_cont strong {
+    float: left;
+    font-size: x-small;
+    padding: 0 0 0 0;
+    width: 72px;
+    height: 26px;
+    background: transparent url("/images/sprites/admin.png") no-repeat scroll -35px 0; }
+  body > div#main_content div.content_box .pf_ph_cont strong span {
+    display: none; }
+  body > div#main_content div.content_box .pf_ph {
+    float: left;
+    font: normal 15px Arial;
+    padding: 0.3em 0.5em 0.5em 0.8em;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 15.5em;
+    color: #999999;
+    font-style: italic; }
+
+body > footer {
+  bottom: -26px;
+  width: 100%;
+  background-color: #000000; }
+  body > footer div#footer_content {
+    width: 960px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    padding: 7px;
+    font-family: "MuseoSans500","Arial";
+    font-size: 11px;
+    font-weight: normal; }
+    body > footer div#footer_content a {
+      color: white; }

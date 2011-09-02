@@ -58,7 +58,14 @@ class SetupController < ApplicationController
   end
 
   def redirect_to_root_if_invalid_env
-    redirect_to root_path and return unless Rails.env.development? || Rails.env.test?
+    unless Rails.env.development? || Rails.env.test? || logged_in?
+      if application_installed? && !logged_in?
+        session[:return_to] = setup_path
+        redirect_to login_required_path
+      else
+        redirect_to root_path
+      end
+    end
   end
   private :redirect_to_root_if_invalid_env
 end

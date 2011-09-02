@@ -1,0 +1,58 @@
+body {
+  font: normal 13px Arial;
+  color: #666666; }
+
+h1 {
+  font: normal 18px "PT Sans Bold",Arial;
+  color: #666666;
+  margin: 10px 0 0 0; }
+
+h2 {
+  font: normal 16px "PT Sans Bold",Arial;
+  color: #666666;
+  margin: 10px 0 0 0; }
+
+h3 {
+  font: normal 13px "PT Sans Bold",Arial;
+  color: #666666;
+  margin: 10px 0 0 0;
+  text-transform: uppercase; }
+
+h4 {
+  font: normal 12px "PT Sans Bold",Arial;
+  color: #666666;
+  margin: 10px 0 0 0; }
+
+h5 {
+  font: normal 12px "PT Sans Bold",Arial;
+  color: #666666;
+  margin: 10px 0 0 0; }
+
+h6 {
+  font: normal 10px "PT Sans Bold",Arial;
+  color: #666666;
+  margin: 10px 0 0 0; }
+
+p {
+  font: normal 13px Arial;
+  color: #666666;
+  margin: 10px 0 0 0; }
+
+p a {
+  color: #D05F4C;
+  text-decoration: none; }
+
+p a:hover {
+  text-decoration: underline;
+  cursor: pointer; }
+
+ul {
+  width: 100%;
+  margin: 10px 0 0 0;
+  padding: 0 0 6px;
+  list-style: inside disc; }
+
+ul li {
+  padding: 3px 0 3px 13px;
+  font: normal 13px Arial;
+  color: #666666; }

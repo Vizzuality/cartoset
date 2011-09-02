@@ -4,10 +4,6 @@ $(document).ready(function() {
     $.scrollTo($('div#main_content div#' + anchor + '_list').position().top-100, 1000, {queue:true});
   };
 
-  // $('#header_content a').click(function(evt){
-  //   evt.preventDefault();
-  // });
-
   $('a#features_menu_link').click(function(e) {
     e.stopPropagation();
     $.scrollTo($('div#main_content div#features_list').position().top-100, 1000, {queue:true});

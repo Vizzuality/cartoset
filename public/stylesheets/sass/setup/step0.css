@@ -1,0 +1,13 @@
+div.small_content_box {
+  margin-top: 200px;
+  height: 200px;
+  background: white url(/images/globe.png) no-repeat top right; }
+
+div.small_content_box h1.lowered {
+  margin: 30px 0 15px; }
+
+p.success_message {
+  width: 300px; }
+
+a.main_action {
+  margin: 20px 0 0 0; }

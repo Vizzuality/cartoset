@@ -29,7 +29,11 @@
       <%= form.text_field 'cartodb_oauth_secret' %>
     </div>
     <div class="submit">
+      <% if logged_in? %>
+      <%= link_to t('.next_step'), setup_path(:step_id => 2), :class => 'main_action' %>
+      <% else %>
       <%= form.submit t('.connect_with_cartodb'), :class => 'main_action' %>
+      <% end %>
     </div>
   <% end %>
 

@@ -95,6 +95,7 @@ en:
       password: Password
       database_name: Database Name
       connect: Connect
+      next_step: Next step
     step2:
       title: Name your app
       description: "Don't be afraid. You will be able to change it later."
