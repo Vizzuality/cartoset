@@ -121,3 +121,11 @@ en:
         title: Go to your site
         description: Check how your users will see your site...
         link: Public site
+  sessions:
+    help:
+      problems: 'If you get stuck or have any problem, %{contact_us}'
+      contact_us: contact us
+    new:
+      please_login: Please login in cartoDB
+      reason: You have to be logged in cartoDB to be able to access your cartoSet admin zone.
+      login: Login into CartoDB
