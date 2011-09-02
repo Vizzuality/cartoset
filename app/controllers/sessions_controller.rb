@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  layout 'setup'
+
   skip_before_filter :show_setup_wizard_if_uninstalled, :only => :create
 
   def new

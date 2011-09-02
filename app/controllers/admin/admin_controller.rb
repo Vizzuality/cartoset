@@ -4,7 +4,10 @@ class Admin::AdminController < ApplicationController
   layout 'admin'
 
   def user_logged?
-    redirect_to root_url unless logged_in?
+    unless logged_in?
+      session[:return_to] = request.request_uri
+      redirect_to login_required_path
+    end
   end
   protected :user_logged?
 end

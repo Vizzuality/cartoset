@@ -20,6 +20,7 @@ Cartoset::Application.routes.draw do
 
   get '/login' => 'sessions#create', :as => :login
   get '/logout' => 'sessions#destroy', :as => :logout
+  get '/login_required' => 'sessions#new', :as => :login_required
 
   match ':controller(/:action(/:id))'
 

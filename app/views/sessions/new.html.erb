@@ -1,3 +1,10 @@
-Welcome to CartoSet
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'sessions/new' %>
+<% end %>
 
-<%= link_to "Sign in with CartoDB", "/auth/cartodb_authentication" %>
+<div class="small_content_box">
+  <h1 class="lowered"><%= t('.please_login') %></h1>
+  <p class="success_message"><%= t('.reason') %></p>
+  <%= link_to t('.login'), cartodb_authorize_path, :class => 'main_action' %>
+</div>
+

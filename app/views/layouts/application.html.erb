@@ -12,7 +12,7 @@
   <% if logged_in? %>
     Hi <%= link_to current_user.username, admin_path %>! (<%= link_to('logout', logout_path) %>)
   <% else %>
-    <%= link_to('login', cartodb_authorize_path) %>
+    <%= link_to('admin', admin_path) %>
   <% end %>
 </div>
 
