@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    Cartoset::Config.set_cartodb_access_token request
     env['warden'].authenticate(:cartodb_oauth)
 
     redirect_back_or_default root_path

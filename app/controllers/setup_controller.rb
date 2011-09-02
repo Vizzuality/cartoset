@@ -13,6 +13,7 @@ class SetupController < ApplicationController
     when "1"
       @settings = OpenStruct.new Cartoset::Config.settings
     when "2"
+      Cartoset::Config.set_cartodb_credentials current_user
       @settings = OpenStruct.new Cartoset::Config.settings
     when "3"
       Cartoset::Config.update params[:settings]

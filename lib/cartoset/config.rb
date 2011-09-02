@@ -39,13 +39,10 @@ class Cartoset::Config
     end
     private :local_postgis_settings?
 
-    def set_cartodb_access_token(request)
-      return if settings['cartodb_oauth_access_token'].present? && settings['cartodb_oauth_access_token_secret'].present?
-
-      credentials = request.env['omniauth.auth']['credentials']
-
-      update :cartodb_oauth_access_token => credentials['token'],
-             :cartodb_oauth_access_token_secret => credentials['secret']
+    def set_cartodb_credentials(user)
+      update :cartodb_user_uid => user.uid,
+             :cartodb_oauth_access_token => user.credentials['token'],
+             :cartodb_oauth_access_token_secret => user.credentials['secret']
 
       setup_cartodb
     end
@@ -95,6 +92,7 @@ class Cartoset::Config
       File.open(path, "w") do |f|
         f.write(settings.to_yaml)
       end
+    rescue
     end
     private :consolidate_settings
   end
