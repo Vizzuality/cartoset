@@ -70,9 +70,13 @@ class Cartoset::Config
           'oauth_access_token_secret' => settings['cartodb_oauth_access_token_secret']
         }
 
-        CartoDB::Init.start Cartoset::Application, cartodb_settings
+        CartoDB::Init.start cartodb_settings
 
       end
+    end
+
+    def valid_user?(user)
+      user.present? && user.uid.eql?(settings['cartodb_user_uid'])
     end
 
     def settings=(values)
