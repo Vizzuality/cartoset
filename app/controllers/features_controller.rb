@@ -10,7 +10,7 @@ class FeaturesController < ApplicationController
   end
 
   def show
-    debugger
+
   end
 
 end
