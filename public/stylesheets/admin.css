@@ -304,13 +304,16 @@ body > div#main_content div.content_box {
         font-size: 17px;
         font-weight: normal;
         color: #333333;
-        margin: 0 0 10px 0; }
+        line-height: 39px;
+        margin: 10px 0; }
       body > div#main_content div.content_box div.side_bar div.delete p {
         font-family: "Arial";
         font-size: 13px;
         font-weight: normal;
         color: #666666;
-        margin: 0 0 10px 0; }
+        margin: 0 0 10px 0;
+        line-height: 16px;
+        width: 200px; }
       body > div#main_content div.content_box div.side_bar div.delete a {
         font-size: 15px; }
   body > div#main_content div.content_box span.file_content {

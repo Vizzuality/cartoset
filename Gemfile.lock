@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:Vizzuality/cartodb-rb-client.git
-  revision: 3ce76c3946e85d61c23af1276ad1a85418f7ac5e
+  revision: f52d22e477d5173ca74a03ea2b87a0a6c3f231c2
   specs:
     cartodb-rb-client (0.0.1)
       activesupport (= 3.0.5)
