@@ -10,7 +10,7 @@ class Admin::FeaturesController <  Admin::AdminController
   def create
 
     @features_fields = Feature.non_common_fields.map{|f| f[:name]}
-    params_for_insert = Hash[params.select{|key| @features_fields.include?(key)}.map{|key, value| [key, value = value.blank?? nil : value]}]
+    params_for_insert = Hash[params.select{|key, value| @features_fields.include?(key)}.map{|key, value| [key, value = value.blank?? nil : value]}]
 
     @new_feature = CartoDB::Connection.insert_row Cartoset::Config['features_table'], params_for_insert
 
@@ -20,7 +20,7 @@ class Admin::FeaturesController <  Admin::AdminController
   def update
 
     @features_fields = Feature.non_common_fields.map{|f| f[:name]}
-    params_for_update = params.select{|key| @features_fields.include?(key)}
+    params_for_update = params.select{|key, value| @features_fields.include?(key)}
 
     CartoDB::Connection.update_row Cartoset::Config['features_table'], params[:id], params_for_update
 
