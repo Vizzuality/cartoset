@@ -35,12 +35,17 @@ Setting up a new Cartoset based project.
 
 1. First of all, download the source code clicking in the 'Downloads' button, in the Cartoset [github's repository](https://github.com/vizzuality/cartoset).
 
-2. Unzip the downloaded file into your desired folder, and then open a new terminal session.
+2. Unzip the downloaded file into your desired folder, and then open a new terminal session. cd to the folder.
 
 3. Install the [bundler](http://gembundler.com/) gem.
 
-4. Install gem's bundle:
-
+4. Install Ruby 1.9.2:
+		cd cartoset
+		rvm install 1.9.2
+		rvm use 1.9.2
+		rvm gemset create cartoset
+		rvm use 1.9.2@cartoset
+		gem install bundler
 		bundle install
 
 5. Start a new server session:
