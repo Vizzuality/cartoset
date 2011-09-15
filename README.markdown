@@ -40,17 +40,18 @@ Setting up a new Cartoset based project.
 3. Install the [bundler](http://gembundler.com/) gem.
 
 4. Install Ruby 1.9.2:
-		cd cartoset
-		rvm install 1.9.2
-		rvm use 1.9.2
-		rvm gemset create cartoset
-		rvm use 1.9.2@cartoset
-		gem install bundler
-		bundle install
+        
+	$ cd cartoset
+	$ rvm install 1.9.2
+	$ rvm use 1.9.2
+	$ rvm gemset create cartoset
+	$ rvm use 1.9.2@cartoset
+	$ gem install bundler
+	$ bundle install
 
 5. Start a new server session:
 
-		rails server
+	$ rails server
 
 6. Go to http://localhost:3000. It will redirect you to the setup wizard.
 
