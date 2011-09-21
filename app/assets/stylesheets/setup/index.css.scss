@@ -1,0 +1,138 @@
+@import 'main.fonts.scss';
+@import 'main.mixins.scss';
+@import 'mixins.css3.scss';
+@import 'setup/setup.colors.scss';
+@import 'setup/setup.vars.scss';
+
+body{
+  background-color: $background;
+  font-family: Arial;
+  font-size: 16px;
+  margin: 0;
+}
+
+ol.step_indicator {
+
+  margin: 150px auto 30px auto;
+  bottom: 100px;
+  width: 588px;
+
+  li {
+    @include inline-block;
+    width: 161px;
+    margin: 0 30px 0 0;
+    font-family: "MuseoSans500","Arial";
+    font-size: 15px;
+    font-weight: normal;
+    color: $steps_unselected;
+
+    &.selected {
+      color: $steps_selected;
+    }
+
+    span.step_number {
+      @include inline-block;
+      float: left;
+      display: block;
+      width: 15px;
+      height: 15px;
+      padding: 2px;
+      margin: 0 6px 0 0;
+      border: 1px solid $steps_unselected;
+      @include border-radius(10px);
+      line-height: 15px;
+      text-align: center;
+
+      &.selected {
+      border: 1px solid $steps_selected;
+        }
+    }
+
+    span.step_description {
+      float: left;
+      @include inline-block;
+      margin: 3px 0 0 0;
+    }
+  }
+}
+
+
+div.small_content_box {
+  width: 584px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #FFFFFF;
+  @include border-radius(3px);
+  @include shadow(0px 3px 3px #407292);
+
+  h1 {
+      margin: 0 0 15px 0;
+      font-family: "MuseoSans500","Arial";
+      font-size: 25px;
+      font-weight: normal;
+      color: #333333;
+  }
+
+  p {
+      font-family: "MuseoSans500","Arial";
+      font-size: 15px;
+      font-weight: normal;
+      color: #666666;
+  }
+}
+
+div.help {
+      margin: 15px 0 0 0;
+      font-family: "MuseoSans500","Arial";
+      font-size: 13px;
+      font-weight: normal;
+      color: #B6CDDC;
+      text-align: center;
+
+      a {
+        color: $help_message;
+      }
+}
+
+
+.main_action{
+  @include inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 7px 15px;
+  border: 1px solid $main_action_border;
+  font-family: "MuseoSans500","Arial";
+  font-size: 19px;
+  font-weight: normal;
+  color: $main_action_font;
+  text-shadow: 0 1px 0 $main_action_font_shadow;
+  text-decoration: none;
+  @include border-radius(4px);
+  @include gradient($main_action_background_gradient_top, $main_action_background_gradient_bottom);
+
+  &:hover{
+    @include gradient($main_action_background_gradient_bottom, $main_action_background_gradient_top);
+  }
+  &:active{
+    @include gradient($main_action_background_gradient_bottom, $main_action_background_gradient_top);
+    @include inner-shadow(0 3px 3px rgba(102, 102, 102, 0.7));
+  }
+
+  &.disabled, &:disabled {
+    @include gradient($main_action_background_disabled_bottom, $main_action_background_disabled_top);
+    border: 1px solid $main_action_border_disabled;
+    text-shadow: 0 1px 0 $main_action_font-shadow_disabled;
+  }
+}
+
+input[type="text"] {
+  @include border-radius(5px);
+  background: url(/assets/bg_input.png) repeat-x 0 0 white;
+  height: 34px;
+  border: 1px solid #CCCCCC;
+  font: normal 15px Arial;
+  color: #999;
+  padding: 0 15px;
+  margin: 0 0 25px 0;
+}
+
