@@ -1,2 +1,2 @@
-rvm use --create 1.9.2@cartoset > /dev/null
+rvm use --create 1.9.2@cartoset.engine.3.1 > /dev/null
 rvm wrapper current textmate

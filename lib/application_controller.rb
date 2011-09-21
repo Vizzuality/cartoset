@@ -15,7 +15,6 @@ module Cartoset
       end
 
       def show_setup_wizard_if_uninstalled
-debugger
         redirect_to setup_path if application_not_installed? && development_environment?
       end
       private :show_setup_wizard_if_uninstalled
@@ -59,6 +58,6 @@ debugger
   end
 end
 
-::ActionController::Base.send :include, Cartoset::Controller
+::ActionController::Base.send :include, Cartoset::Controller if defined?(ActionController)
 
 

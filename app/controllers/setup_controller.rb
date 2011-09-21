@@ -35,7 +35,7 @@ class SetupController < ApplicationController
 
       session[:return_to] = setup_path(:step_id => 2)
 
-      redirect_to cartodb_authorize_path and return
+      redirect_to '/auth/cartodb' and return
   end
 
   def features_table_data

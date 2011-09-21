@@ -1,4 +1,9 @@
 require 'cartoset/version'
-require 'engine' if defined?(Rails) && Rails::VERSION::MAJOR == 3
-require 'application_controller' if defined?(Rails) && Rails::VERSION::MAJOR == 3
+require 'cartodb-rb-client'
+
+if defined?(Rails) && Rails::VERSION::MAJOR == 3
+  require 'engine'
+  require 'application_controller'
+end
+
 

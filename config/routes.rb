@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   match '/setup/features_table_data' => 'setup#features_table_data'
   match '/setup/create_features_table' => 'setup#create_features_table', :as => :create_table
 
-  match "/auth/cartodb", :as => :cartodb_authorize
   match "/auth/:provider/callback" => "sessions#create"
 
   get '/login' => 'sessions#create', :as => :login
