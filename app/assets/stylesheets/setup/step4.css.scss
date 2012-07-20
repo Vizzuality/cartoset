@@ -10,7 +10,7 @@ div.shadowed {
 
   margin: 20px 0 0 0;
   padding: 20px;
-  background: #DFE5EB url(/assets/next_steps_diagram.png) no-repeat 60px 30px;
+  background: #DFE5EB url(image-path("next_steps_diagram.png")) no-repeat 60px 30px;
   @include border-radius(3px);
 
   div.suggestion {

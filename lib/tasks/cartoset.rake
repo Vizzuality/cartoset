@@ -50,6 +50,16 @@ namespace :cartoset do
     end
   end
 
+  namespace :heroku do
+    task :config => :environment do
+      puts "Reading config/cartoset_config.yml and sending config vars to Heroku..."
+
+      [:staging, :production].each do |env|
+        system Cartoset::Config.settings.inject('heroku config:add'){|command, key_value| command << " #{key_value[0]}=#{key_value[1]}"} << " --remote #{env}"
+      end
+    end
+  end
+
   def print_errors(errors)
     unless errors.empty?
       puts ''

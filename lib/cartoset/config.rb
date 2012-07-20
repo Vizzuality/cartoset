@@ -86,7 +86,8 @@ class Cartoset::Config
 
     def settings
       @@settings ||= begin
-        YAML.load_file(path) || {}
+        hash = (YAML.load_file(path) || {})
+        hash = hash.merge(Hash[ENV].slice(hash.keys))
       rescue Exception => e
         {}
       end

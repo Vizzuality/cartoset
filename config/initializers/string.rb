@@ -94,7 +94,7 @@ class String
 
   def add_https_if_required!
     return self if self.start_with?('https://')
-    return self.gsub(/^http:\/\//, 'https://')  if self.start_with?('http://')
+    return self if self.start_with?('http://')
     'https://' + self
   end
 

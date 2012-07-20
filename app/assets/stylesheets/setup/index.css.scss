@@ -127,7 +127,7 @@ div.help {
 
 input[type="text"] {
   @include border-radius(5px);
-  background: url(/assets/bg_input.png) repeat-x 0 0 white;
+  background: url(image-path("bg_input.png")) repeat-x 0 0 white;
   height: 34px;
   border: 1px solid #CCCCCC;
   font: normal 15px Arial;

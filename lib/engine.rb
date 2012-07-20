@@ -10,6 +10,10 @@ require 'cartoset/auth/warden_strategies'
 module Cartoset
   class Engine < Rails::Engine
 
+    initializer "static assets" do |app|
+      app.middleware.use ::ActionDispatch::Static, "#{root}/public"
+    end
+
     initializer "cartoset.add_middleware" do
 
       config.app_middleware.use RailsWarden::Manager do |manager|

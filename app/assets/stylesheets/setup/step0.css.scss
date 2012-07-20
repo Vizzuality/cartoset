@@ -1,12 +1,9 @@
-/*
-*= require_self
-*/
 @import 'main.mixins';
 
 div.small_content_box {
   margin-top: 200px;
   height: 200px;
-  background: #FFFFFF url(/assets/globe.png) no-repeat top right ;
+  background: #FFFFFF url(image-path("globe.png")) no-repeat top right ;
 }
 
 div.small_content_box {

@@ -8,9 +8,11 @@ class Cartoset::FeaturesDataImporter
       file.write(data_stream.read.force_encoding("UTF-8"))
 
       @tables = CartoDB::Connection.tables || nil
-      CartoDB::Connection.drop_table('cartoset_features') if @tables && @tables.map{|t| t.name}.include?('cartoset_features')
+      CartoDB::Connection.drop_table('cartoset_features') if @tables && @tables.tables && @tables.tables.map{|t| t.name}.include?('cartoset_features')
 
+      require 'ruby-debug'; debugger
       table = CartoDB::Connection.create_table 'cartoset_features', file
+      table = CartoDB::Connection.table table.name
     end
 
     table

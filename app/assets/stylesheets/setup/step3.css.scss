@@ -16,18 +16,24 @@ div.shadowed {
 }
 
 a.selector {
+  position: relative;
   @include inline-block;
-  background: url(/assets/select.png);
+  background: url(image-path("select.png"));
   color: $select_text;
   padding: 8px 10px;
   width: 189px;
   height: 16px;
   cursor: pointer;
+  z-index: 1;
 }
 
 ul.selector_values {
-  position: absolute;
+  position: relative;
+  top: -1px;
   display: none;
+  width: 207px;
+  margin: 0;
+  padding: 0;
   overflow: auto;
   @include gradient(#FFFFFF, $select_bottom);
   border-left: 1px solid $select_border;

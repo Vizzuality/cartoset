@@ -34,7 +34,7 @@
     $('iframe').css('width',"548px");
     $('iframe').css('height',"440px");
     $('iframe').css('padding',"5px 8px");
-    $('iframe').css('background',"url('/assets/sprites/htmlArea.png') no-repeat 0 -50px");
+    $('iframe').css('background',"url('/images/sprites/htmlArea.png') no-repeat 0 -50px");
     $('iframe').css('border',"none");
   });
 

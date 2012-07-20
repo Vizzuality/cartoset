@@ -271,7 +271,7 @@ div#settings_list{
                 float: left;
                 width: 300px;
                 @include border-radius(5px 0 0 5px);
-                background: url(/assets/bg_textbox.png) repeat-x 0 0 white;
+                background: url(image-path("bg_textbox.png")) repeat-x 0 0 white;
                 height: 30px;
                 border: 1px solid #CCCCCC;
                 font: normal 15px Arial;

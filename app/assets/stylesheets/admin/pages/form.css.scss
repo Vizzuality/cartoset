@@ -32,7 +32,7 @@ body > div#main_content div.content_box {
       vertical-align: middle;
       margin:40px 0 0 20px!important;
       padding:0 0 0 15px;
-      background:url('/assets/sprites/htmlArea.png') no-repeat -210px 0px;
+      background:url(image-path("sprites/htmlArea.png")) no-repeat -210px 0px;
       text-decoration:none;
       font:normal 15px Arial;
       color:#333333;
@@ -58,10 +58,10 @@ body > div#main_content div.content_box {
     background:blue;
     width:233px;
     padding:6px 0 0 0;
-    background:url('/assets/backgrounds/bubble_top.png') no-repeat -1px 0;
+    background:url(image-path("backgrounds/bubble_top.png")) no-repeat -1px 0;
 
     div.bottom {
-      background:url('/assets/backgrounds/bubble_bottom.png') no-repeat 0 bottom;
+      background:url(image-path("backgrounds/bubble_bottom.png")) no-repeat 0 bottom;
       width:193px;
       padding:10px 21px 16px;
     }
@@ -78,7 +78,7 @@ body > div#main_content div.content_box {
       width:15px;
       height:15px;
       margin:-7px 0 0 0;
-      background:url('/assets/sprites/htmlArea.png') no-repeat -192px -16px;
+      background:url(image-path("sprites/htmlArea.png")) no-repeat -192px -16px;
     }
   }
 
@@ -95,7 +95,7 @@ body > div#main_content div.content_box {
       width:552px!important;
       height:37px;
       padding:3px 10px;
-      background:url('/assets/sprites/htmlArea.png') no-repeat 0 -500px;
+      background:url(image-path("sprites/htmlArea.png")) no-repeat 0 -500px;
 
 
     }
@@ -118,7 +118,7 @@ body > div#main_content div.content_box {
           display: block;
           width: 16px;
           height: 16px;
-          background: url('/assets/sprites/htmlArea.png') no-repeat -16px -500px;
+          background: url(image-path("sprites/htmlArea.png")) no-repeat -16px -500px;
           border: none;
           cursor: pointer;
           padding: 0px;
