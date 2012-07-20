@@ -6,7 +6,7 @@ Requirements.
 
 The requirements you will need in order to run a Cartoset based project are:
 
- - valid Ruby interpreter (versions 1.8.7 and 1.9.2 supported)
+ - valid Ruby interpreter (versions >=1.9.2 supported)
  - [rubygems](http://rubygems.org/pages/download)
  - [git](http://git-scm.com/)
  - [PostgreSQL 9.0](http://www.postgresql.org/download/)
@@ -33,20 +33,12 @@ The requirements you will need in order to run a Cartoset based project are:
 Setting up a new Cartoset based project.
 ----------------------------------------
 
-1. First of all, download the source code clicking in the 'Downloads' button, in the Cartoset [github's repository](https://github.com/vizzuality/cartoset).
+1. Create a new rails project. Version should be equal or greater than 3.1
 
-2. Unzip the downloaded file into your desired folder, and then open a new terminal session. cd to the folder.
+2. Add the cartoset gem to the project Gemfile
 
-3. Install the [bundler](http://gembundler.com/) gem.
+4. Install all the gems in the Gemfile:
 
-4. Install Ruby 1.9.2:
-        
-	$ cd cartoset
-	$ rvm install 1.9.2
-	$ rvm use 1.9.2
-	$ rvm gemset create cartoset
-	$ rvm use 1.9.2@cartoset
-	$ gem install bundler
 	$ bundle install
 
 5. Start a new server session:
@@ -64,3 +56,5 @@ Setting up a new Cartoset based project.
 8. When you finish the setup proccess, you will have your cartoset project configured!
 
 9. Customize your cartoset project, adding some css styles and giving it some love!
+
+10. You can also add your own controllers, or override the existing ones.
