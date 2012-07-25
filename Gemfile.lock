@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cartoset (0.0.1)
+    cartoset (0.0.2)
       cartodb-rb-client (~> 0.3.0)
       oa-core (= 0.2.6)
       oa-oauth (= 0.2.6)

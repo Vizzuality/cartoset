@@ -1,11 +1,11 @@
 module ApplicationHelper
   def paginate(rows, current_page, total_count, per_page = 10, params = {})
-    
+
     if per_page.is_a?(Hash)
       params = per_page
       per_page = 10
     end
-    
+
     window      = 2
     total_pages = (total_count.to_f / per_page.to_f).ceil
     last_page   = total_pages - 1
